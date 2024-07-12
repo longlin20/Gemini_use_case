@@ -1,0 +1,237 @@
+PROBLEM 1  
+Section 1.1 ( 0.25 points)  
+ 
+public class ProductException extends Exception {  
+    public ProductException(String msg) {  
+        super(msg);  
+    } 
+} 
+ 
+Evaluation criteria  
+● 0 if the code makes no sense.  
+● 0.05 if class declaration is OK.  
+● 0.2 if constructor is OK.  
+● Significant errors are subject to additional penalties.  
+ 
+Section 1.2 (0, 75 points)  
+public class Product {  
+ private String name;  
+  private char category;  
+ private String country;  
+ private double pricePerUnit;  
+ 
+ // f-FOOD, s-SUPPLIES, e -EQUIPMENT, m -Miscellanea  
+ public static final char FOOD = 'f';  
+ public static final char SUPPLIES = 's';  
+ public static final char EQUIPMENTS = 'e';  
+ public static final char MISCELLANY = 'm';  
+ 
+ public Product(String name, char category, String country,  
+   double pricePerUnit) throws ProductException {  
+ 
+  this.name = name;  
+  this.country = country;  
+  this.pricePerUnit = pricePerUnit;  
+ 
+  switch (category) {  
+  case FOOD:  
+  case SUPPLIES:  
+  case EQUIPMENTS:  
+  case MISCELLANY:  
+   this.category = category;  
+   break; 
+  default:  
+   throw new ProductException(  
+     "The category must be: 'f' FOOD, 's' SUPPLIES, 'e' 
+EQUIPMENT, 'm' Miscellanea");  
+  } 
+ } 
+ 
+} 
+ 
+  
+  
+Evaluation criteria  
+● 0 if the code makes no sense.  
+● 0.1 if class declaration is OK.  
+● 0.1 if the attributes declaration is OK (they must be private).  
+● 0.2 if the setting of the values of all the attributes is OK.  
+● 0.2 if the exception’s throw is OK.  
+● 0.15 if the constructor throws the exception in the declaration, or a block try -catch is declared.  
+● Significant errors are subject to additional penalties.  
+ 
+Section 1.3 ( 1 point)  
+ 
+public int countProducts(char category) {  
+ 
+  int total = 0;  
+ 
+  for (int i = 0; i < list.size(); i++) {  
+   if (list.get(i).getCategory() == category)  
+    total++;  
+  } 
+ 
+  return total;  
+} 
+ 
+Evaluation criteria  
+● 0 if the code makes no sense.  
+● 0.25 if the loop to traverse through the ArrayList is OK.  
+● 0.25 if the access of the elements in the ArrayList is OK . 
+● 0.25 if the comparison of category is OK.  
+● 0.25 if the counter is correctly incremented and returned.  
+● Significant errors are subject to additional penalties . 
+ 
+Section 1.4 (1 point)  
+ 
+public void update Price() { 
+ 
+  for (int i = 0; i < list.size(); i++)  
+   if (!list.get(i).getCountry().equals("Spain")) {  
+    Product current = list.get(i);  
+ 
+    current.setPricePerUnit(current.getPricePerUnit() * 1.1);  
+    totalPrice = totalPrice + current.getPricePerUnit();  
+   } 
+ } 
+ 
+Evaluation criteria:  
+● 0 if the code makes no sense . 
+● 0.25 if the loop to traverse through the ArrayList is OK.  
+● 0.25 if the access of the elements in the ArrayList is OK.  
+● 0.25 if the comparison of the String is OK (0 if equals is not used to compare the Strings).  
+● 0.25 if the total price is correctly updated.  
+● Significant errors are subject to additional penalties.   
+  
+PROBLEM 2  
+Section 2.1 (0. 75 points)  
+abstract  class LibraryEmployee {  
+    private String name; 
+    private int ID; 
+    private double salary; 
+ 
+    public LibraryEmployee(String name, int ID, double salary) { 
+        this.name = name; 
+        this.ID = ID; 
+        this.salary = salary; 
+    } 
+ 
+    public void setSalary( double salary) throws SalaryTooLowException {  
+        if (salary < 25000.0) {  
+            throw new SalaryTooLowException( "Salary cannot be set below $25,000" ); 
+        } 
+        this.salary = salary; 
+    } 
+ 
+    public abstract  double calculatePay();  
+} 
+Evaluation criteria  
+● 0 if the code makes no sense.  
+● 0.15 if class and variables declaration is OK.  
+● 0,25 if constructor is OK.  
+● 0,25 if set Salary is O K 
+● 0,1 if abstract method is OK  
+● Significant errors are subject to additional penalties.  
+ 
+ 
+Section 2.2 (0.5 points)  
+ 
+public class LibraryAssistant extends LibraryEmployee {  
+    private int hoursWorked ; 
+ 
+    @Override  
+    public double calculatePay() {  
+        return getSalary() * hoursWorked ; 
+    } 
+} 
+ 
+Evaluation criteria  
+● 0 if the code makes no sense.  
+● 0.25 if class and variables declaration is OK.  
+● 0,25 if method calculatePay() is O K 
+● Significant errors are subject to additional penalties.  
+ 
+ 
+ 
+ 
+ 
+  
+  
+Section 2.3 (1 points)  
+public class PayrollSystem {  
+    public static void main(String[] args) { 
+        ArrayList<LibraryEmployee> employees  = new ArrayList<>();  
+        employees .add(new Librarian( "Jane Smith" , 1234, 40000.0, "Reference" )); 
+        employees .add(new LibraryAssistant( "John Doe" , 5678, 20, 30));  
+ 
+        try { 
+            employees .get(0).setSalary(20000.0);  
+        } catch (SalaryTooLowException e) { 
+            System. out.println( e.getMessage());  
+        } 
+ 
+    } 
+Evaluation criteria  
+● 0 if the code makes no sense.  
+● 0.25 if ArrayList is created OK  
+● 0,25 if the object Librarian and LibraryAssistant is created  OK  
+● 0,5 manage the Exception is OK try and catch  
+● Significant errors are subject to additional penalties  
+ 
+Section 2. 4 (2 points)  
+ 
+@Test 
+    void testLibrarianDepartment() {  
+        assertEquals ("Adult Fiction" , ((Librarian)  librarian ).getDepartment());  
+    } 
+ 
+Evaluation criteria  
+● 0 if the code makes no sense.  
+● 0.25 if call assertEquals with correct parametres  
+● 0,25 if cast and call method getDepartament()  
+● Significant errors are subject to additional penalties  
+ 
+    @Test 
+    void testLibraryAssistantHoursWorked() {  
+        assertEquals (30, ((LibraryAssistant) libraryAssistant ).getHoursWorked());  
+    } 
+ 
+Evaluation criteria  
+● 0 if the code makes no sense.  
+● 0.25 if call assertEquals with correct parametres  
+● 0,25 if cast and call method getDepartament()  
+● Significant errors are subject to additional penalties  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+  
+ 
+    @Test 
+    void testSalaryTooLowException() {  
+        Exception exception  = assertThrows (SalaryTooLowException. class, () -> { 
+            librarian .setSalary(20.0);  
+        });} 
+ 
+Evaluation criteria  
+● 0 if the code makes no sense.  
+● 0.25 if call assertThrows with correct parametres  
+● 0,25 if cast and call method setSalary() with the correct parameter  
+● Significant errors are subject to additional penalties  
+ 
+ 
+    @Test 
+    void testCalculatePay() {  
+        assertEquals (600.0, libraryAssistant .calculatePay()); } 
+ 
+Evaluation criteria  
+● 0 if the code makes no sense.  
+● 0.25 if call assertEquals with correct parametres  
+● 0,25 if cast and call method calculatePay()  
+● Significant errors are subject to additional penalties

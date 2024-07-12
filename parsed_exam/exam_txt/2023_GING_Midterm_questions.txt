@@ -1,0 +1,125 @@
+Problem 1 (3 / 7 points)  
+We have the following declarations:
+public interface Queue<E> {  
+    boolean isEmpty();  
+    int size();  
+    void enqueue (E info);  
+    E dequeue();  
+    E front();  
+} 
+ 
+ 
+public interface Stack<E> {  
+    boolean isEmpty();  
+    int size();  
+    void push (E info);  
+    E pop();  
+    E top();  
+} 
+ 
+ 
+public class LinkedQueue<E> implements Queue<E> 
+{ … } 
+ 
+public class LinkedStack<E> implements Stack<E> 
+{ … }  public class Point {  
+    private double x;  
+    private double y;  
+     
+    public double getX( ) 
+      { … } 
+ 
+    public double getY();  
+      { … } 
+     
+    … 
+} 
+Assume that all methods in the classes LinkedQueue  and LinkedStack  are already implemented. The 
+class Point  represents geographical points used by a GPS. The coordinate X represents the longitude, and 
+the coordinate Y represents the latitude of the GPS point.  
+ 
+Section 1.1 (1 point)   
+ 
+ 
+
+You are asked to write the code for the method  
+public LinkedStack<Point> north enHemisphere(LinkedQueue<Point> q)  
+This method receives as parameter a queue which contains elements of type Point . The method should 
+return a LinkStack  with the points which belong to the Northern Hemisphere, i.e., the points which have 
+positive latitude.  
+VERY IMPORTANT: To deal with the queue and the stack you must exclusively use the methods 
+included in the aforementioned interfaces. Solutions which do  not meet this requirement will not be 
+allowed. Also the queue must remain unaltered when the method finishes.  
+ 
+Section 1.2 (2 points)  
+Write the code for the method  
+ 
+public boolean foundInBoth(LinkedQueue<Object> q, LinkedStack<Object> s, Object o)  
+ 
+This method receives a Linkedqueue  and a LinkedStack , as well as a generic Object . The method 
+should return true  if the object is present in both structures, and false  otherwise.  
+ 
+VERY IMPORTANT: As in the previous section, you must exclusively  use the met hods included in the 
+interfaces and both the queue and the stack must remain unaltered when the method finishes.  
+ 
+ 
+Problem 2 (1 / 7 points)  
+ 
+Given the class ArrayList<E>  with the following methods:  
+ 
+public E get(int index)  
+public E set(int index, E element)  
+public int size()  
+ 
+Implement the method public void SelectionSort(ArrayList<Integer> list) . The method 
+receives an object ArrayList  containing objects of type Integer  and it must sort the elements in 
+ascending order. The sorting method to be implemented is Selection Sort . 
+   
+ 
+ 
+
+Problem 3 (3 / 7 points)  
+A leading logistics company has asked you to develop a program for managing a Warehouse of products 
+located in the Iowa offices.  
+The Product ( Product ) class, which is already implemented and will be used in this case, is a tangible 
+item that is offered for s ale and it can be distributed from the Warehouse. The attributes of Product  is: 
+● Code (code): The code of the product. This attribute is the key to sorting the products in the 
+warehouse management.  
+● Name (name). Name of the product.  
+● Price (price ). Price of the product.  
+● Category (category ). Category of the product.  
+Assume all getters,setters  and the  method compareTo , are already implemented in the class 
+Product.  
+You must implement a class named WarehouseManagement . This class is the brain of the application 
+and will contain the basic operations for warehouse management ( addProduct, findProduct ). To 
+manage the Products, you should use a binary search tree (LBSTree) as the data structure whose interface 
+is BSTree . 
+ 
+public interface BSTree<E> {  
+   boolean isEmpty();  
+   E getInfo();  
+   Comparable getKey();  
+   BSTree<E> getLeft();  
+   BSTree<E> getRight();  
+   void insert(Comparable key, E info);  
+   BSTree<E> search(Comparable key);}  
+ 
+Section 1 (0.5 points)  
+Define the attributes and implement the constructor without parameters for the class 
+WarehouseManagement . 
+Section 2 (0.5 points)  
+Write the code to define the basic operations to addProduct  in WarehouseManagement .  
+ 
+ 
+
+  public void addProduct(int code, Product product){…}  
+Section 3 (0.5 points)  
+Write the code to define the basic operations findProduct in WarehouseManagement .  
+public Product findProduct(int code){…}  
+Section 4 (1.5 points)  
+Write the code of the method countProducts  in WarehouseManagement . This method recursively 
+counts the number of products in the warehouse  
+   public int countProducts(BSTree<Product> tree) {…}  
+ 
+VERY IMPORTANT:  The method must be implemented recursively . Any other implementation will 
+not be valid

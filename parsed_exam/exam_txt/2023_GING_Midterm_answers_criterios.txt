@@ -1,0 +1,169 @@
+PROBLEM 
+Section 1.1 (1 point)  
+public LinkedStack<Point> northenHemisphere(LinkedQueue<Point> q) {  
+ 
+  LinkedStack<Point> s = new LinkedStack<Point>();  
+ 
+  for (int i = 0; i < q.size(); i++) {  
+   Point p =  q.dequeue();  
+ 
+   if (p.getY() > 0)  
+    s.push(p);  
+ 
+   q.enqueue(p);  
+  } 
+ 
+  return s;  
+ }   
+ 
+Evaluation criteria  
+● 0 if the code makes no sense.  
+● 0.1 if the LinkedStack is correctly declared and initialized.  
+● 0.3 if the queue is correctly traversed.  
+● 0.1 if the condition to check the latitude is OK.  
+● 0.2 if the element is correctly pushed into the stack.  
+● 0.2 if the queue remains unaltered at the end of the method (the element can be enqueued or an auxiliary 
+queue can be used).  
+● 0.1 if the correct result is ret urned.   
+ 
+ 
+
+● If the interface methods are not used the highest mark is 0.5.  
+● Significant errors are subject to additional penalties.  
+ 
+Section 1.2 (2 points)  
+public boolean foundInBoth(LinkedQueue<Object> q, LinkedStack<Object> s,  
+   Object o) {  
+  boolean foundInQ  = false;  
+  boolean foundInS = false;  
+  LinkedStack<Object> aux = new LinkedStack<Object>();  
+ 
+  for (int i = 0; i < q.size(); i++) {  
+ 
+   Object obj = q.dequeue();  
+   if (obj.equals(o))  
+    foundInQ = true;  
+   q.enqueue(obj);  
+  } 
+ 
+  if (foundInQ)  
+   for (int i = 0; i < s.size(); i++) {  
+    Object obj = s.pop();  
+    if (obj.equals(o))  
+     foundInS = true;  
+ 
+    aux.push(obj);  
+   } 
+ 
+  for (int i = 0; i < aux.size(); i++)  
+   s.push(aux.pop());  
+ 
+  return foundInQ && foundInS;  
+ } 
+ 
+Evaluation criteria  
+● 0 if the code makes no sense.  
+● 0.1 if the auxiliary LinkedStack is correctly declared and initialized.  
+● 0.3 if the queue is correctly traversed.  
+● 0.3 if the stack is correctly traversed.  
+● 0.3 if the method equals is used to compare.   
+ 
+ 
+
+● 0.2 if the elements are correctl y pushed and popped from/to the stack.  
+● 0.5 if both the queue and the stack remain unaltered at the end of the method (the element can be enqueued 
+or an auxiliary queue can be used. For the stack an auxiliary stack is needed). 0.25 for each correct structur e 
+at the end of the method.  
+● 0.3 if the correct result is returned.  
+● If the interface methods are not used the highest mark is 0.5.  
+● Significant errors are subject to additional penalties.  
+ 
+PROBLEM 2 (1 point)  
+ 
+public void SelectionSort(ArrayList<Integer> list) {  
+   
+  for (int i = 0; i < list.size() - 1; i++) {  
+   int m = i;  
+   for (int j = i; j < list.size(); j++) {  
+    if (list.get(j) < list.get(m) ) {  
+     m = j; 
+    } 
+   } 
+     Integer aux = list.get(i);  
+     list.set(i, list.get(m));  
+     list.set(m, aux);  
+  } 
+ } 
+ 
+Evaluation criteria  
+● 0 if the code makes no sense.  
+● 0.25 if the loops are OK.  
+● 0.25 if the comparison is OK.  
+● 0.5 if the swapping process is OK.  
+ 
+PROBLEM 3 (3 points)  
+ Section 1 (0.5 points)  
+ public class WarehouseManagement {  
+   private BSTree<Product> products;    
+   public WarehouseManagement() {  
+        products = new LBSTree<Product>();}  
+   } 
+ 
+Evaluation criteria  
+● 0 if the code makes no sense.  
+● 0.1 if the LBTree is correctly declared and initialised.  
+● 0.3 if the constructor is OK.  
+● 0.1 if the variable is correctly assigned.  
+● Significant errors are subject to additional penalties.   
+ 
+ 
+
+Section 2 (0.5 points)  
+    public void addProduct(int code, Product product) {  
+        if (product != null) {  
+             products.insert(code, product);  
+        } 
+        
+    } 
+ Evaluation criteria  
+● 0 if the code makes no sense.  
+● 0,25 If control that product null  
+● 0.25 If the cal l to the function insert in the method addProduct is correct.  
+● Significant errors are subject to additional penalties  
+ 
+Section 3 (0.5 points)  
+public Product findProduct(int code) {  
+    BSTree<Product> productTree = products.search(code);  
+    if (productTree  == null) {  
+        return null;  
+    } 
+    return productTree.getInfo();  
+} 
+ 
+ Evaluation criteria  
+● 0 if the code makes no sense.  
+● 0.25 If the call to the function search in the method findProduct is correct.  
+● 0.25 If you return the Product in the method findProduct is correct.  
+● Significant errors are subject to additional penalties  
+Section 3 (1.5 point)  
+public int countProducts(BSTree<Product> tree) {  
+ if (tree.isEmpty()) {  
+            return 0;  
+       }  
+       else { 
+           int leftCount = countProducts(tree.getLeft());  
+            int rightCount = countProducts(tree.getRight());   
+ 
+ 
+
+            return leftCount + rightCount + 1;  
+      } 
+} 
+ Evaluation criteria  
+● 0 if the code makes no sense.  
+● 0 if the code is no implemented re cursively  
+● 0.25 If the basic case is correct.  
+● 0.5. If the recursive call to the right subtree is correct  
+● 0.5. If the recursive call to the left subtree is correct  
+● 0.25. If add 1 to the count  
+● Significant errors are subject to additional penalties.

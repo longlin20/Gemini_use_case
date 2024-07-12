@@ -1,0 +1,124 @@
+Problem 1 ( 3 / 7 points)  
+In the store of the course project  (StoreManager ), there is a queue to store the orders to be processed 
+(ordersToProcess ). The queue is implemented in another class ( LinkedQueue ), whose main 
+methods  are provided below. In the queue, orders are of type Order , and are identified with the attribute 
+orderID , which can be accessed with its corresponding getOrderID() . 
+public class LinkedQueue {  
+    private Node<Order> head; 
+    private Node<Order> tail; 
+    private int size; 
+ 
+    public LinkedQueue() {}  
+    public boolean isEmpty() { ...} 
+    public int size() { ...} 
+    public Order front() { ...} 
+    public void enqueue(Order info) {...} 
+    public Order dequeue() { ...} 
+    public String toString() { ...} 
+    public void print() { ...} 
+} 
+ 
+Section 1.1 ( 1.5 points)  
+Considering the abovementioned information, implement the method Order search(int orderID)  
+in class StoreManager . This method search es one order in the queue (given its orderID ) and returns 
+the corresponding Order  object. For this method, you can only use the methods of class LinkedQueue  
+that are already provided.  Note that this method does not modify neither the content of the queue no r the 
+order of its elements.  
+Section 1.2 (1 point)  
+The implementation of previous section would have been easier if there was a method to search in the 
+LinkedQueue  class. In this section, you are asked to implement the method Order search(int 
+orderID)  in LinkedQueue  class. This method searches one order in the queue (given its orderID ) 
+and returns the corresponding Order  object.  
+Section 1. 3 (0.5 point s)  
+Finally, implement the method Order search2(int orderID)  in StoreManager . This method 
+carries out the same operations of the method implemented in Section 1.1, but making  use of the method 
+implemented in Section 1.2.   
+ 
+ 
+
+Problem 2 (1 / 7 points)  
+In a project, we need a stack data structure, and we want to make use of ArrayLists fo r its implementation. 
+Complete the code  below  to implement the main methods of the stack.  
+public class ArrayListStack<E> {  
+ private ArrayList<E> arraylist ; 
+  
+ public ArrayListStack(){  // COMPLETE } 
+ public void push(E info) { // COMPLETE  } 
+ public E pop() { // COMPLETE } 
+} 
+NOTE : The class ArrayList<E>  has the following methods, some of which can be useful in this problem:  
+• boolean add(E e)  • boolean isEmpty()  
+• void add(int index, E element)  • E remove(int index)  
+• void clear()  • boolean remove(Object o)  
+• E get(int index)  • E set(int index, E element)  
+• int indexOf(Object o)  • int size()  
+ 
+Problem 3 (3 / 7 points)  
+The Huffman coding is a typical encoder to encode information . This coding generates a tree based on the 
+probability of each symbol (e.g., letter) and the encoding can be obtained based on the tree. An example of 
+tree is as follows:  
+ 
+In this tree, there a symbol (e.g., letter) in each leaf. In our implementation, we will represent them with 
+String . The rest of the nodes are empty (in our case, we will put a dash , “-”, in the information in those 
+nodes). In order to find the encoding, we add a “0” each time we move left in the tree and we add a “1” 
+each time we mode ri ght in the tree. This way, the encoding of A is “00” (we move  twice to the left ) and 
+the en coding of C is “10” (we move right first and then we move left).  
+ 
+Section 3.1 (0.5 points)  
+Indicate the encoding and the depth  in the tree of the symbols B, D and E.  
+Section 3.2 (2 points)  
+Program the method String findEncoding(String symbol)  in the class LBTree  that 
+represents the tree (you can find a partial implementation below). This method has a symbol as a parameter 
+(e.g.,  “A”) and returns a String with the corresponding encoding (“00” in the example”). If the symbol is 
+not found in the tree (e.g., if “F” is used in the previous tree), the method will return -1. -
+-
+A B-
+C -
+D E 
+ 
+ 
+
+Section 3.3 (0.5 points)  
+Implement the method int findDepth(S tring symbol) . This method indicates the depth of the 
+node where a symbol is. If the symbol is not found, the method will return -1.  
+Hint: You can make use of the previous method.  
+public class LBTree<E> implements  BTree<E> {  
+    private LBNode<E> root; 
+ 
+    public LBTree() {  
+        root = null; 
+    } 
+ 
+    public LBTree(E info) { 
+        root = new LBNode<E>( info, new LBTree<E>(), new LBTree<E>());  
+    } 
+ 
+    public boolean isEmpty() { ...} 
+    public E getInfo() throws BTreeException { ...} 
+    public BTree<E> getLeft() throws BTreeException { ...} 
+    public BTree<E> getRight() throws BTreeException { ...} 
+    public void insert(BTree<E> tree, int side) throws BTreeException { ...}     
+    public BTree<E> extract( int side) throws BTreeException { ...} 
+    public int size() { ...} 
+    public String toString() { ...} 
+    public int height() { ...} 
+    public String findEncoding(String symbol) {// SECTION 3.2 } 
+    public int findDepth(String symbol) {// SECTION 3.3 } 
+} 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 

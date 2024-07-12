@@ -1,0 +1,146 @@
+PROBLEM 
+Section 1.1 (0.5 points)  
+public abstract  class Courier implements  CourierFunctions {  
+ String name; 
+  
+ public Courier(String name) { 
+  this.name = name; 
+ } 
+  
+} 
+ 
+Evaluation criteria:  
+● 0.20: Class declaration including abstract and implementing the interface.  
+● 0.10: Attribute name with correct visibility  
+● 0.10: Signature of the constructor  
+● 0,10: Initialization of the attribute  
+● Significant errors are subject to additional penalties  
+ 
+Section 1.2 (1 point)  
+public class FastDeliveryCourier extends Courier {  
+ 
+ public FastDeliveryCourier(String name) { 
+  super(name); 
+ } 
+  
+ public FastDeliveryCourier() {  
+  this(null); 
+ } 
+ 
+ @Override  
+ public double calculateCommission( double cost) throws LowCostException {  
+  if(cost < 20) 
+   throw new LowCostException( "Minimum cost is not reached" ); 
+  return 0.2*cost; 
+ } 
+  
+} 
+ 
+Evaluation criteria  
+● 0.10: Class declaration extending Courier  
+● 0.20: Constructor with parameters  
+● 0.20: Constructor without parameters  
+● 0.10: Signature of method calculateCommission, including throws  
+● 0.10: Check the condition  
+● 0.10: Throw LowCostException  
+● 0.20: Compute (0.1) and return (0.1) the commission  
+● Significant errors are subject to additional penalties
+
+Section 1.3 (1.5 points)  
+public class Shipment {  
+ private Order order; 
+ private Courier courier; 
+ private double price; 
+ private int status; 
+ private ArrayList<String> messages ; 
+  
+ public static final int SENT = 1; 
+ public static final int DELIVERED  = 2; 
+  
+ private static int total_shipments ; 
+ private static int total_fast ; 
+ 
+Evaluation criteria  
+● 0.10: Class declaration  
+● 0.30: Attributes order and courier (0.15 each)  
+● 0.20: Attributes price and status (0.1 each)  
+● 0.10: Attribute messages  
+● 0.40: Constants (0.2 each)  
+● 0.40: Static variables (0.20 each)  
+● Significant errors are subject to additional penalties  
+ 
+Section 1.4 (1.5 points)  
+public Shipment(Order order, Courier courier) throws LowCostException {  
+  setOrder( order); 
+  setCourier( courier); 
+  status = SENT; 
+  price = 
+order.calculateCost() +courier.calculateCommission( order.calculateCost()) ; 
+   
+  messages  = new ArrayList<String>();  
+  messages .add(System. currentTimeMillis () + " -  Order sent" ); 
+   
+  total_shipments ++; 
+  if(courier instanceof  FastDeliveryCourier)  
+   total_fast ++; 
+} 
+ 
+Evaluation criteria  
+● 0.20: Signature of the constructor with correct parameters (0.1) and throws (0.1)  
+● 0.20: Call to set methods to initialize order and courier (0.1 each)  
+● 0.10: Set initial status to SENT  
+● 0.40: Calculate price using methods from class Order and Courier  
+● 0.10: Initialize ArrayList  
+● 0.20: Add message in ArrayList (0.1) using System.currentTimeMillis() appropriately (0.1)  
+● 0.20: Increment static variables (0.1 each)  
+● 0.10: Check if courier is FastDeliveryCourier using instanceof  
+● Significant errors are subject to additional penalties  
+
+Section 1.5 (1 point)  
+@Test 
+void test() throws LowCostException {  
+ SlowDeliveryCourier s = new  SlowDeliveryCourier( "Courier SL" ); 
+ assertThrows (LowCostException. class, ()->{s.calculateCommission(5);});  
+ assertEquals (s.calculateCommission(20), 1);  
+ assertEquals (s.calculateCommission(60), 6);  
+       // Branch coverage = 5/
+} 
+ 
+Evaluation criteria  
+● 0.10: Signature of the method including @Test and throws  
+● 0.10: Creation of the object  
+● 0.20: Case with assertThrows  
+● 0.20: Case when prize is between 20 (included) and 50 (not included)  
+● 0.20: Case when prize is between 50 (included) and 100 (not included)  
+● 0.20: Branch coverage  
+● Significant errors are subject  to additional penalties  
+ 
+PROBLEM 2 (1.5 points)  
+Section 2.1 (1.5 points)  
+public static String decipher_recurs(String cipher) { 
+ // Perform error checking  
+ if (cipher.equals( "")) return "no cipher" ;  
+ if (cipher.length() % 5 != 0) return "invalid cipher";  
+return decipher_recurs (cipher,""); 
+} 
+  
+public static String decipher_recurs(String cipher, String result) { 
+ if(cipher.equals( "")) 
+  return result; 
+   
+ return decipher_recurs (cipher.substring(5), result) + 
+decipherChar (cipher.substring(0, 5));  
+} 
+ 
+ 
+ 
+Evaluation criteria:  
+● 0.20: Error checking (0.1 each condition)  
+● 0.20: Call to the auxiliary method with the correct parameters  
+● 0.10: Signature of the auxiliary method  
+● 0.20: Base case  
+● 0.80: Recursive case  
+o 0.40: Recursive call  
+o 0.20: Call to deciperChar  
+o 0.20: Return ensuring that the order is correct  
+● Significant errors are subject to additional penalties

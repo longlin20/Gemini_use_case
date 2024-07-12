@@ -1,0 +1,145 @@
+PROBLEM  
+Section 2 .1 (0.75 points ) 
+public abstract  class Media { 
+ protected  String name; 
+ protected  String category ; 
+  
+ public Media (String name, String category ){ 
+  this.name = name; 
+  this.category  = category ; 
+ } 
+  
+ public abstract  int computeTotalDuration();  
+} 
+ 
+Section 2.2 (1 points)  
+public class Episode extends Media{ 
+ private int duration ; 
+ private int ID; 
+ public static int counter = 1; 
+  
+ public Episode(String name, String category , int duration )  { 
+  super(name, category ); 
+  this.duration  = duration ; 
+  this.ID = counter++; 
+ } 
+ 
+ public void setDuration ( int duration ){ 
+  this.duration  = duration ; 
+ } 
+  
+ public int computeTotalDuration() {  
+  return duration ; 
+ } 
+} 
+ 
+Section 2.3 (0.5 points)  
+public class FullSeriesException extends Exception {  
+ public FullSeriesException(String msg) { 
+  super(msg); 
+ } 
+} 
+ 
+Section 2.4 (2.75 points)  
+import java.util.ArrayList;  
+public class Series extends Media { 
+ private int  numberOfEpisodes ; 
+ private ArrayList <Episode> episodes ; 
+ 
+ public Series(String name, String category , ArrayList <Episode> episodes ) throws 
+FullSeriesException {   
+ 
+
+  super(name, category ); 
+  if(episodes.size() >10){ 
+   throw new FullSeriesException( "Series with more than 10 episodes" ); 
+  } 
+  this.numberOfEpisodes  = episodes.size() ; 
+  this.episodes  = episodes ; 
+ } 
+ public int computeTotalDuration() {  
+  int totalDuration  = 0; 
+  for(int i = 0; i<episodes .size(); i++){ 
+   totalDuration  += episodes .get(i).computeTotalDuration();  
+  } 
+  return totalDuration ; 
+ } 
+ public void addNewEpisode(Episode newEp) throws FullSeriesException  {  
+  if(episodes .size()==10){  
+   throw new FullSeriesException( "Full series" ); 
+  } 
+  episodes .add(newEp); 
+  this.numberOfEpisodes ++; 
+ } 
+ 
+} 
+ 
+Section 1.1 ( 0.75 point s) 
+• 0.15: Class declaration  
+• 0.15: Attribute declaration as protected  
+• 0.25: Constructor initializing the attributes  
+• 0.20: Abstract method computeTotalDuration()  
+• Significant errors are subject to additional penalties  
+Section 1.2 ( 1 point)  
+• 0.15: Class declaration extending from Media 
+• 0.15: Static attribute to implement the counter  
+• 0.40: Constructor calling the constructor of the superclass, initializing duration and updating the ID counter.  
+• 0.15: Setter needed to retrieve the value of the attribute duration  from other classes  
+• 0.15: Method computeTotalDuration()  
+• Significant errors are subject to additional penalties  
+Section 1.3 (0. 5 point s) 
+• 0.15: Class declarati on extending from Exception  
+• 0.35: Constructor calling the constructor of the superclass and passing a string as parameter.  
+• Significant errors are subject to additional penalties  
+Section 1.4 ( 2.75 points)  
+• 0.25: Class declaration extending from Media and attributes (including here the use of Episode  as type for 
+the ArrayList)  
+• 1.00: Constructor  
+o 0.25: Signature including throws  
+o 0.15: Calling the constructor of the superclass  
+o 0.30: Checking the number of episodes and throwing the exception (if size>10)  
+o 0.15: Calculation of the number of episodes  
+o 0.15: Initialization of episodes  
+• 0.50: Method computeTotalDuration()   
+ 
+
+o 0.05: Method signature  
+o 0.20: Loop  
+o 0.25: Correct access to the duration of each episode and performance of the sum  
+• 1.00: Method addNewEpisode()  
+o 0.25: Method signature including throws  
+o 0.30: Checking the number of episodes and throwing the exception (if size>10)  
+o 0.25: Addition of the element to the ArrayList  
+o 0.20: Updating variable numberOfEpisodes  
+• If GET method is implemented in class Episode, penalize 0.1 as it is the same as computeTotalDuration()  
+• Significant errors are subject to additional penalties  
+ 
+PROBLEM  
+@Test 
+public void testA() { // Branch coverage 50%  
+ assertEquals (PointsCalculator. getPointsFlight ("Premium Economy" , 7000), 375 ); 
+} 
+ 
+@Test 
+public void testB() { // Method coverage 50%  
+ assertEquals (PointsCalculator. getPointsFlight ("Business" , 3000), 400 ); 
+} 
+  
+@Test 
+public void testC() { // Line coverage 100% in method  
+ assertEquals (PointsCalculator. getPointsFlight ("Business" , 3000), 400 ); 
+ assertEquals (PointsCalculator. getPointsFlight ("Premium Economy" , 7000), 375 ); 
+ assertEquals (PointsCalculator. getPointsFlight ("Tourist" , 500), 100 ); 
+} 
+You cannot use this test for a black -box test because it does not cover all the possible equivalence 
+classes (e.g., Business with less than 2000 miles is not tested  in the example ). 
+ 
+Section 2.2 (1 .5 point s) 
+• 0.55 each test 
+o 0.05: Method declaration with @Test  
+o 0.15: assertEquals are right  
+o 0.10: Coverage achieved is correct  
+o 0.25: Coverage is achieved with the minimum number of lines . If coverage is incorrect, this part is 
+incorrect regardless the number of lines.  
+• 0.35 final question in part c. If the answer is correct but not the justification, maximum 0.
+• Significant errors are subject to additional penalties
