@@ -1,0 +1,266 @@
+Section 1.1 (0. 75 points )
+public class  Account {
+    private String username ;
+    private String password ;
+    private boolean isBlocked ;
+
+    protected static final short  PASSWORD_MIN_LENGTH  = 8;
+    public Account(String username , String password ) throws PasswordException {
+        this.username  = username ;
+        setPassword( password );
+        isBlocked = false;
+    }
+    public String getUsername() {
+        return username ;
+    }
+    public String getPassword() {
+        return password ;
+    }
+    public void setPassword(String password ) throws PasswordException {
+        if (password .length() < PASSWORD_MIN_LENGTH ) {
+            throw new PasswordException( "The length of the password must be at least
+                8 characters" );
+        }
+        this.password  = password;
+    }
+      public boolean getIsBlocked() {
+        return isBlocked ;
+    }
+    public void setIsBlocked(boolean isBlocked) {
+        this.isBlocked =  isBlocked;
+    }
+}
+Section 1. 2 (0.5 points )
+public class  ProfessionalAccount extends Account {
+    private String  company;
+    public ProfessionalAccount(String username , String password, String company)
+            throws PasswordException {
+        super(username , password );
+        this.company = company;
+    }
+
+    public String getCompany() {
+        return company;
+    }
+    @Override
+    public void setPassword(String password ) throws PasswordException {
+        if (password.equals( getUsername() )) {
+            throw new PasswordException( "The password cannot contain the username" );
+        }
+        super.setPassword( password );
+
+
+
+    }
+}
+Section  1.3 (1 point )
+public class AuthenticationManager implements  Authenticator {
+    private Account[] accounts ;
+
+    public AuthenticationManager(Account[] accounts ) {
+        this.accounts  = accounts;
+    }
+
+    public int authenticateUser(String username , String password ) {
+        Account account = null;
+        boolean found = false;
+        for (int i = 0; i < accounts .length && !found; i++) {
+            if (accounts [i].getUsername().equals( username )) {
+                account = accounts [i];
+                found = true;
+            }
+        }
+        int authenticationResult  = PASSWORD_INCORRECT ;
+        if (account == null) {
+            authenticationResult  = ACCOUNT_NOT_FOUND ;
+        } else if (account.getIsBlocked()) {
+            authenticationResult  = ACCOUNT_BLOCKED ;
+        } else if (account.getPassword().equals( password )) {
+            authenticationResult  = USER_AUTHENTICATED ;
+        } else {
+            account.setIsBlocked( true);
+        }
+        return authenticationResult;
+    }
+}
+Section 1.1 (0.75 points)
+• 0.05: Class declaration .
+• 0.1: Correct attributes (type and visibility).
+• 0.05: Correct constant  (type and final) . The assigned visibility  will not be considered .
+• 0.2: Constructor.
+o 0.05: Method definition including the exception.
+o 0.05: username  initialization  and isBlocked set to  false ( it is also correct if the line with
+“isBlock = false” is not included  because isBlocked is false by defaul t).
+o 0.1: Set ting the password including the  valida tion, invoking the set method or checking the
+length  within the constructor.
+• 0.1: Getter and setter (except  setPassword).
+• 0.25: setPassword.
+o 0.05: Method definition including the exception.
+o 0.1: Length verification.
+o 0.05: Throwing the exception.
+o 0.05: Set ting the attribute.
+
+
+
+
+
+
+Section 1.2 (0.5 points)
+• 0.1: Class declaration.
+o -0.05 if it does not extend Account.
+• 0.05: Attribute  company and its  corresponding getter.
+• 0.15: Constructor.
+o 0.05: Constructor definition . If the exception is not defined  here,  but there was a penalty in
+Account,  no additional penalty will be added .
+o 0.05: Calling superclass  constructor (super).
+o 0.05: Initializing  company.
+• 0.2: s etPassword .
+o 0.1: Checking username and exception.
+o 0.1: Calling superclass  method.
+o If superclass  set method is called before performing the validation of the username -0.1.
+
+Section 1.3 (1 point)
+• 0.1: Class declaration .
+• 0.1: Attribute  accounts.
+• 0.15: Constructor.
+• 0.65: Method  authenticateUser.
+o 0.35: Searching for the account in the array.
+▪ -0.05 if  == used instead of  equals.
+▪ -0.15 if no loop is used to find the account.
+o 0.05: User not found condition.
+o 0.05: Blocked account condition.
+o 0.1: User correctly authenticated condition.
+o 0.1: Incorrect password condition and account blocking.
+▪ -0.05 if the account is not blocked but a value is returned  (or the other way around).
+o If it does not return anything  -0.1.
+
+PROBLEM 2 (0 .75 points )
+Section  2.1 (0.45 points )
+@Test
+public void testSectionA(){
+    Number number = new Number(5);
+    assertEquals(number.result(),1);
+}
+Section  2.2 (0.15 points )
+// It cannot be done
+It is not possible to achieve the  requested  coverage because:
+1. Since there are 4 branches, coverage can only take values  0%, 25%,  50%,  75% or 100%, depending
+on the number of branches covered.
+2. It is requested to achieve a coverage between 50% (not included) and 67% (included). Then, there
+is no possible way to achieve  this range.
+The 4 branches are: the true and false branches of the if (if number>0 or not) and the true and false branches
+of the else -if (if number<0 or not).
+
+
+
+
+Section  2.3 (0.15 points )
+@Test
+public void testSectionC(){
+    Number number = new Number(5);
+}
+Section  2.1 (0.45 points )
+• 0.05: Correct header of the test method  (with any method name) :
+• 0.1:  Correct creation of the  object of class Number: Number number = new Number(5)
+• 0.3:  Correct assertEquals.
+• If code is correct but the test does not achieve the requested coverage, 0.2 for the whole section.
+
+Section 2. 2 (0.15 points )
+• 0.15:  If the reason why it cannot be done  is properly justified . A possible justification is included
+in the solution  above .
+• If the answer is “It cannot be done” without justification 0.05 for the whole section.
+
+Section 2. 3 (0.15 points )
+• 0.05: Correct header of the test method (with any method name):
+• 0.1: Correct creation of the object of class Number: Number number = new Number(5)
+• If code is correct but the test does not achieve the requested coverage, 0.05 for the whole section.
+
+PROBLEM
+Section 3. 1 (0.4 points )
+public Packet sendPacket(){
+    return this.dequeue();
+}
+
+Section 3. 2 (1.6 points )
+public Packet sendUrgent (){
+    if(top!=null){
+        Node<Packet> tmp = top.getNext();
+        Node<Packet> prev = top;
+        if(prev.getInfo().isUrgent()){
+            return this.dequeue();
+        }else{
+            while(tmp!=null){
+                if(tmp.getInfo().isUrgent()){
+                    prev.setNext( tmp.getNext());
+                    size--;
+                    if(tmp.getNext()== null){
+                        tail = prev;
+                    }
+                    return tmp.getInfo();
+                }else{
+                    prev = tmp;
+                    tmp = tmp.getNext();
+
+
+
+                }
+            }
+        }
+    }
+    return null;
+}
+
+Section  3.1 (0.4 points )
+• 0.4: Correct handl ing of the dequeue operation, manually of through the dequeue() method:
+ Manually:
+o 0.1: Updating  top.
+o 0.1: Updating  tail.
+o 0.1: Updating  size.
+o 0.1: Returning the packet.
+Through the dequeue()  method :
+o 0.3: Calling the  dequeue()  method.
+o 0.1: Returning the packet.
+Section  3.2 (1.6 points )
+• 0.4: Returning null when there are no urgent packets.
+• 0.4: Correct handling of the case in which the first urgent packet is referenced by  top, manually or
+though the dequeue() method:
+ Manually :
+o 0.1: Updating  top.
+o 0.1: Updating  tail.
+o 0.1: Updating  size.
+o 0.1: Returning the packet.
+Through the dequeue() method :
+o 0.3: Calling the dequeue() method.
+o 0.1: Returning the packet.
+• 0.4: Correct handling of the case in which the first urgent packet is in the middle of the queue:
+o 0.2: Updating next references.
+o 0.1: Updating size.
+o 0.1: Returning the packet.
+• 0.4: Correct handling of the case in which the first urgent packet is  referenced by  tail:
+o 0.1: Updating next references.
+o 0.1: Updating tail.
+o 0.1: Updating size.
+o 0.1: Returning the packet.
+
+
+PROBLEM 4  (2 points)
+public void updateBalanceFactor() {
+if (!isEmpty()) {
+this.root.setBalanceFactor( this.getRight().height() -
+this.getLeft().height());
+((LBTree<E>)  this.getLeft()).updateBalanceFactor();
+((LBTree<E>) this.getRight()).updateBalanceFactor();
+}
+}
+
+• 0.25: Determining the base case condition.
+• 0.25: Solving the base case  (no modification  should be  done  when the tree is empty ).
+• 0.50: Correct calculation of the balance factor for the own node (computing the subtraction between
+the height of the right subtree and the height of the left one). If calculated in the opposite way  (left
+height – right height), maximum  0.4.
+• 0.50: Storing the f actor using the method  setBalanceFactor of the object  this.root. If the private
+attribute is used and no t the setter, maximum 0.40.
+• 0.25: Recursive call of the method for the left subtree.
+• 0.25: Recursive call of the method for the right subtree.
+• Penalize  -0.05 if no casting is performed to call the recursive method (if only one is missing or both
+of them).

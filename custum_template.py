@@ -1,4 +1,3 @@
-import pandas as pd
 from langchain.prompts import PromptTemplate
 
 
@@ -62,6 +61,7 @@ def score_template():
         ]
     )
     return prompt
+
 
 def answer_with_history_template():
     template = """Role and Goal: Serve as a university professor specializing in Java programming.

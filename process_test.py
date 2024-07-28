@@ -1,10 +1,7 @@
 import concurrent
 import json
-import os
 import re
-from typing import List
 
-from langchain_google_vertexai import VertexAIEmbeddings
 from pdf2image import convert_from_path
 import base64
 from io import BytesIO
@@ -13,6 +10,7 @@ from vertexai.generative_models import GenerativeModel, Part
 from tqdm import tqdm
 import time
 import pandas as pd
+
 
 def convert_doc_to_images(path):
     images = convert_from_path(path)
@@ -27,8 +25,9 @@ def get_img_uri(img):
 
 
 def get_llm_config():
-    system_prompt = '''
-You will be provided with an image of a pdf page or a slide. Your goal is to extract the test-type exercises. Extract first the questions, then the possible answers, and finally the correct answer (write the full answer). The format should be as follows:
+    system_prompt = '''You will be provided with an image of a pdf page or a slide. Your goal is to extract the 
+    test-type exercises. Extract first the questions, then the possible answers, and finally the correct answer (
+    write the full answer). The format should be as follows:
 
 Question: [The question text]
 Options: 
@@ -38,8 +37,8 @@ c. [Option C]
 d. [Option D]
 Answer: [The correct answer (write the full answer)]
 
-Exclude elements that are not relevant to the content. Do not mention page numbers or the position of the elements on the image.
-    '''
+Exclude elements that are not relevant to the content. Do not mention page numbers or the position of the elements on 
+the image.'''
     generation_config = {
         "max_output_tokens": 8192,
         "temperature": 0,
@@ -106,7 +105,8 @@ def process_questions_data(file):
 
     questions_data = []
     for content in docs["pages_description"]:
-        questions = re.findall(r"(?:Question:|Question\*\*:\*\*)\s*(.*?)\n(?:Options:|\*\*Options:\*\*)", content, re.DOTALL)
+        questions = re.findall(r"(?:Question:|Question\*\*:\*\*)\s*(.*?)\n(?:Options:|\*\*Options:\*\*)", content,
+                               re.DOTALL)
         options = re.findall(r"(?:Options:|\*\*Options:\*\*)\s*(.*?)\n(?:Answer:|\*\*Answer:\*\*)", content, re.DOTALL)
         answers = re.findall(r"(?:Answer:|\*\*Answer:\*\*)\s*(.*?)(?=\n|$)", content, re.DOTALL)
 
@@ -120,6 +120,7 @@ def process_questions_data(file):
     df = pd.DataFrame(questions_data)
     new_file = file.replace(".json", ".xlsx")
     df.to_excel(new_file, index=False)
+
 
 """
 year = '18-19 (1)'

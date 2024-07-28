@@ -1,0 +1,225 @@
+
+Section  1 (0.2 points )
+public interface  TicketPrinter {
+String restaurantTickets() throws TicketException;
+}
+
+Section  2 (1.5 points)
+public class Volunteer extends Person implements  Position, TicketPrinter {
+      private static int numTotal ;
+     private int numVolunteer ;
+     private String position ;
+     private char shift;
+
+     public static final char MORNING = 'M';
+     public static final char AFTERNOON = 'A';
+
+     public Volunteer( int age, char gender, String i d, char shift) {
+              super(age, gender, i d);
+              if (checkParameter( shift)){
+                     this.shift = shift;
+              } else {
+                     this.shift = MORNING;
+              }
+              this.position  = selectPosition();
+              numTotal ++;
+              this.numVolunteer  = numTotal ;
+     }
+
+     public String toString() {
+              return "Volunteer number: "  + numVolunteer  + ", Position: "  + position  +
+", " + "Shift: "  + shift + ", " + super.toString();
+     }
+
+     public String selectPosition() {
+              int p = (int) Math.round(Math.random() * 4);
+              return positions [p];
+     }
+
+     public String restaurantTickets() throws TicketException {
+              if (shift == MORNING) {
+               return "Lunch ticket" ;
+              }
+              else if (shift == AFTERNOON  && !this.position .equals( "ticketing" )) {
+               return "Dinner ticket" ;
+              }
+          else {
+               throw new TicketException( "Invalid shift" );
+              }
+       }
+
+
+
+     public boolean checkParameter( char shift) { // For referenc e only
+              if (shift == MORNING || shift == AFTERNOON ) {
+                      return true;
+              }
+              return false;
+     }
+}
+Section  3 (0.3 points )
+for(int i = 0; i<volunteers.size(); i++) {
+ System. out.println( volunteers.get( i));
+System. out.println( volunteers .get(i).restaurantTickets());
+}
+
+Section  1 (0.2 points )
+● 0.2: Declara tion of the interface and abstract method
+o If the student does not show knowledge about interfaces because he/she writes abstract in the
+declaration, implements the method, or writes {} instead of ;, then
+o Do not penalize if public is indicated in the method regardless  it is not needed (all methods are
+public in an interface)
+o Pena lize 0.05 if throws  is not used in the method
+● Significant er rors are subject to additional penalties
+Section  2 (1.5 puntos)
+● 0.1: Class declaration
+● 0.05: Declaration of the static variable  numTotal
+● 0.1: Decla ration of variables  numVolunteer, position y shift
+● 0.1: Declara tion of the two constants
+● 0.5: Construct or
+o 0.1: Declara tion
+o 0.1: Man agement and call to  super()
+o 0.1: Man agement and assignation of variable  shift
+o 0.1: Management and assignation of variable position
+o 0.05: Man agement and assignation of the static attribute
+o 0.05: Man agement and assignation of attribute  numVolunteer
+● 0.15: Method  toString()
+o Do not penalize if the method is implemented with more line codes than needed
+● 0.20: Method  selectPosition()
+o 0.05: Declara tion of the method
+o 0.10: Obtain position using  Math.random
+o 0.05: Return the position
+● 0.30: Method  restaurantTickets()
+o 0.05: Declara tion
+o 0.25: Con ditions to print lunch (0.05) or dinner tickets  (0.1) , or throw the exception (0.1 )
+● Significant errors are subject to additional penalties
+Section  3 (0.3 points )
+● 0.1: Traverse the ArrayList with the correct limits in the for loop.
+● 0.1: Print the list of volunteers
+● 0.1: Print the restaurant tickets
+● Significant errors are subject to additional penalties
+
+
+
+PROBLEM 2 (2 p oints )
+Section  1 (0.25 points)
+public class MyBasicLinkedListException extends Exception {
+     public MyBasicLinkedListException(String msg){
+      super(msg);
+     }
+}
+Section  2 (1.75 points )
+public MyBasicLinkedList<E> intersection(MyBasicLinkedList<E> list2) throws
+MyBasicLinkedListException{
+    MyBasicLinkedList<E> result = new MyBasicLinkedList<E>();
+    Node<E> aux = this.getFirst();
+
+    // Also valid  for(int i=0; i<this.size(); i++){
+    while (aux != null) {
+        if ((list2.numberOfOccurrences( aux.getInfo()) != 0) &&
+          (result.numberOfOccurrences( aux.getInfo()) == 0 ))
+            result.insert( aux.getInfo());
+        aux = aux.getNext();
+    }
+
+    // Also valid if (result.size()==0)
+    if (result.isEmpty())
+        throw new MyBasicLinkedListException( "Empty intersection!" );
+    return result;
+}
+
+Section  1 (0.25 puntos)
+● 0 if the solution does not make sense and/or the solution is wrong in general
+● 0.1: Correctly declaration  of the class, extending  Exception
+● 0.15: Correct implementation of the constructor
+● Significant errors are subject to additional penalties
+Section  2 (1.75 points )
+● 0 if the solution does not make sense and/or the solution is wrong in general
+● 0.1: Declaration and initialization of the resulting list
+● 0.1: Correct access to the first element to traverse the list
+● 0.25: Correct declaration of the loop  (using as many iterations as the number of elements of one of the lists
+and defining a correct stop condition )
+● 0.5: Correctly check ing if the current element is in the other list and it is not repeated in the resulting list
+(0.25 each condition)
+● 0.25: Corre ctly insert ion of  the element in the resulting list (in case the insertion is necessary)
+● 0.15: Correct advancement in the list with the next element
+● 0.25: Correctly throw ing the exception if the resulting list is empty
+● 0.15: Correctly return ing the resulting list
+● Penalize 0.2 if any of the lists is modified
+● Significant errors are subject to additional penalties
+
+
+
+
+
+PROBLEM
+Section  1 (0.5 points )
+n2.insert( n1, BTree. LEFT);
+n2.insert( n5, BTree. RIGHT);
+n3.insert( n6, BTree. LEFT);
+n4.insert( n2, BTree. LEFT);
+n4.insert( n3, BTree. RIGHT);
+
+Section  2 (0.3 puntos)
+Pre-order = 4 2 1 5 3
+In-order = 1 2 5 4 6
+Post-order = 1 5 2 6 3
+Section  3 (1.2 points )
+public static int sumEvenNumbers(BTree<Integer> tree) {
+ if (tree.isEmpty()) {
+  return 0;
+ } else if (tree.getInfo() % 2 == 0) {
+  return sumEvenNumbers (tree.getLeft()) +
+                   sumEvenNumbers (tree.getRight()) + tree.getInfo();
+ } else {
+  return sumEvenNumbers (tree.getLeft()) +
+sumEvenNumbers (tree.getRight());
+ }
+}
+Section  1 (0.5 points )
+● 0.5: Inserts are correct regardless the second parameter of insert (0.1 each insert)
+● Penalize 0.2 if the second parameter of the insert method is incorrect . Second argument may only take the
+following values   (BTree.LEFT o r BTree.RIGHT) or (0 or 1)
+● Significant errors are subject to additional penalties
+Section  2 (0.3 points )
+● 0.1 each traversal
+● Significant errors are subject to additional penalties
+Section  3 (1.2 points )
+● 0.3: Check whether the tree is empty or not
+● 0.2: Check whether the information of the node is even or not
+● 0.4: First recursive case when the information is even
+● 0.3: Second recursive case  (else) when the information is odd
+● If the method is not implemented in a recursive way, then
+● Significant errors are subject to additional penalties
+
+
+
+PROBLEM
+public static void  bubbleSort (ArrayList<Integer> a) {
+    for (int i = 0; i < a.size(); i++) {
+     for (int j = 0; j < a.size() - i - 1; j++) {
+         if (a.get(j).comparteTo( a.get(j + 1)) < 0) {
+                 Integer temp = a.get(j);
+                 a.set(j, a.get(j + 1));
+                 a.set(j + 1, temp);
+         }
+     }
+ }
+}
+
+PROBLEM
+● 0.1: Correct declaration of the method
+o Penal ize 0.1 if the method is not declared as void and/or static, if the argument is not provided,
+and if the type ArrayList is incorrect
+● 0.2: First for loop
+o Pena lize 0.1 if students write length instead of  size()
+o If limits are no t correctly defined, then
+● 0.2: Second for loop
+o Penaliz e 0.1 if students write  length instead of  size()
+o If limits are not correctly defined , then
+● 0.3. Condi tional  if
+o Penalize 0.3 if sorting is carried out in ascending order
+o Penalize 0.2 if indexes of get methods are incorrect
+● 0.2: Lines inside the  if
+o Penaliz e 0.1 if the use of get is incorrect and/or the indexes used in the gets are incorrect
+o Penalize  0.1 if the use of set is incorrect and/or the indexes used in the sets are incorrect

@@ -1,0 +1,4957 @@
+content_chunks
+"Question: Dado el montículo de clave mínima (min-heap) resultante de insertar de uno en uno ordenadamente la secuencia de nodos {5, 1, 3, 2, 7}, indica cuál de los siguientes arrays se corresponde con el montículo resultante tras realizar una operación extract() sobre el montículo construido.
+Options:
+a. {2, 7, 3, 5}
+b. {2, 3, 5, 7}
+c. {3, 2, 5, 7}
+d. *** {2, 5, 3, 7}
+Answer: {2, 5, 3, 7}"
+"Question: Dado el árbol de búsqueda binario resultante de insertar de uno en uno ordenadamente la siguiente secuencia de nodos {3, 1, 5, 2, 7, 9}, ¿cuál es el resultado de recorrer el árbol en post-orden después de extraer el nodo cuyo valor es 7?
+Options:
+a. 3, 1, 5, 2, 9
+b. 3, 1, 2, 5, 9
+c. 1, 2, 3, 5, 9
+d. *** 2, 1, 9, 5, 3
+Answer: 2, 1, 9, 5, 3"
+"Question: Indique qué hace el siguiente método de una lista doblemente enlazada que contiene dos nodos dummy top y tail.
+```java
+public E m(){
+E result = null;
+if (tail.getPrev()!=top) {
+result = tail.getPrev().getInfo();
+tail.setPrev(tail.getPrev().getPrev());
+tail.getPrev().getPrev().setNext(tail);
+size--;
+}
+return result;
+}
+```
+Options:
+a. Inserta un elemento en el lado de top (insertFirst)
+b. *** Elimina un elemento en el lado de tail (removeLast)
+c. Inserta un elemento en el lado de tail (insertLast)
+d. Elimina un elemento en el lado de top (removeFirst)
+Answer: Elimina un elemento en el lado de tail (removeLast)"
+"Question: Dado el siguiente código, indique cuál de las siguientes afirmaciones es cierta.
+```java
+public E m() {
+E result = null;
+if (top!=-1){
+result = data[top];
+data [top] = null;
+top = top -1;
+}
+return result;
+}
+```
+Options:
+a. *** Equivale al método pop() de un ArrayStack
+b. Equivale al método dequeue() de una LinkedQueue
+c. Equivale al método removeFirst() de una LinkedList
+d. Equivale al método push() de un ArrayStack
+Answer: nan"
+"Question: *** Equivale al método pop() de un ArrayStack
+
+Answer: *** Equivale al método pop() de un ArrayStack"
+"Question: La resolución de la llamada a un método en caso de sobrecarga depende de...
+Options:
+a. Si el método es estático o no.
+b. El valor de retorno del método.
+c. *** Los parámetros del método.
+d. La visibilidad del método.
+Answer: *** Los parámetros del método."
+"Question: Indique cuál de los siguientes algoritmos de ordenación realiza particiones recursivas eligiendo un elemento como pivote y ordenando mediante intercambios los elementos a la derecha y a la izquierda de este.
+Options:
+a. Insertion Sort.
+b. *** Quick Sort.
+c. Bubble Sort.
+d. Selection Sort.
+Answer: *** Quick Sort."
+"Question: Dado el siguiente código, ¿cuál de las siguientes afirmaciones es correcta?:
+```java
+public class ClassA{
+    public void m(int a) {; }
+    public void m(float b) {; }
+    public void m(int c) {; }
+    public void m(double d) {; }
+}
+```
+Options:
+a. *** La sobrecarga public void m(int c) no es correcta.
+b. La sobrecarga public void m(double d) no es correcta.
+c. La sobrecarga public void m(float b) no es correcta.
+d. El método m está sobrecargado correctamente.
+Answer: *** La sobrecarga public void m(int c) no es correcta."
+"Question: Dado el siguiente código, ¿es correcto el programa?:
+```java
+public class Main {
+    public static void main(String args[]) {
+        int[] elements = {1,2,3,4,5,6};
+        int i = 0;
+        int len = elements.length;
+        while (i<=len){
+            System.out.println(elements[i]);
+            i++;
+        }
+    }
+}
+```
+Options:
+a. No es correcto, en compilación se indica que no se ha inicializado correctamente el array.
+b. No es correcto, en compilación se indica que no se puede asignar a una variable entera el valor resultante de llamar a elements.length.
+c. *** No es correcto, genera una excepción ArrayIndexOutOfBoundsException en su ejecución.
+d. Es correcto, en su ejecución imprime por pantalla los elementos del array y finaliza correctamente.
+Answer: c. *** No es correcto, genera una excepción ArrayIndexOutOfBoundsException en su ejecución."
+"Question: ¿Cuál de las siguientes afirmaciones es correcta?
+Options:
+a. JUnit muestra el porcentaje de cobertura de las pruebas de caja negra.
+b. Con una cobertura del 100% del código podemos asegurar el funcionamiento correcto del programa.
+c. *** Las pruebas de caja blanca no aseguran el correcto funcionamiento del programa.
+d. Las pruebas de caja blanca son también llamadas pruebas de entrada/salida.
+Answer: *** Las pruebas de caja blanca no aseguran el correcto funcionamiento del programa."
+"Question: Dado el siguiente programa, ¿cuál de las siguientes afirmaciones es correcta?:
+```java
+public class Main {
+    protected int i;
+    public static void main(String args[]) {
+        Main m = new Main();
+        m.i = 0;
+        System.out.println(m.i);
+    }
+}
+```
+Options:
+a. *** Compila y ejecuta correctamente mostrando 0 por pantalla.
+b. Compila y ejecuta correctamente mostrando null por pantalla.
+c. No compila correctamente porque no se puede crear un objeto m en el método main de la propia clase Main.
+d. No compila correctamente indicándose que el atributo i es protegido y no puede ser accedido por el objeto m.
+Answer: *** Compila y ejecuta correctamente mostrando 0 por pantalla."
+"Question: Dado el siguiente código, ¿cuál de las siguientes afirmaciones es correcta?
+```java
+class ClassA{
+public ClassA() { }
+}
+class ClassB extends ClassA {
+private int a;
+public ClassB (int a) { super(); this.a = a;}
+}
+class ClassC extends ClassB{
+private int b;
+public ClassC(int a, int b) { super(); this.b = b;}
+}
+public class Main {
+public static void main(String args[]) {
+ClassC c = new ClassC(10,10);
+}
+}
+```
+Options:
+a. Desde un método static no se puede crear un objeto.
+b. *** No es correcta la cadena de llamadas de constructores en la herencia cuando se crea el objeto c.
+c. En el código de Classc hay que sustituir super() por this().
+d. El objeto c se crea correctamente.
+Answer: *** No es correcta la cadena de llamadas de constructores en la herencia cuando se crea el objeto c."
+"Question: Indique qué hace el siguiente método en un árbol binario.
+```java
+public int m() {
+int result = 0;
+try {
+result = 1 + getLeft().m() + getRight().m();
+} catch (BTreeException e) {
+result = 0;
+}
+return result;
+}
+```
+Options:
+a. Calcula la altura del árbol.
+b. Comprueba si el árbol está vacío y devuelve cero si lo está.
+c. Calcula la profundidad del árbol.
+d. *** Calcula el tamaño del árbol.
+Answer: d. *** Calcula el tamaño del árbol."
+"Question: Dado el array {3, 1, 7, 2, 5, 9}, ¿cuál sería el contenido del array tras tres iteraciones del bucle externo del método Selection Sort, si usamos la implementación que ordena de menor a mayor eligiendo el valor mínimo de la parte no ordenada e intercambiándolo por el primer elemento desordenado?
+Options:
+a. {1, 3, 2, 5, 9, 7}
+b. {1, 3, 7, 2, 5, 9}
+c. {1, 3, 2, 5, 7, 9}
+d. *** {1, 2, 3, 7, 5, 9}
+Answer: d. *** {1, 2, 3, 7, 5, 9}"
+"Question: Dado el siguiente método al que pasamos como parámetro el array {1, 2, 3}, indica cuál de las siguientes afirmaciones es cierta.
+```java
+public void m(int array ([]) {
+LStack s = new LStack();
+LQueue q = new LQueue();
+for(int i=0; i<array.length; i++){
+s.push(array[i]);
+}
+for(int i=0; i<array.length; i++){
+q.enqueue(s.pop());
+}
+for(int i=0; i<array.length; i++) {
+System.out.println(q.dequeue());
+}
+}
+```
+Options:
+a. *** Imprime 3, 2, 1.
+b. No pueden coexistir una pila y una cola en un mismo programa.
+c. Lanza ArrayIndexOutOfBoundException.
+d. Imprime 1, 2, 3.
+Answer: nan"
+"Question: ¿Qué hace el siguiente código?
+
+Answer: *** Imprime 3, 2, 1."
+"Question: Si compilas este código y javac te indica: `error: ClassB is not abstract and does not override abstract method method1() in ClassA`, ¿Qué puedes deducir?:
+```java
+public class Main{
+public static void main(String args[]) {
+ClassB b = new ClassB();
+}
+}
+```
+Options:
+a. ClassB no hereda de ClassA y ClassB tiene que ser abstracta.
+b. ClassB hereda de ClassA y hace falta implementar la interfaz Abstractable.
+c. *** ClassB hereda de ClassA. ClassA es abstracta con su método method1() también abstracto.
+d. ClassB no hereda de ClassA pero necesita implementar un método method1().
+Answer: *** ClassB hereda de ClassA. ClassA es abstracta con su método method1() también abstracto."
+"Question: Indique cuál de las siguientes afirmaciones sobre estructuras de datos es cierta.
+Options:
+a. Es necesario indicar el tamaño de la lista enlazada antes de su creación.
+b. Las listas enlazadas necesitan disponer de espacio contiguo en memoria para el almacenamiento de los datos que contienen.
+c. Los arrays pueden crecer dinámicamente en función del número de elementos añadidos.
+d. *** Las interfaces Stack y Queue pueden implementarse tanto con arrays como con listas enlazadas.
+Answer: *** Las interfaces Stack y Queue pueden implementarse tanto con arrays como con listas enlazadas."
+"Question: Indique cuál de las siguientes afirmaciones es cierta.
+Options:
+a. *** En un montículo binario mínimo (min-heap) los hijos de un nodo siempre tienen una clave mayor que su padre.
+b. Un árbol no se puede representar mediante un array porque es una estructura jerárquica. c. Un ´arbol binario siempre es un ´arbol de b´usqueda.
+d. En un ´arbol binario, dado un nodo, las claves de los nodos de su sub´arbol izquierdo
+siempre son mayores que las de su sub´arbol derecho
+Answer: *** En un montículo binario mínimo (min-heap) los hijos de un nodo siempre tienen una clave mayor que su padre."
+"Question: Dado el siguiente código, ¿cuál de las siguientes afirmaciones es correcta?
+```java
+public class ClassA extends ClassB, ClassC implements InterfaceD, InterfaceE{
+public static void main(String args[]){}
+}
+```
+Options:
+a. El programa no compila porque en ClassA no se puede implementar un método main.
+b. El programa no compila porque Java no permite la implementación de más de una interfaz al mismo tiempo.
+c. *** El programa no compila porque Java no admite herencia de más de una clase al mismo tiempo.
+d. El programa no compila porque deberíamos haber implementado un constructor de forma explícita.
+Answer: *** El programa no compila porque Java no admite herencia de más de una clase al mismo tiempo."
+"Question: Indica qué devuelve el siguiente método recursivo para a=3.
+```java
+public static int metodo (int a) {
+int resultado = 0;
+if (a<0){
+resultado = -1;
+}else if (a>10) {
+resultado = 1;
+}else{
+resultado = 2 + metodo (a+2);
+}
+return resultado;
+}
+```
+Options:
+a. *** 9
+b. 1
+c. La llamada recursiva se ejecuta indefinidamente.
+d. 3
+Answer: a. *** 9"
+"Question: Indica cuál de las siguientes afirmaciones sobre recursión es correcta.
+Options:
+a. La recursión en cascada implica dos métodos que se llaman entre sí.
+b. *** La recursión no por la cola require realizar operaciones pendientes después de la  última llamada recursiva.
+c. La recursión anidada también se puede llamar lineal por la cola.
+d. La recursión se utiliza porque normalmente es más eficiente que un bucle.
+Answer: b. *** La recursión no por la cola require realizar operaciones pendientes después de la  última llamada recursiva."
+"Question: Dado el siguiente código. Cual será la salida tras ejecutar el método main.
+```java
+public class TestIncremento{
+private static int a =2;
+private static int b =2;
+public static void main(String[] args) {
+int a1= 2 * a++;
+int b1= 2 * ++b;
+System.out.println(a1 + "" "" + b1);
+}
+}
+```
+Options:
+a. Ninguna opción en correcta.
+b. 66
+c. 44
+d. ***46
+Answer: ***46"
+"Question: Indique cual de las siguientes afirmaciones no es aplicable a pruebas de caja negra.
+Options:
+a. Las pruebas de caja negra también se pueden llamar pruebas de entrada / salida
+b. Las clases de equivalencia definen subconjuntos disjuntos de posibles datos de entrada para pruebas de caja negra.
+c. Las pruebas de caja negra permiten probar la funcionalidad del código.
+d. *** La cobertura de ramas es un tipo de prueba de caja negra.
+Answer: La cobertura de ramas es un tipo de prueba de caja negra."
+"Question: Dadas las clases Billete y BilleteDeTren que hereda de la anterior y las interfaces Vendible y VendiblePorInternet que hereda de la anterior. Indique cual de las siguientes sentencias es incorrecta.
+Options:
+a. *** BilleteDeTren b = (BilleteDeTren)new Billete();
+b. BilleteDeTren b = new BilleteDeTren();
+c. public class Billete implements Vendible, VendiblePorInternet{};
+d. Billete b = new BilleteDeTren();
+Answer: BilleteDeTren b = (BilleteDeTren)new Billete();"
+"Question: Indique cual de las siguientes afirmaciones sobre modificadores es incorrecta:
+Options:
+a. *** private aplicado a un paquete quiere decir que ese paquete sólo es accesible a la carpeta donde se encuentra la clase con el método main
+b. private aplicado a un método de una clase quiere decir que sólo es accesible dentro de la propia clase
+c. Si un atributo no tiene modificador sólo es accesible desde las clases del mismo paquete.
+d. static aplicado a un atributo de una clase quiere decir que su valor es el mismo para todos los objetos de la clase.
+Answer: private aplicado a un paquete quiere decir que ese paquete sólo es accesible a la carpeta donde se encuentra la clase con el método main"
+"Question: Dado el siguiente código indique cual de las siguientes sentencias de prueba para acceder al método metodoA() desde el metodoB() es incorrecta.
+```java
+public class ClaseA{
+public void metodoA(){...}
+}
+public class Claseb extends ClaseA{
+public void metodoB(){
+//sentencias de prueba
+}
+}
+```
+Options:
+a. `*** ClaseA.metodoA();`
+b. `this.metodoA();`
+c. `super.metodoA();`
+d. `metodoA();`
+Answer: a. `*** ClaseA.metodoA();`"
+"Question: Suponiendo que llamamos al método m(char array) pasándole como parámetro el array array = {'a', 'b', 'c'}. Indique cuál de las siguientes afirmaciones es incorrecta.
+public void m(char() array){
+LQueue q = new LQueue();
+for(int i=0; i<array.length; i++){
+q.enqueue(array[i]);
+System.out.println(q.dequeue());
+}
+}
+Options:
+a. *** Imprime los elementos del array en orden inverso.
+b. Al terminar la ejecución del método la LQueue queda vacía
+c. Imprimiría lo mismo si en lugar de usar como estructura una LQueue utilizásemos una LStack
+d. Imprimiría lo mismo si en lugar de usar como estructura una LQueue utilizásemos un montículo.
+Answer: *** Imprime los elementos del array en orden inverso."
+"Question: Dado el árbol representado por el array array = {,5, 7, 2, 1, 3, 6, 4, 8}. Indica la altura, profundidad y ascendientes del subárbol cuya raíz es 7.
+Options:
+a. altura:2, profundidad:1, ascendientes: 5,7
+b. altura:1, profundidad:2, ascendientes: 5,7
+c. altura:1, profundidad:2, ascendientes: 5
+d. *** altura:2, profundidad:1, ascendientes: 5
+Answer: *** altura:2, profundidad:1, ascendientes: 5"
+"Question: Dado el montículo mínimo resultante de insertar ordenadamente la siguiente secuencia de nodos: 3, 1, 2, 5, 6, 9, 8, 10. Cuál sería el hijo izquierdo del nodo 2 después de hacer la operación extract()
+Options:
+a. 10
+b. 9
+c. 8
+d. *** 3
+Answer: *** 3"
+"Question: Dado el árbol de búsqueda binario resultante de insertar de uno en uno ordenadamente la siguiente secuencia de nodos: 3, 1, 2, 5, 6, 9, 8, 10. Escribe la altura y el tamaño del subárbol que tiene como raíz el 5.
+Options:
+a. altura: 1, tamaño: 5
+b. *** altura: 3, tamaño: 5
+c. altura: 1, tamaño: 2
+d. altura: 2, tamaño: 1
+Answer: *** altura: 3, tamaño: 5"
+"Question: Indique cuál de los siguientes algoritmos de ordenación realiza una división recursiva en
+mitades del array a ordenar y luego va mezclando ordenadamente los subarrays resultantes
+desde los más sencillos hasta los más complejos utilizando para ello multitud de estructuras
+auxiliares.
+Options:
+a. QuickSort
+b. *** MergeSort
+c. InsertionSort
+d. SelectionSort
+Answer: *** MergeSort"
+"Question: Indique cuál de las siguientes afirmaciones sobre los arrays es incorrecta.
+Options:
+a. Un array puede utilizarse para representar un árbol binario.
+b. *** Un array puede crecer dinámicamente en función del número de elementos insertados
+en él.
+c. Un array puede utilizarse para representar un montículo o cola con prioridad.
+d. Un array puede utilizarse para representar estructuras lineales como pilas y colas.
+Answer: *** Un array puede crecer dinámicamente en función del número de elementos insertados"
+"Question: Dado el siguiente código. Por qué valor deberíamos sustituir xxxx para que el método indi-
+cado imprima el último elemento de una LinkedList tal y como las que hemos implementado
+en clase.
+```java
+public void printLast() {
+Node<E> aux = first;
+while(xxxx) {
+aux = aux.getNext();
+}
+System.out.println(aux.getInfo());
+}
+```
+Options:
+a. aux.getNext().getNext() != null
+b. aux != null
+c. aux.setNext(null)
+d. *** aux.getNext() != null
+Answer: *** aux.getNext() != null"
+"Question: Dado el árbol representado por el array array = {,1, 2, 5, 6, 7, 9, 3}. Indique cuál
+de las siguientes afirmaciones es correcta.
+Options:
+a. El resultado de recorrer el árbol in-orden es: 1, 2, 6, 7, 5, 9, 3
+b. Es un montículo mínimo.
+c. *** El resultado de recorrer el árbol en post-orden es: 6, 7, 2, 9, 3, 5, 1
+d. Es un árbol de búsqueda binario.
+Answer: *** El resultado de recorrer el árbol en post-orden es: 6, 7, 2, 9, 3, 5, 1"
+"Question: ¿Qué hace el siguiente código?
+```java
+public boolean m() {
+boolean resultado = false;
+if (head == -1){
+  resultado = true;
+}
+return resultado;
+}
+```
+Options:
+a. Elimina el último elemento del ArrayQueue
+b. Elimina el primer elemento del ArrayQueue.
+c. Da una NullPointerException.
+d. *** Comprueba si el ArrayQueue está vacía.
+Answer: Comprueba si el ArrayQueue está vacía."
+"Question: Indique cual de las siguientes afirmaciones sobre un árbol de búsqueda binario es cierta.
+Options:
+a. Es una estructura FIFO.
+b. *** Es una estructura jerárquica.
+c. Es una estructura lineal.
+d. Es una estructura LIFO.
+Answer: Es una estructura jerárquica."
+"Question: Dadas las clases ClaseA y ClaseB que hereda de ClaseA. Si queremos ampliar su funcionalidad con una nueva clase ClaseC y dos Interfaces I1 e I2. Indica cuál de las siguientes sentencias daría un error de compilación.
+Options:
+a. *** public class ClaseB extends ClaseA, ClaseC
+b. public class ClaseA implements I1
+c. public class ClaseC extends ClaseC
+d. public class ClaseB implements I1, I2
+Answer: *** public class ClaseB extends ClaseA, ClaseC"
+"Question: Dado el siguiente código. Indica cuántas veces se ejecuta el bucle y cuánto vale el array datos tras invocar al siguiente método para datos = {1,1,1,1,1}.
+```java
+public static void metodo (int [] datos) {
+for(int i=0; i<datos.length;i++){
+datos [i] = 3;
+i= i+2;
+}
+}
+```
+Options:
+a. *** 2 veces, 3,1,1,3,1
+b. 5 veces, 3,3,3,3,3
+c. Ninguna opción es correcta.
+d. 3 veces, 3,1,3,1,3
+Answer: *** 2 veces, 3,1,1,3,1"
+"Question: Dado el siguiente código indique cuál de las siguientes afirmaciones es *incorrecta*.
+```java
+public class ClaseA{
+private int a;
+public ClaseA (int a) {this.a=a;}
+public ClaseA() { this(null);}
+}
+public class ClaseB extends ClaseA{...}
+```
+Options:
+a. Podemos crear un constructor en la clase ClaseB que desde su primera línea haga una llamada a super().
+b. La clase ClaseB tiene un constructor por defecto.
+c. La clase ClaseA tiene sobrecarga de constructores.
+d. *** La clase ClaseB puede sobreescribir el constructor por defecto de ClaseA
+Answer: *** La clase ClaseB puede sobreescribir el constructor por defecto de ClaseA"
+"Question: Dado el siguiente código indica cual de las siguientes sentencias para modificar los valores de a, b y c es *incorrecta*.
+```java
+public class ClaseA{
+protected int a = 1;
+public static int b=1 ;
+public static final int C = 1;
+public void setA(int a) {this.a = a;}
+public static void main(String[] args) {
+ClaseA miObjeto = new ClaseA();
+//sentencias para modificar los valores
+}
+}
+```
+Options:
+a. miObjeto.setA(3);
+b. ClaseA.b = 3;
+c. miObjeto.a = 3;
+d. *** ClaseA.C = 3;
+Answer: *** ClaseA.C = 3;"
+"Question: What is the output of the following code?
+```java
+public static int m(int a) {
+int resultado = 0;
+if (a<=0) {
+resultado = 1;
+}else{
+resultado = m(0) * m(a-1) * m(a-2);
+}
+return resultado;
+}
+```
+Options:
+a. Es un caso de recursión anidada.
+b. 0,0,0
+c. *** 1,1,1
+d. La recursión no termina.
+Answer: *** 1,1,1"
+"Question: Indica cuál de las siguientes afirmaciones sobre pruebas de programas es incorrecta.
+Options:
+a. Las pruebas de cobertura de métodos son un caso de pruebas de caja blanca.
+b. *** Las clases de equivalencia también se denominan pruebas de excepciones.
+c. Las pruebas alfa y beta son pruebas que se hacen con el cliente.
+d. Se pueden hacer pruebas funcionales integrando varios módulos y equivalen a las pruebas de caja negra.
+Answer: *** Las clases de equivalencia también se denominan pruebas de excepciones."
+"Question: Dado el siguiente código indica cual de las siguientes afirmaciones es incorrecta.
+```java
+public class ClaseA{
+private char a;
+public ClaseA (char a) {setA(a);}
+public void setA (char a) {this.a=a3;}
+public static void main(String[] args) {
+ClaseA miObjeto = new ClaseA('r');
+}
+}
+```
+Options:
+a. El estado del objeto miobjeto es privado.
+b. La clase clased no tiene constructor por defecto.
+c. *** No se puede llamar al metodo setA desde el constructor.
+d. El comportamiento del objeto miObjetoes público.
+Answer: *** No se puede llamar al metodo setA desde el constructor."
+"Question: Cuál de las siguientes afirmaciones sobre recursión es cierta
+Options:
+a. La recursión en cascada implica dos métodos que se llaman entre sí.
+b. La recursión por la cola es normalmente más eficiente que un bucle.
+c. La recursión anidada también se puede llamar lineal por la cola.
+d. *** La recursión no por la cola requiere realizar operaciones pendientes después de la última llamada recursiva.
+Answer: *** La recursión no por la cola requiere realizar operaciones pendientes después de la última llamada recursiva."
+"Question: Dado el siguiente método perteneciente a una LinkedList como las que hemos implementado en clase. Indique cuál de las siguientes afirmaciones es correcta
+```java
+public void m(){
+Node<E> aux = first;
+while(aux!=null){
+aux = aux.getNext();
+System.out.println(aux.getInfo());
+}
+}
+```
+Options:
+a. Imprime el último nodo de la lista.
+b. Imprime todos los nodos de la lista.
+c. Imprime el penúltimo nodo de la lista.
+d. *** Lanza una NullPointerException.
+Answer: Lanza una NullPointerException."
+"Question: Suponiendo que llamamos al método m(int array) pasándole como parámetro el array array = {1, 2, 3}. Indique cuál de las siguientes afirmaciones es correcta.
+```java
+public void m(int array){
+LStack s = new LStack();
+for(int i=0; i<array.length; i++){
+s.push(array[i]);
+}
+for(int i=0; i<array.length; i++){
+System.out.println(s.pop());
+}
+}
+```
+Options:
+a. Lanza un ArrayIndexOutOfBoundsException
+b. Imprime el último elemento del array: 3
+c. Imprime los elementos del array en el mismo orden que estaban en el array original.
+d. *** Imprime los elementos del array en orden inverso.
+Answer: Imprime los elementos del array en orden inverso."
+"Question: Dado el árbol de búsqueda binario resultante de insertar ordenadamente la siguiente secuencia de nodos: c, a, b, e, g, d, f. Cuál sería el hijo derecho del nodo c.
+Options:
+a. null
+b. *** e
+c. a
+d. b
+Answer: e"
+"Question: Dado el árbol representado por el array array = {,a, b, c, d, e}. Indique la altura y profundidad del nodo d.
+Options:
+a. altura: 2, profundidad: 0
+b. altura: 3, profundidad: 0
+c. altura: 0, profundidad: 3
+d. *** altura: 0, profundidad: 2
+Answer: altura: 0, profundidad: 2"
+"Question: Indique cuál de las siguientes afirmaciones sobre estructuras de datos lineales es incorrecta.
+Options:
+a. Los arrays necesitan porciones contiguas de memoria para almacenar la información.
+b. Los arrays son estructuras de datos lineales.
+c. *** Las listas enlazadas tienen un tamaño estático que hay que asignar en el momento de su creación.
+d. Las listas enlazadas pueden almacenar información en posiciones de memoria no contiguas.
+Answer: Las listas enlazadas tienen un tamaño estático que hay que asignar en el momento de su creación."
+"Question: Suponiendo que queremos ordenar un array de menor a mayor, indique cuál de los siguientes algoritmos de ordenación va buscando desde la primera posición hasta la última el elemento menor y luego repite el proceso sucesivamente para el resto del array pendiente de ordenar.
+Options:
+a. *** SelectionSort
+b. QuickSort
+c. InsertionSort
+d. MergeSort
+Answer: SelectionSort"
+"Question: Dada la implementación de una LinkedList como las que hemos visto en clase, sin nodos dummy. Cual de las siguientes sentencias permitirían eliminar el primer nodo de la lista.
+Options:
+a. first.setNext(first.getNext().getNext())
+b. last = last.getPrev()
+c. first.setNext(first.getNext())
+d. *** first = first.getNext()
+Answer: first = first.getNext()"
+"Question: What does the code snippet do?
+Options:
+a. enqueue
+b. dequeue
+c. *** push
+d. pop
+Answer: push"
+"Question: Indique cual de las siguientes afirmaciones sobre un ArrayQueue es cierta.
+Options:
+a. Es una estructura LILO.
+b. Es una estructura FILO.
+c. *** Es una estructura FIFO.
+d. Es una estructura LIFO.
+Answer: c. *** Es una estructura FIFO."
+"Question: Dado el siguiente código y las variables array = {1, 2, 3}y String b=""hello"", ¿qué valor tienen las variables array y b después de llamar al método m(array, b)?
+```java
+public static void m(int[] array, String b){
+for(int i=0; i<array.length; i++){
+array [i] = array.length;
+b = ""bye"";
+}
+}
+```
+Options:
+a. *** array = {3,3,3} b = ""hello""
+b. array = {1,2,3} b = ""hello""
+c. array = {3,3,3} b = ""bye""
+d. array = {1,2,3} b = ""bye""
+Answer: array = {3,3,3} b = ""bye"""
+"Question: Dado el siguiente código, ¿cuál será la salida tras ejecutar el método main?
+```java
+public class Test{
+private static int a = 1;
+private static int b = 2;
+public static void main(String[] args){
+int a1 = a + b++;
+int a2 = ++a + 5;
+System.out.println(a1 + "" "" + a2);
+}
+}
+```
+Options:
+a. ***37
+b. 47
+c. 36
+d. 46
+Answer: 3 7"
+"Question: Dado el siguiente código, indique por qué sentencia habría que sustituir XXXX para modificar el valor de la variable a y que pase a tomar el valor 5.
+```java
+public class A{
+private static int a = 3;
+public void setA(int a) {this.a =a;}
+}
+public class B extends A{
+public void modifyA(){
+XXXX
+}
+}
+```
+Options:
+a. *** setA(5);
+b. super.a = 5;
+c. this.a = 5;
+d. a = 5;
+Answer: c. this.a = 5;"
+"Question: Dado el siguiente código, indique por qué modificadores habría que sustituir xxxx, y yyyy para que las declaraciones de las clases A y B fuesen correctas.
+```java
+public interface I1{void m1();}
+public interface 12{void m2();}
+public xxxx class A implements I1{ }
+public yyyy class B extends A implements 12{
+public void m2(){...}
+}
+```
+Options:
+a. *** xxx = abstract, yyy = abstract.
+b. xxx = abstract, yyy sin modificador
+c. xxx sin modificador, yyy = abstract
+d. xxx sin modificador, yyy sin modificador
+Answer: xxx = abstract, yyy = abstract."
+"Question: El constructor de A es invocado por el constructor de B.
+Options:
+a. *** El constructor de A es invocado por el constructor de B.
+b. El constructor de A está sobrecargado.
+c. El constructor de A está sobreescrito.
+d. Aunque no se indique explícitamente, A tiene un constructor por defecto que asigna al atributo a el valor 0.
+Answer: *** El constructor de A es invocado por el constructor de B."
+"Question: Dadas las interfaces I1, e I2 que hereda de la anterior, y la clase abstracta A que implementa la interfaz I2 y su hija no abstracta B, indique cuál de las siguientes sentencias es INCORRECTA.
+Options:
+a. *** A a = new A();
+b. A a = new B();
+c. I1 i1 = new B();
+d. I2 i2 = new B();
+Answer: *** A a = new A();"
+"Question: Indique cuál de las siguientes afirmaciones es aplicable a pruebas de caja blanca.
+Options:
+a. *** La cobertura de ramas es un tipo de prueba de caja blanca.
+b. Las clases de equivalencia definen subconjuntos disjuntos de posibles datos de entrada para pruebas de caja blanca.
+c. Las pruebas de caja blanca también se pueden llamar de entrada/salida.
+d. Las pruebas de caja blanca no requieren conocer la estructura interna del código.
+Answer: *** La cobertura de ramas es un tipo de prueba de caja blanca."
+"Question: Indique qué devuelve el siguiente método recursivo para a = 2.
+```java
+public static int m(int a){
+  int result = 0;
+  if (a<=0) {
+    result = 3;
+  }else{
+    result = m(a-1) + m(a-2) - 2;
+  }
+  return result;
+}
+```
+Options:
+a. *** 5
+b. 3
+c. -2
+d. 4
+Answer: *** 5"
+"Question: ¿Qué estructura de datos se utiliza para implementar una cola?
+Options:
+a. *** Deque
+b. Montículo
+c. Árbol binario
+d. Pila
+Answer: *** Deque"
+"Question: En una implementación de una cola doblemente enlazada usando la técnica dummy nodes (nodos centinela). Si guardamos N datos en los N nodos con información de la cola, ¿cuántos nodos tiene en total la cola (incluyendo los que almacenan información y los que no)?
+Options:
+a. *** N+2
+b. N
+c. N+1
+d. N+3
+Answer: *** N+2"
+"Question: Una multinacional posee alrededor de 100.000 empleados repartidos a lo largo de todo el planeta. La multinacional dispone de un software propietario que almacena la información de cada uno de los empleados, incluyendo nombre, apellidos, fecha de nacimiento, cuenta de correo electrónico y usuario y contraseña de acceso al ordenador. Sabiendo que la operación de login (mediante usuario y contraseña) es la más frecuente y debe realizarse lo más rápido posible, ¿qué estructura de datos debería implementar el software propietario de la multinacional para almacenar la información de sus empleados?
+Options:
+a. *** Árbol binario de búsqueda.
+b. Lista enlazada.
+c. Montículo como cola de prioridad.
+d. Pila.
+Answer: *** Árbol binario de búsqueda."
+"Question: Dado la siguiente interfaz, ¿qué devuelve top() si isEmpty() devuelve true?
+```java
+public interface Stack<E> {
+    boolean isEmpty();
+    int size();
+    E top();
+    void push(E info);
+}
+```
+Options:
+a. *** null
+b. new E()
+c. throw new EmptyStackException()
+d. throw new StackOverFlowException()
+Answer: *** null"
+"Question: Dado el siguiente array de enteros ordenado {6,12,15,16,20,25,30,38,40,50,60,61,67,80,85},
+¿en cuántas iteraciones se localiza el número 61 usando una implementación de búsqueda
+binaria iterativa?
+Options:
+a. *** 2
+b. 1
+c. 3
+d. 4
+Answer: *** 2"
+"Question: Dado el siguiente código que imprime por pantalla el contenido de una lista enlazada. Si se
+llama a este método print() sobre una lista de 10 elementos, ¿qué número de elementos tiene
+la lista después de llamar a print()?:
+```java
+public void print(){
+if (first != null) {
+Node<E> current = first;
+while (first!=null){
+System.out.println(first.getInfo());
+first = first.getNext();
+}
+}
+}
+```
+Options:
+a. *** 0
+b. 10
+c. -1
+d. 1
+Answer: *** 0"
+"Question: Tenemos una agencia de viajes (agency) y creamos un árbol binario de búsqueda para organizar los posibles destinos, donde el parámetro del método que inserta es el destino, que se utiliza como información y como clave (considerando el orden alfabético). ¿Cuál es la altura del árbol resultante tras ejecutar las siguientes sentencias?
+agency.insert(""Madrid"");
+agency.insert(""Rome"");
+agency.insert(""Paris"");
+agency.insert(""New York"");
+agency.insert(""Buenos Aires"");
+agency.insert(""Cape Town"");
+agency.insert(""Sydney"");
+agency.insert(""Amsterdam"");
+agency.insert(""Vienna"");
+agency.insert(""Tehran"");
+Options:
+a. 6
+b. 3
+c. 4
+d. 5
+Answer: c. 4"
+"Question: Dado el montículo representado por el array {1, 4, 6, 8, 9, 10}, ¿cuál sería el array resultante que representaría el montículo resultante tras ejecutar las siguientes sentencias, y donde el método extract extrae la raíz del montículo?
+insert(2);
+extract();
+insert(7);
+extract();
+Options:
+a. {4, 6, 7, 8, 9, 10}
+b. {2, 6, 7, 8, 9, 10}
+c. {2, 4, 6, 7, 8, 10}
+d. {4, 7, 6, 8, 9, 10}
+Answer: d. {4, 7, 6, 8, 9, 10}"
+"Question: ¿Cuántos intercambios necesita el algoritmo Bubble Sort para ordenar este array de String de mayor a menor?
+{""France"", ""Bulgaria"", ""Denmark"", ""Estonia"", ""Austria"", ""Croatia"", ""Germany""}
+Options:
+a. 9
+b. 12
+c. 10
+d. 11
+Answer: d. 11"
+"Question: ¿Cuál es la complejidad del algoritmo HeapSort?
+Options:
+a. O(n2)
+b. O(n)
+c. O(n log n)
+d. O(log n)
+Answer: c. O(n log n)"
+"Question: Dado el siguiente método recursivo, ¿qué frase es correcta si este método se llama con a igual a 4 y b igual a 2?
+public static int method(int a, int b){
+if(a < b){
+return 2;
+}else{
+return 2+method(a--, b++);
+}
+}
+Options:
+a. Es una recursión en cascada.
+b. La llamada method(4,2) lleva a un StackOverflowError.
+c. La llamada method(4,2) devuelve 4 como resultado.
+d. La llamada method(4,2) devuelve 6 como resultado.
+Answer: b. La llamada method(4,2) lleva a un StackOverflowError."
+"Question: Pasando del elemento superior de la pila al elemento inferior de la misma, ¿cuáles son los elementos de la pila después de ejecutar el conjunto de sentencias mencionado?
+Options:
+a. C,B,D,A
+b. A,B,C,D
+c. D,C,B,A
+d. C,D,B,A
+Answer: c. D,C,B,A"
+"Question: ¿Cuál de estas opciones NO es una métrica habitual de cobertura en las pruebas unitarias?
+Options:
+a. Cobertura de líneas (Line coverage)
+b. Cobertura de interfaces (Interface coverage)
+c. Cobertura de ramas (Branch coverage)
+d. Cobertura de métodos (Method coverage)
+Answer: b. Cobertura de interfaces (Interface coverage)"
+"Question: El modificador protected aplicado a un método...
+Options:
+a. indica que el método sólo puede ser llamado desde la clase en la que está implementado.
+b. indica que el método sólo puede ser llamado desde la clase en la que está implementado, desde las clases derivadas y desde las clases que pertenecen al mismo paquete.
+c. indica que el método sólo puede ser llamado desde la clase en la que está implementado, y desde las clases que pertenecen al mismo paquete.
+d. indica que el método puede ser llamado desde cualquier parte del programa.
+Answer: b. indica que el método sólo puede ser llamado desde la clase en la que está implementado, desde las clases derivadas y desde las clases que pertenecen al mismo paquete."
+"Question: La palabra reservada this se refiere a
+Options:
+a. el constructor sin parámetros de la clase que contiene el this.
+b. un atributo cuyo nombre es el mismo que el de un parámetro recibido en el método que contiene el this.
+c. el método que contiene el this para que éste pueda ser utilizado para hacer llamadas recursivas.
+d. el objeto actual sobre el que se invocó el método que contiene el this
+Answer: d. el objeto actual sobre el que se invocó el método que contiene el this"
+"Question: Dado el siguiente enunciado para la creación de un array, ¿cuál de las siguientes frases es correcta?
+```java
+Integer[] integers = {Integer.parseInt(new String(""6"")), new Integer(2021)};
+```
+Options:
+a. El método parselnt de la clase Integer es estático
+b. El método parselnt de la clase Integer no es necesario, ya que String es una subclase de Integer
+c. Este es un caso de upcasting
+d. Los objetos de la clase Integer no pueden ser creados usando la palabra reservada new.
+Answer: a. El método parselnt de la clase Integer es estático"
+"Question: Dado el siguiente método recursivo:
+```java
+public static int m(int x) {
+if (x<=1) {
+return 0;
+}
+else {
+return m(x-1) + m(x+1);
+}
+}
+```
+Options:
+a. Es una recursión en cascada
+b. Es una recursión anidada.
+c. Es una recursión lineal no por la cola.
+d. No es un método recursivo
+Answer: a. Es una recursión en cascada"
+"Question: Dada una lista enlazada vacía, y en la que se insertan los siguientes String uno a uno en el orden indicado a,d,g,h,b,p,e, ¿qué devolvería la llamada al siguiente método considerando que head apunta al primer nodo de la lista?
+```java
+public void method(){
+if(head != null){
+Node aux = head;
+while(aux!=null){
+aux = aux.getNext();
+}
+System.out.println(aux.getInfo());
+}
+}
+```
+Options:
+a. a
+b. Se lanza una NullPointerException
+c. e
+d. p
+Answer: Se lanza una NullPointerException"
+"Question: La sobreescritura de métodos (method overriding) consiste en
+Options:
+a. Programar en una clase hija un método con el mismo nombre, el mismo número y tipo de parámetros, y el mismo tipo de retorno que otro método de la clase padre.
+b. Programar en la misma clase dos métodos con el mismo nombre, pero que reciben un número o tipo de parámetros diferentes.
+c. Programar en la misma clase dos métodos con el mismo nombre, uno declarado como estático y el otro como no estático.
+d. Programar en la misma clase dos métodos con el mismo nombre y el mismo número y tipo de parámetros.
+Answer: Programar en una clase hija un método con el mismo nombre, el mismo número y tipo de parámetros, y el mismo tipo de retorno que otro método de la clase padre."
+"Question: Dadas las siguientes declaraciones de clases e interfaces, ¿cuál de las siguientes asignaciones causaría un error de compilación?
+```java
+public interface Identifiable{...}
+public interface Recruitable{...}
+public class Person implements Identifiable{...}
+public class Student extends Person{...}
+public class GradStudent extends Student implements Recruitable{...}
+```
+Options:
+a. `Identifiable i = new Student();`
+b. `Identifiable i = new GradStudent();`
+c. `Recruitable r = new Student();`
+d. `Person p = new Student();`
+Answer: Recruitable r = new Student();"
+"Question: Si el siguiente método recibe un array con los valores 10,21,43,52,67,0,32 ¿qué devuelve este método?
+```java
+public static int method(int[] data) {
+int b = 0;
+if(data.length>=1){
+b = data[0];
+for (int i=1; i <= data.length; i++) {
+if (b < data[i]){
+b = data[i];
+}
+}
+}
+return b;
+}
+```
+Options:
+a. Se lanza una ArrayIndexOutOfBoundsException
+b. 67
+c. 32
+d. 0
+Answer: a. Se lanza una ArrayIndexOutOfBoundsException"
+"Question: If the following method receives an array with values 10,21,43,52,67,0,32 what does this method return?
+```java
+public static int method (int[] data) {
+int b = 0;
+if(data.length>=1){
+b = data[0];
+for (int i=1; i <= data.length; i++){
+if (b < data[i]){
+b = data[i];
+}
+}
+}
+return b;
+}
+```
+Options:
+a. 32
+b. An ArrayIndexOutOfBoundsException is thrown
+c. 67
+d. 0
+Answer: b. An ArrayIndexOutOfBoundsException is thrown"
+"Question: Given the following statement for the creation of an array, which of the following sentences is correct?
+```java
+Integer[] integers = {Integer.parseInt(new String(""6"")), new Integer(2021)};
+```
+Options:
+a. The method parseInt from class Integer is not necessary, as String is a subclass from Integer
+b. This is a case of upcasting
+c. Objects of class Integer cannot be created using the reserved word new.
+d. The method parseInt of class Integer is declared as static
+Answer: d. The method parseInt of class Integer is declared as static"
+"Question: Method overriding consists of:
+Options:
+a. Programming in the same class two methods with the same name, but that receive a different number or type of parameters.
+b. Programming in the same class two methods with the same name, and same number and type of parameters.
+c. Programming in the same class two methods with the same name, one declared as static and the other one as non-static.
+d. Programming in a child class a method with the same name, same number and type of parameters, and return type as another method in the parent class.
+Answer: d. Programming in a child class a method with the same name, same number and type of parameters, and return type as another method in the parent class."
+"Question: Given the following class and interface declarations, which of the following assignments would cause a compilation error?
+```java
+public interface Identifiable{...}
+public interface Recruitable{...}
+public class Person implements Identifiable{...}
+public class Student extends Person{...}
+public class GradStudent extends Student implements Recruitable{...}
+```
+Options:
+a. Recruitable r = new Student();
+b. Person p = new Student();
+c. Identifiable i = new Student();
+d. Identifiable i = new GradStudent();
+Answer: a. Recruitable r = new Student();"
+"Question: The protected modifier applied to a method...
+Options:
+a. indicates that the method can only be called from the class in which it is implemented.
+b. indicates that the method can only be called from the class in which it is implemented, from the derived classes, and from the classes that belong to the same package.
+c. indicates that the method can be called from any part of the programme.
+d. indicates that the method can only be called from the class in which it is implemented, and from the classes that belong to the same package.
+Answer: b. indicates that the method can only be called from the class in which it is implemented, from the derived classes, and from the classes that belong to the same package."
+"Question: The reserved word this refers to
+Options:
+a. the constructor with no parameters of the class that contains the this.
+b. the method that contains the this so that the this can be used to make recursive calls.
+c. an attribute whose name is the same as a parameter received in the method that contains the this.
+d. the current object on which the method that contains the this was invoked.
+Answer: d. the current object on which the method that contains the this was invoked."
+"Question: Which of these options is NOT a usual metric of coverage in unit testing?
+Options:
+a. Line coverage
+b. Branch coverage
+c. Interface coverage
+d. Method coverage
+Answer: c. Interface coverage"
+"Question: Given the following recursive method:
+```java
+public static int m(int x) {
+    if (x<=1) {
+        return 0;
+    } else {
+        return m(x-1) + m(x+1);
+    }
+}
+```
+Options:
+a. It is not a recursive method.
+b. It is a cascade recursion.
+c. It is a nested recursion.
+d. It is a linear non-tail recursion.
+Answer: b. It is a cascade recursion."
+"Question: Given the following recursive method, which statament is correct if this method is called with a equals to 4 and b equals to 2.
+```java
+public static int method(int a, int b){
+    if(a < b){
+        return 2;
+    }else{
+        return 2+method(a--, b++);
+    }
+}
+```
+Options:
+a. The call to method(4,2) leads to a StackOverflowError.
+b. This is a case of cascade recursion.
+c. The call to method(4,2) returns 4 as result.
+d. The call to method(4,2) returns 6 as result.
+Answer: a. The call to method(4,2) leads to a StackOverflowError."
+"Question: Given an empty linked list, and in which these String are inserted one by one in the order indicated a,d,g,h,b,p,e, what would the call to the next method return considering that head points to the first node of the linked list?
+```java
+public void method(){
+if(head != null){
+Node aux = head;
+while(aux!=null){
+aux = aux.getNext();
+System.out.println(aux.getInfo());
+}
+}
+}
+```
+Options:
+a. a
+b. A NullPointerException will be thrown
+c. e
+d. p
+Answer: b. A NullPointerException will be thrown"
+"Question: Going from the top element in the stack to the element at the bottom of the stack, what are the elements of the stack after executing the above mentioned set of stataments?
+Options:
+a. C,B,D,A
+b. D,C,B,A
+c. A,B,C,D
+d. C,D,B,A
+Answer: b. D,C,B,A"
+"Question: We run a travel agency (agency) and we create a binary search tree to organize the possible destinations, where the parameter of the method that inserts is the destination, which is used both as information and key (considering alphabetical order). What is height of the resulting tree after running the following statements?
+agency.insert(""Madrid"");
+agency.insert(""Rome"");
+agency.insert(""Paris"");
+agency.insert(""New York"");
+agency.insert(""Buenos Aires"");
+agency.insert(""Cape Town"");
+agency.insert(""Sydney"");
+agency.insert(""Amsterdam"");
+agency.insert(""Vienna"");
+agency.insert(""Tehran"");
+Options:
+a. 5
+b. 6
+c. 3
+d. 4
+Answer: d. 4"
+"Question: Given the heap represented by the array {1, 4, 6, 8, 9, 10}, which would be the resulting array that would represent the resulting heap after executing the following statements, and where the method extract extracts the root of the heap?
+```
+insert(2);
+extract();
+insert(7);
+extract();
+```
+Options:
+a. {4, 7, 6, 8, 9, 10}
+b. {2, 4, 6, 7, 8, 10}
+c. {2, 6, 7, 8, 9, 10}
+d. {4, 6, 7, 8, 9, 10}
+Answer: a. {4, 7, 6, 8, 9, 10}"
+"Question: How many swaps does the Bubble Sort algorithm needs to sort this array of String from the highest to the lowest?
+```
+{""France"", ""Bulgaria"", ""Denmark"", ""Estonia"", ""Austria"", ""Croatia"", ""Germany""}
+```
+Options:
+a. 12
+b. 11
+c. 9
+d. 10
+Answer: b. 11"
+"Question: What is the complexity of the HeapSort algorithm?
+Options:
+a. O(n2)
+b. O(log n)
+c. O(n log n)
+d. O(n)
+Answer: c. O(n log n)"
+"Question: If the following method receives an array with values 1,2,4,5,6,0,3 what does this method return?
+```java
+public static int method(int[] data) {
+    int a = 0;
+    if(data.length>=1){
+        int b= data[0];
+        for (int i=1; i < data.length; i++){
+            if (b> data[i]){
+                a = i;
+                b = data[i];
+            }
+        }
+    }
+    return a;
+}
+```
+Options:
+a. 6
+b. 5
+c. 0
+d. An ArrayIndexOutOfBoundsException is thrown
+Answer: b. 5"
+"Question: Given the following statement for the creation of an array, which of the following sentences is correct?
+`Object[] objects = {new String(""exam""), new Integer(2021), new Boolean(true)};`
+Options:
+a. This is a case of downcasting.
+b. The creation of the objects of classes Integer and Boolean is not correct.
+c. The statement is correct.
+d. The array objects cannot store instances of classes other than Object.
+Answer: The statement is correct."
+"Question: Method overloading consists of:
+Options:
+a. Programming in a class methods with the same name, same number and type of parameters but different return types.
+b. Using class references to point to objects in classes that inherit from another class.
+c. Programming in a class methods with the same name, but that receive a different number or type of parameters
+d. Replacing an inherited method by another one with the same name in the subclass.
+Answer: Programming in a class methods with the same name, but that receive a different number or type of parameters"
+"Question: Given the following class and interface declarations, which of the following assignments would cause a compilation error?
+`public interface Identifiable{...}`
+`public class Person implements Identifiable{...}`
+`public class Student extends Person{...}`
+`public class Intern extends Student{...}`
+Options:
+a. `Identifiable i = new Intern();`
+b. `Student s = new Identifiable();`
+c. `Identifiable i = new Person();`
+d. `Person p = new Intern();`
+Answer: Student s = new Identifiable();"
+"Question: The final modifier applied to a method...
+Options:
+a. The final modifier cannot be applied to methods.
+b. indicates that the method uses constants.
+c. indicates that the method cannot be overriden.
+d. indicates that the return value of the method is a constant.
+Answer: c. indicates that the method cannot be overriden."
+"Question: A static attribute...
+Options:
+a. exists only once for all the instances of the class where the attribute is defined.
+b. indicates that the attribute can only be accessed from the same class and its derived classes.
+c. means that the attribute is a constant and its value cannot be changed while the program is being executed.
+d. must always be called with this.attributeName.
+Answer: a. exists only once for all the instances of the class where the attribute is defined."
+"Question: We are given a method that calculates the area of a square for a given side received as parameter. We want to do black box tests on this method. Select the set of values that allow us to test all the equivalence classes and boundary values for this method.
+Options:
+a. -5, 0, 5
+b. 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+c. 0, 0.5, 1
+d. -1, 1, 2, 3
+Answer: a. -5, 0, 5"
+"Question: Given the following recursive method:
+```java
+public static int m(int x, int y) {
+    if (x<=1) {
+        return y;
+    } else {
+        return m(x-1, x + m(x-2,y));
+    }
+}
+```
+Options:
+a. It is not a recursive method.
+b. It is a nested recursion.
+c. It is a linear non-tail recursion.
+d. It is a mutual recursion.
+Answer: b. It is a nested recursion."
+"Question: Given the following recursive method, which statament is correct if this method is called with n equals to 4 and m equals to 3.
+```java
+public static int method(int n, int m){
+    if(n < m){
+        return 3;
+    }else{
+        return 2*method(n--, ++m);
+    }
+}
+```
+Options:
+a. The call to method(4,3) returns 6 as result.
+b. The call to method(4,3) leads to a StackOverflowError
+c. The call to method(4,3) returns 12 as result.
+d. This is a case of linear non-tail recursion.
+Answer: c. The call to method(4,3) returns 12 as result."
+"Question: Given an empty queue implemented through a linked list, and in which these elements are inserted one by one in the order indicated 3,4,8,2,1,7,9, what would the call to the next method return considering that head points to the first node to be extracted from the queue?
+```java
+public void method(){
+  if(head != null){
+    Node aux = head;
+    while(aux.getNext()!=null){
+      aux = aux.getNext();
+    }
+    System.out.println(aux.getNext().getInfo());
+  }
+}
+```
+Options:
+a. 9
+b. A NullPointerException will be thrown
+c. 7
+d. 3
+Answer: b. A NullPointerException will be thrown"
+"Question: Going from the first element to be dequeued to the last element to be dequeued, what does the queue contain after executing the above mentioned set of stataments?
+Options:
+a. The queue is empty
+b. C,B,A,D
+c. A,B,C,D
+d. C,B,D,A
+Answer: d. C,B,D,A"
+"Question: We run a travel agency (agency) located in London (UK) and we create a binary search tree to organize the possible destinations, where the first parameter of the method that inserts is the destination (information) and the second the distance to London in kilometers (used as the key). What is the result of calling agency.printinOrder() after running the following statements?
+Options:
+a. Madrid, Paris, Amsterdam, Vienna, Rome, New York, Tehran, Cape Town
+b. Madrid, Paris, Rome, Amsterdam, New York, Vienna, Tehran, Cape Town
+c. Paris, Amsterdam, Vienna, Madrid, Rome, Tehran, New York, Cape Town
+d. Vienna, Amsterdam, Paris, Tehran, Madrid, Rome, Cape Town, New York
+Answer: c. Paris, Amsterdam, Vienna, Madrid, Rome, Tehran, New York, Cape Town"
+"Question: Which of the following statements is TRUE?
+Options:
+a. The number of comparisons to search for an element in a binary search tree depends directly on the depth of the node containing the desired information.
+b. All sub-trees of a binary search tree are heaps.
+c. All the sub-trees of a heap are binary search trees.
+d. For a heap to be considered complete it must have all levels filled to their capacity.
+Answer: a. The number of comparisons to search for an element in a binary search tree depends directly on the depth of the node containing the desired information."
+"Question: How many swaps does the Bubble Sort algorithm needs to sort this array of String from the lowest to the highest (that is in alphabetical order)?
+{""Denmark"", ""Bulgaria"", ""Croatia"", ""Estonia"", ""Austria"", ""France"", ""Germany"", ""Italy"", ""Hungary""}
+Options:
+a. 9
+b. 7
+c. 8
+d. 10
+Answer: b. 7"
+"Question: How many iterations are need with Linear Search and with Binary Search to find out that the value 13 is not in the following array?
+{-10, -4, 0, 3, 5, 8, 16}
+Options:
+a. 6 with Linear Search and 4 with Binary Search
+b. 7 with Linear Search and 3 with Binary Search
+c. We cannot use Binary Search in this case as there are negative numbers
+d. We cannot use Binary Search in this case as the array is not sorted
+Answer: b. 7 with Linear Search and 3 with Binary Search"
+"Question: ¿Cuántas veces se ejecuta este método para data = {1,2,3,1,0}?.
+```java
+public static void method(int[] data) {
+for (int i = 0; i < data.length; i=i+2) {
+System.out.println(data[i]);
+}
+}
+```
+Options:
+a. 3
+b. 5
+c. 2
+d. 0
+Answer: 3"
+"Question: ¿Cuál de los siguientes comandos es el correcto para compilar un fichero fuente de java?
+Options:
+a. javac Fichero.java
+b. java Fichero.java
+c. javac Fichero
+d. java Fichero.class
+Answer: javac Fichero.java"
+"Question: El modificador final aplicado a una clase significa...
+Options:
+a. Que esta clase no puede tener clases hijas.
+b. Que todos los atributos de la clase son constantes.
+c. Que esta clase no se puede sobrecargar.
+d. Que esta clase no se puede sobreescribir.
+Answer: Que esta clase no puede tener clases hijas."
+"Question: Dado el siguiente código indique cuál de las siguientes afirmaciones es correcta.
+```java
+public class ClaseA{
+private int a;
+public ClaseA(int a){this.a=a;}
+public ClaseA(){this(null);}
+}
+public class ClaseB extends ClaseA{...}
+```
+Options:
+a. Podemos crear un constructor en la clase B que desde su primera línea invoque al constructor de la clase A
+b. No podemos crear una clase C que herede de la clase A.
+c. Desde la clase B podemos imprimir el atributo a con la sentencia System.out.println(a).
+d. Desde la clase B podemos imprimir el atributo a con la sentencia System.out.println(super.a).
+Answer: Podemos crear un constructor en la clase B que desde su primera línea invoque al constructor de la clase A"
+"Question: Dado el siguiente código indica cuál de las siguientes sentencias es incorrecta.
+```java
+public Interface 11{
+    void metodo1();
+}
+public Interface 12 extends 11{
+    void metodo2();
+}
+public abstract class C1 implements 12{
+    public void metodo3() {System.out.println(""ejecutando metodo3"");}
+}
+public class C2 extends C1{
+    public void metodo1(){System.out.println(""ejecutando metodo1"");}
+    public void metodo2(){System.out.println(""ejecutando metodo2"");}
+    public void metodo2(){super.metodo3()}
+}
+```
+Options:
+a. `C2 c = (C2)new C1();`
+b. `11 c = new C2();`
+c. `12 c = new C2();`
+d. `C1 c = new C2();`
+Answer: C2 c = (C2)new C1();"
+"Question: Dado el siguiente código indica cuál de las siguientes afirmaciones es correcta.
+Nota: Ten en cuenta que sólo existen los getters y setters indicados en el código.
+```java
+public class A{
+    protected int a = 1;
+    public static int b =1;
+    public static final int C = 1;
+    public void setB(int b){...}
+    public static void main(String[] args){
+        A miObjeto1 = new A();
+        B miObjeto2 = new B();
+        A miObjeto3 = new B();
+    }
+}
+public class B extends A{}
+```
+Options:
+a. No podemos modificar el atributo C desde B
+b. No podemos modificar el atributo a desde B porque no existe el método setA(int a)
+c. No podemos modificar el atributo a desde B porque B no tiene constructor.
+d. No podemos modificar el atributo b desde B
+Answer: No podemos modificar el atributo C desde B"
+"Question: Indica cuál de las siguientes afirmaciones es correcta.
+Options:
+a. Una clase abstracta puede tener constructores.
+b. En una clase abstracta no puede haber sobrecarga de constructores.
+c. En una clase abstracta no puede haber sobreescritura de métodos.
+Answer: Una clase abstracta puede tener constructores."
+"Question: Dado el siguiente método recursivo. Señala la afirmación correcta.
+```java
+public static int method(int n, int m){
+    if(n < m){
+        return 0;
+    }else{
+        return 5 * method(n-m, n+m);
+    }
+}
+```
+Options: 
+a. Se trata de un caso de recursión lineal no por la cola.
+b. Se trata de un caso de recursión no lineal en cascada.
+c. Se trata de un caso de recursión lineal por la cola.
+d. Se trata de un caso de recursión mútua.
+Answer: Se trata de un caso de recursión lineal no por la cola."
+"Question: ¿Qué devuelve el método m(3,4)?
+```java
+public static int m(int x, int y) {
+    int i = 0;
+    if (x <= 1) {
+        return y;
+    } else {
+        return m(x - 1, m(x - 3, y));
+    }
+}
+```
+Options:
+a. 4
+b. 2
+c. 16
+d. Es un caso de recursión que no termina
+Answer: 4"
+"Question: Indica qué hace este método sobre una lista enlazada como las que hemos programado en clase, siendo first la referencia al primer nodo de la lista.
+```java
+public void method() {
+Node aux = first;
+while (aux != null &amp;&amp; aux.getNext() != null &amp;&amp; aux.getNext().getNext()
+!= null) {
+aux = aux.getNext();
+}
+System.out.println(aux.getInfo());
+}
+```
+Options:
+a. Imprime el penúltimo nodo de la lista.
+b. Imprime todos los nodos de la lista menos el penúltimo.
+c. Imprime el último nodo de la lista.
+d. Imprime todos los nodos de la lista menos el último.
+Answer: Imprime el penúltimo nodo de la lista."
+"Question: Dada una lista simplemente enlazada con referencias al primer nodo (first) y alúltimo (last). Cuál es el código para insertar un nodo llamado nuevo al final de la lista.
+Options:
+a. last.setNext(nuevo);
+b. nuevo.setNext(last);
+c. last.getNext()=nuevo;
+d. nuevo.getPrev(last);
+Answer: last.setNext(nuevo);"
+"Question: Una pila es una estructura de tipo:
+Options:
+a. LIFO: Last in first out.
+b. FIFO: First in first out.
+c. Ninguna de las otras opciones es correcta.
+d. LILO: Last in last out.
+Answer: LIFO: Last in first out."
+"Question: Los métodos de la interfaz de una cola para insertar y extraer elementos son:
+Options:
+a. enqueue para insertar, dequeue para extraer.
+b. enqueue para extraer, dequeue para insertar.
+c. push para insertar, pop para extraer.
+d. pop para insertar, push para extraer.
+Answer: enqueue para insertar, dequeue para extraer."
+"Question: Dado el árbol representado por el array {4,1,5,.,3,.,6,.,.,2} indica cuál es la altura y profundidad del nodo 3. (NOTA: El punto representa una posición vacía).
+Options:
+a. altura: 1, profundidad: 2
+b. altura: 2, profundidad: 1
+c. altura: 0, profundidad: 3
+d. altura: 3, profundidad: 0
+Answer: altura: 1, profundidad: 2"
+"Question: Dado el árbol representado por el array {4,1,6,.,3,.,7,.,.,2} indica por este orden el tamaño del árbol y el número de ascencientes del nodo 3. (NOTA: El punto representa una posición vacía).
+Options:
+a. 6, 2
+b. 10, 2
+c. 10, 3
+d. 6,3
+Answer: 6, 2"
+"Question: Si insertamos uno a uno los siguientes elementos: 4,1,3,5,2,6 en un árbol de búsqueda binario, indica cuál sería el resultado de recorrerlo en preorden.
+Options:
+a. 4,1,3,2,5,6
+b. 4,1,5,2,3,6
+c. 4,1,3,5,2,6
+d. 1,2,3,4,5,6
+Answer: 4,1,3,2,5,6"
+"Question: Dado el montículo mínimo representado por el array {1,3,5,6,9,7}, indica cual de estos arrays representa al montículo después de realizar las siguientes operaciones insert(2), extract().
+Options:
+a. {2,3,5,6,9,7}
+b. {1,3,2,5,6,9}
+c. {1,3,5,6,9,7}
+d. {1,3,2,6,9,7}
+Answer: {2,3,5,6,9,7}"
+"Question: Suponiendo que queremos ordenar un array de menor a mayor, indique cuál de los siguientes algoritmos de ordenación va buscando desde la primera posición hasta la última el elemento menor y luego repite el proceso sucesivamente para el resto del array pendiente de ordenar.
+Options:
+a. SelectionSort
+b. BubbleSort
+c. Insertion Sort
+Answer: SelectionSort"
+"Question: Indica a qué algoritmo corresponde el siguiente código.
+```java
+public static void algorithm (int[] a){
+for (int i=0; ia[j-1]){
+a[j]=a[j-1];
+j--;
+}
+a[j]=tmp;
+}
+}
+```
+Options:
+a. insertionSort descendente.
+b. insertion Sort ascendente.
+c. selectionSort ascendente.
+d. selectionSort descendente.
+Answer: insertion Sort ascendente."
+"Question: ¿Cuál de las siguientes afirmaciones sobre pruebas de caja blanca es correcta?
+Options:
+a. Permiten entre otras cosas analizar la cobertura del código.
+b. Permiten asegurar la cobertura de requisitos.
+c. Permiten estimar el rendimiento de la aplicación en casos extremos.
+d. Permiten asegurar la satisfacción del cliente.
+Answer: Permiten entre otras cosas analizar la cobertura del código."
+"Question: ¿Qué devuelve la llamada m1(4);
+```java
+public static int m1(int number) {
+int result = 0;
+if (number == 1) {
+result = 1;
+} else {
+result = 2 * m1(number - 1);
+}
+return result;
+}
+```
+Options:
+a. 8
+b. 4
+c. 16
+d. 2
+Answer: 8"
+"Question: Dado el siguiente método recursivo. Indica la afirmación correcta.
+```java
+public static int method(int n, int m){
+if(n < m){
+return 0;
+}else{
+return method(n-m, n+m);
+}
+}
+```
+Options:
+a. Es un caso de recursión lineal por la cola.
+b. Es un caso de recursión lineal no por la cola.
+c. Es un caso de recursión mútua por la cola.
+d. Es un caso de recursión en cascada.
+Answer: Es un caso de recursión lineal por la cola."
+"Question: Indica cuál de las siguientes afirmaciones es correcta.
+Options:
+a. Las interfaces pueden tener constantes.
+b. Las interfaces no se pueden heredar. c. Dos clases de jerarquías de herencia distintas no pueden implementar la misma interfaz.
+d. Las clases abstractas no pueden tener constructores.
+Answer: Las interfaces pueden tener constantes."
+"Question: Dadas las clases A y B indica cuál de las siguientes afirmaciones es falsa.
+```java
+public class ClaseA{
+    private int a;
+    public ClaseA(int a){this.a=a;}
+    public ClaseA(){this(null);}
+    //getters and setters
+}
+public class ClaseB extends ClaseA{...}
+```
+Options:
+a. No puedo imprimir el contenido de a desde B.
+b. Puedo imprimir el contenido de a desde B con System.out.println(getA()).
+c. Puedo imprimir el contenido de a desde A con System.out.println(getA()).
+d. Puedo imprimir el contenido de a desde B con System.out.println(super.getA()).
+Answer: No puedo imprimir el contenido de a desde B."
+"Question: El modificador final aplicado a un método significa...
+Options:
+a. Que el método no se puede sobreescribir.
+b. Que el método no se puede sobrecargar.
+c. Que las variables internas del método son constantes.
+d. Que los parámetros del método son constantes.
+Answer: Que el método no se puede sobreescribir."
+"Question: ¿Cuál de los siguientes comandos es el correcto para ejecutar la clase Programa de java?
+Options:
+a. java Programa
+b. javac Programa.java
+c. java Programa.java
+d. javac Programa.class
+Answer: java Programa"
+"Question: ¿Cuántas veces se ejecuta este método para data = {1,2,3,1,0}?.
+```java
+public static void method(int[] data) {
+    for (int i = 0; i < data.length; i=i*2) {
+        System.out.println(data[i]);
+    }
+}
+```
+Options:
+a. Es un bucle infinito
+b. 2
+c. 0
+d. 3
+Answer: Es un bucle infinito"
+"Question: Indica qué hace este método sobre una lista enlazada como las que hemos programado en clase, siendo first la referencia al primer nodo de la lista.
+```java
+public void method() {
+Node aux = first;
+while (aux!=null && aux.getNext() != null) {
+aux = aux.getNext();
+}
+System.out.println(aux.getInfo());
+}
+```
+Options:
+a. Imprime el último elemento de la lista.
+b. Imprime el penúltimo elemento de la lista.
+c. Imprime todos los elementos de la lista.
+d. Imprime el primer elemento de la lista.
+Answer: Imprime el último elemento de la lista."
+"Question: Si first es el primer nodo de una lista simplemente enlazada cuál es el código para eliminar el nodo first de la lista.
+Options:
+a. `first = first.getNext();`
+b. `setNext(first.getNext());`
+c. `first.setNext(first.getNext());`
+d. `first = new Node(info);`
+Answer: `first = first.getNext();`"
+"Question: Una cola es una estructura de tipo...
+Options:
+a. FIFO: First in first out.
+b. LIFO: Last in first out.
+c. FILO: First in last out.
+d. Ninguna de las otras opciones es correcta.
+Answer: FIFO: First in first out."
+"Question: Indica cuál de las siguientes afirmaciones sobre los métodos de una pila es correcta.
+Options:
+a. El método push permite insertar elementos y recibe como parámetro un objeto de tipo E info.
+b. El método pop permite insertar elementos y recibe como parámetro un objeto de tipo E info.
+c. El método enqueue permite insertar elementos y recibe como parámetro un objeto de tipo E info.
+Answer: El método push permite insertar elementos y recibe como parámetro un objeto de tipo E info."
+"Question: Dado el árbol representado por el array {3,1,4,.,2,.,5} indica cuál es la altura y profundidad del nodo 3. (NOTA: El punto representa una posición vacía))
+Options: 
+a. altura: 2, profundidad: 0
+b. altura: 0, profundidad: 2
+c. altura: 3, profundidad: 0
+d. altura: 0, profundidad: 3
+Answer: altura: 2, profundidad: 0"
+"Question: Given the following code snippet, what is printed on the screen after its execution?
+```java
+public class A{
+public static void main(String[] args){
+int x = 1;
+m(x);
+System.out.println(x);
+}
+private static void m(int x){
+x = x * 2;
+}
+}
+```
+Options:
+a. 1
+b. 2
+c. 0
+d. x*2
+Answer: 1"
+"Question: The final modifier applied to a class...
+Options:
+a. indicates that the class uses constants.
+b. indicates that the methods of the class cannot be overridden.
+c. The final modifier cannot be applied to classes.
+d. Indicates that the class cannot have derived classes.
+Answer: Indicates that the class cannot have derived classes."
+"Question: In this ArrayList: ArrayList a = new ArrayList(); we can store...
+Options:
+a. Objects of any class in Java.
+b. Objects of the class Object only.
+c. Objects of the class ArrayList only.
+d. Objects of the classes Object and String only.
+Answer: Objects of any class in Java."
+"Question: Given the following code, divided in two files, one per class, which of the following sentences is correct?
+```java
+public class A{
+    public static void main(String [] args){
+        B b = new B(10);
+    }
+}
+
+public class B extends A {
+    int b;
+    public B() {; }
+}
+```
+Options:
+a. The compiler shows an error and does not finish the compilation.
+b. Class A in its main method cannot create an object of class B.
+c. The code is compiled and executed without problems, creating an object of class B.
+d. In order to create an object of class B, the main method must be in class B.
+Answer: The compiler shows an error and does not finish the compilation."
+"Question: Given the following class hierarchy (with each class in a separate file), which of the following sentences is correct?
+```java
+public class File{; }
+public class FileOfficeMicrosoft extends File {; }
+public class FileExcel extends FileOfficeMicrosoft{; }
+public class Folder extends FileOfficeMicrosoft{; }
+public class FileWord extends FileOfficeMicrosoft{; }
+```
+Options:
+a. FileOfficeMicrosoft is a base class for FileWord
+b. Folder is a superclass of FileExcel
+c. FileOfficeMicrosoft is a subclass of Folder
+d. FileExcel is a parent class of File
+Answer: FileOfficeMicrosoft is a base class for FileWord"
+"Question: Method overloading consists of:
+Options:
+a. Programming in a class methods with the same name, but that receive a different number or type of parameters
+b. Programming in a class methods with the same name, same number and type of parameters but different return types.
+c. Replacing an inherited method by another one with the same name in the subclass.
+d. Using class references to point to objects in classes that inherit from another class.
+Answer: Programming in a class methods with the same name, but that receive a different number or type of parameters"
+"Question: We are asked to program a method that calculates the sine of a certain angle (in radians) received as input (double type). The behavior of this method must be such that it will return the result of the sine of x (sin(x)) for the range 0<=x<=2*pi, and an undetermined value for any other input value. Select the set of values that would allow to test all the equivalence classes for this method.
+Options:
+a. -4.0, 4.0, 8.0
+b. -2.0, 0.0, 2.0
+c. 0, 3.14, 6.28
+d. -6.0, -5.0, -4.0, -3.0, -2.0, -1.0, 0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0
+Answer: a. -4.0, 4.0, 8.0"
+"Question: Given the following recursive method, which statement is correct if this method is called with n equals to 5 and m equals to 2.
+```java
+public static int method(int n, int m){
+    if(n < m){
+        return 3;
+    }else{
+        return 3*method(n-m, n+m);
+    }
+}
+```
+Options:
+a. The call to method(5,2) returns 3 as result.
+b. The call to method(5,2) returns 27 as result.
+c. This is a case of linear non-tail recursion.
+d. This is a case of non-linear cascading recursion.
+Answer: This is a case of linear non-tail recursion."
+"Question: Given the following method:
+```java
+public static int a(int x, int y) {
+    if (x 
+}
+```
+Options:
+a. It is a nested recursion.
+b. It is not recursive.
+c. It is a linear recursion.
+d. It is a mutual recursion.
+Answer: a. It is a nested recursion."
+"Question: ** What does this method on a linked list like the ones we have programmed in class, where first is the reference to the first node in the list.
+
+```java
+public void method(){
+    if(first != null){
+        Node aux = first;
+        while(aux.getNext()!=null){
+            aux = aux.getNext();
+        }
+        System.out.println(aux.getInfo());
+    }
+}
+```
+Options:
+a. Prints the last element on the list.
+b. Prints the second-to-last element on the list.
+c. Prints all the elements on the list.
+d. Prints the first element of the list.
+Answer: Prints the last element on the list."
+"Question: ** Given an empty stack, what does the call to top() return after the next sequence of method calls are executed: `push(5); top(); pop(); push(2); push(3); pop(); pop();`
+Options:
+a. null or an exception would be thrown because the stack is empty.
+b. 3
+c. 5
+d. 2
+Answer: null or an exception would be thrown because the stack is empty."
+"Question: ** Given a non-empty linked list that stores objects of type Integer, and that contains more than one element, if the method m is called, which node does current point to after exiting the while loop?
+
+```java
+public void m() {
+    Node current = this.first;
+    while(current != null) {
+        current = current.getNext();
+    }
+}
+```
+Options:
+a. To no node (i.e. null).
+b. To the last node on the list.
+c. To the first node on the list.
+d. To the second-to-last node on the list.
+Answer: To no node (i.e. null)."
+"Question: In a deque (double-ended queue), which of the following statements is correct?
+Options:
+a. For a more efficient implementation it should be programmed with a doubly linked list.
+b. For a more efficient implementation it should be programmed with an array
+c. With its -insertLast()- and -removeFirst()- methods we are able to use the deque as a stack.
+d. With its -insertFirst()- and -removeFirst()- methods we are able to use the deque as a queue.
+Answer: With its -insertLast()- and -removeFirst()- methods we are able to use the deque as a stack."
+"Question: If we insert one by one the elements of the following array (3,1,2,5,7,4,6) in a binary search tree, which node would be the left child of the node whose value is 5 after finishing the insertion process?
+Options:
+a. 4
+b. 6
+c. null
+d. 2
+Answer: 4"
+"Question: Given the binary tree of objects of type -Integer-, represented by the following array, and considering that these objects act as the key, is this binary tree a heap?
+{15, 27, 41, 32, 59, 63, 95, 80, 77, null, null, null, null, null, null}
+Options:
+a. Yes; it is a min-heap.
+b. No; it is not a heap since it does not meet the criteria to be either min-heap or max-heap.
+c. No; it is not a heap because it is not complete.
+d. Yes; it is a max-heap.
+Answer: Yes; it is a min-heap."
+"Question: Given the binary tree represented by the array {A, B, C, D, E, F}, what would be the result of traversing this tree in post-order?
+Options:
+a. D, E, B, F, C, А.
+b. B, D, E, C, F, A.
+c. A, B, D, E, C, F.
+d. D, E, B, A, C, F.
+Answer:  D, E, B, F, C, А."
+"Question: Given a min-heap represented by the array {""a"", ""d"", ""f"", ""e"", ""g""} and using objects of type String as both the info and the key, what would be the content of the array that represents the heap after executing the following operations: insert(""c""); extract();, considering that extract() extracts the root of the min-heap.
+Options:
+a. ""c"", ""d"", ""f"", ""e"", ""g""
+b. ""a"", ""d"", ""c"", ""e"", ""g"", ""f""
+c. ""d"", ""e"", ""c"", ""f"", ""g""
+d. ""f"", ""d"", ""c"", ""e"", ""g""
+Answer: ""c"", ""d"", ""f"", ""e"", ""g"""
+"Question: How many swaps does the Bubble Sort algorithm needs to sort this array of integers from the lowest to the highest?
+{45, 22, 39, 12}
+Options:
+a. 5
+b. 4
+c. 3
+d. 2
+Answer: 5"
+"Question: Which of the following commands should we use in the console/terminal to compile a Java source file that contains the class Person?
+Options:
+a. javac Person.java
+b. java Person
+c. java Person.java
+d. javac Person.class
+Answer: javac Person.java"
+"Question: Which of the following sentences is correct?
+Options:
+a. The name of the constructor must be the same as the name of the class.
+b. In Java we cannot have as many constructors as we want.
+c. The constructor of a class can be overridden in a derived class.
+d. When declaring a constructor we need to indicate void as the result type.
+Answer: The name of the constructor must be the same as the name of the class."
+"Question: Given classes U and E, what is printed on the screen when class E is executed?
+```java
+public class U
+{
+protected static int c = 0;
+}
+public class E extends U{
+public E()
+{
+c = 1;
+}
+public static void main(String[] args){
+U a1 = new U();
+E b1 = new E();
+System.out.print(U.c + "" - "");
+System.out.print(E.c);
+}
+}
+```
+Options:
+a. 1 - 1
+b. 0 - 1
+c. The program contains a compilation error that prevents its execution.
+d. 0 - 0
+Answer: 1 - 1"
+"Question: Given the following code, which of the following statements is correct?
+```java
+public interface D { public void print(); }
+public class P implements D
+{ private String name; }
+```
+Options:
+a. Class P does not compile, but it would if it were declared as an abstract class.
+b. The following assignment is correct: P p = new D();
+c. The method print() should be declared as abstract in D.
+d. As P implements D, it cannot override the method print().
+Answer: Class P does not compile, but it would if it were declared as an abstract class."
+"Question: Given classes A and P, what does it happen?
+```java
+public class P
+{
+...
+}
+public class A extends P
+{
+int N;
+public A (int N)
+{
+this.N = N;
+super();
+}
+}
+```
+Options:
+a. A compilation error occurs because the super(); statement is in an incorrect position in the code.
+b. The code does not produce compilation errors.
+c. A compilation error occurs because the parameter that the constructor receives has the same name as an attribute of class A.
+d. A compilation error occurs because with the super(); sentence the program tries to access the constructor of P, which has not been explicitly defined.
+Answer: A compilation error occurs because the super(); statement is in an incorrect position in the code."
+"Question: Given the following code, with each class in a separate file: which of the following assignments IS NOT CORRECT because of incompatible data types?
+```java
+public class F extends D {...}
+public class B extends D {...}
+public class U extends F {...}
+```
+Options:
+a. B b = new D()
+b. D d = new U()
+c. Object o = new B()
+d. F f = new U()
+Answer:  B b = new D()"
+"Question: Regarding white box testing, which of the following statements is correct?
+Options:
+a. It tests the structure of the code but not its functionality.
+b. It is performed directly by the client.
+c. It is performed manually and serves to measure the coverage of the code.
+d. It ensures the proper execution of each line of the program.
+Answer: It tests the structure of the code but not its functionality."
+"Question: You implement a method that serves to add a 50% discount on the public transport for both underage and retired persons. This method receives the age of the person as a parameter. Assuming that the legal age is 18, and that people retire at 65 and live a maximum of 120 years, select the set of values that would allow to test all the equivalence classes for this method.
+Options:
+a. -4, 10, 27, 84, 178
+b. 0, 18, 65, 120
+c. 0, 10, 30, 50, 70, 120
+d. -10, 5, 15, 75, 100
+Answer: -4, 10, 27, 84, 178"
+"Question: What does the following method return for n=3?
+```java
+public int result (int n){
+if (n
+```
+Options:
+a. 11
+b. 3
+c. 8
+d. The code is incorrect and the recursion never ends.
+Answer: 11"
+"Question: Given the following code, what type of recursion is used?
+```java
+public double s(int n) {
+if (n
+```
+Options:
+a. Cascade recursion
+b. Linear non-tail recursion
+c. Mutual recursion
+d. Nexted recursion
+Answer: Cascade recursion"
+"Question: Which of the following statements is FALSE?
+Options:
+a. In a queue implemented with a linked list, the elements are inserted and extracted by the same end of the queue.
+b. A queue is a linear data structure.
+c. In a queue implemented with a linked list it is more convenient to extract by the beginning of the queue.
+d. A queue implemented via an array has a maximum capacity that is set at the time the queue is created.
+Answer: In a queue implemented with a linked list, the elements are inserted and extracted by the same end of the queue."
+"Question: Going from the top of the stack to the bottom, what does the stack contain after executing the above mentioned set of stataments?
+Options:
+a. H,A
+b. A,H
+c. H,A,Z
+d. Y,Z, B
+Answer: H,A"
+"Question: Which of the following is an important limitation of linked lists?
+Options:
+a. Additional memory is needed to store the objects of class Node with their attributes when using a linked list.
+b. Concatenating two linked lists has a computational cost that is independent of the size of the lists.
+c. There is no need for large amounts of contiguous memory to store information in a linked list.
+d. Inserting a new element in a linked list has a computational cost that is independent of the size of the list.
+Answer: Additional memory is needed to store the objects of class Node with their attributes when using a linked list."
+"Question: Given an empty queue implemented through a linked list, and in which these elements are inserted one by one in the order indicated 3,4,8,2,1,7,9, what would the call to the next method print?
+```java
+public void method(){
+if(top != null){
+Node aux = top;
+while(aux.getNext()!=null){
+aux = aux.getNext();
+}
+System.out.println(aux.getInfo());
+}
+}
+```
+Options:
+a. 9
+b. 3
+c. 7
+d. null
+Answer: 9"
+"Question: Given the binary tree represented by the array = {a, b, c,,, d, e}. Indicate the height of the tree. NOTE: blank spaces between commas indicate empty nodes.
+Options:
+a. 2
+b. 1
+c. 3
+d. 5
+Answer: 2"
+"Question: Which of the following statements is FALSE?
+Options:
+a. For a heap to be considered complete it must have all levels filled to their capacity.
+b. The number of comparisons to search for an element in a binary search tree depends directly on the depth of the node containing the desired information.
+c. All sub-trees of a binary search tree are also binary search trees.
+d. All the sub-trees of a min-heap are also min-heaps.
+Answer: For a heap to be considered complete it must have all levels filled to their capacity."
+"Question: Given the heap represented by the array {4, 8, 5, 10, 9}, which would be the resulting array that would represent the resulting heap after executing the following statements, and where the method extract extracts the root of the heap?
+```
+insert(2);
+extract();
+insert(6);
+extract();
+```
+Options:
+a. {5, 8, 6, 10, 9}
+b. {8, 6, 5, 9, 10}
+c. {5, 6, 8, 9, 10}
+Answer: {5, 6, 8, 9, 10}"
+"Question: Given a binary search tree for football teams, initially empty, what is the result of calling teams.printPreOrder() after running the following statements (first parameter is the info, name of the team; second parameter is the key, year of foundation).
+```
+teams.insert(""Real Madrid"", 1902);
+teams.insert(""Barcelona"", 1899);
+teams.insert(""Atletico de Madrid"", 1903);
+teams.insert(""Sevilla"", 1905);
+teams.insert(""Espanyol"", 1900);
+teams.insert(""Betis"", 1907);
+teams.insert(""Real Sociedad"", 1909);
+teams.insert(""Valencia"", 1919);
+```
+Options:
+a. Real Madrid, Barcelona, Espanyol, Atletico de Madrid, Sevilla, Betis, Real Sociedad, Valencia
+b. Barcelona, Espanyol, Real Madrid, Atlético de Madrid, Sevilla, Betis, Real Sociedad, Valencia
+c. Espanyol, Barcelona, Valencia, Real Sociedad, Betis, Sevilla, Atlético de Madrid, Real Madrid
+d. Real Madrid, Espanyol, Atletico de Madrid, Barcelona, Sevilla, Valencia, Betis, Real Sociedad
+Answer: Real Madrid, Barcelona, Espanyol, Atletico de Madrid, Sevilla, Betis, Real Sociedad, Valencia"
+"Question: How many iterations are need to find the value 12 with Linear Search and with Binary Search?
+```
+{1, 4, 7, 8, 11, 12, 17}
+```
+Options:
+a. 6 with Linear Search and 2 with Binary Search
+b. 7 with Linear Search and 3 with Binary Search
+c. We cannot use Binary Search in this case.
+d. 3 with Linear Search and 3 with binary Search
+Answer: 6 with Linear Search and 2 with Binary Search"
+"Question: How many swaps does the Bubble Sort algorithm needs to sort this array of integers from the lowest to the highest?
+```
+{41, 20, 36, 59, 17}
+```
+Options:
+a. 6
+b. 5
+c. 7
+d. 4
+Answer: 6"
+"Question: ¿Cuál de las siguientes afirmaciones sobre pruebas alfa es correcta?
+Options:
+a. Son para el cliente pero se realizan en entornos controlados por el desarrollador.
+b. Se realizan en el entorno del cliente.
+c. Permiten asegurar cobertura de requisitos.
+d. Permiten asegurar cobertura de ramas.
+Answer: Son para el cliente pero se realizan en entornos controlados por el desarrollador."
+"Question: ¿Qué devuelve la llamada al método recursivo m2(4)?.
+Options:
+a. 10
+b. 9
+c. Es un caso de recursion infinita.
+d. m2 no es un método recursivo porque sólo se ejecuta una vez.
+Answer: 10"
+"Question: Dado el siguiente método recursivo. Indica la afirmación correcta.
+```java
+public static int method1 (int x, int y) {
+int i=0;
+if (x <=1) {
+System.out.println(""+++""+(i++) +""+++"");
+}
+return y;
+else {
+System.out.println(""---""+(i++) +""----"");
+return method1(x-1, x + method1(x-3,y));
+}
+}
+```
+Options:
+a. Es un caso de recursión anidada.
+b. Es un caso de recursión en cascada.
+c. Es un caso de recursión mutua.
+d. Es un caso de recursión lineal no por la cola.
+Answer: Es un caso de recursión anidada."
+"Question: Indica cuál de las siguientes afirmaciones es correcta.
+Options:
+a. No se pueden crear objetos de una clase abstracta.
+b. Las clases abstractas no pueden tener constructores.
+c. Las interfaces no pueden tener constantes.
+d. Una clase hija puede extender de dos clases padres diferentes.
+Answer: No se pueden crear objetos de una clase abstracta."
+"Question: Indica cuál de las siguientes sentencias para modificar los valores de a, b, c es incorrecta.
+Nota: Ten en cuenta que sólo existen los getters y setters indicados en el código.
+```java
+public class A{
+protected int a = 1;
+public static int b =1;
+public static final int C = 1;
+public void setB(int b){...}
+public static void main(String[] args){
+A miObjeto1 = new A();
+B miObjeto2 = new B();
+A miObjeto3 = new B();
+// código de las diferentes opciones de respuesta
+}
+}
+public class B extends A{
+public void setA(int a){...}
+}
+```
+Options:
+a. `miObjeto1.setA(2);`
+b. `miObjeto1.a = 2;`
+c. `miObjeto2.setA(2);`
+d. `miObjeto3.a = 2;`
+Answer: `miObjeto1.setA(2);`"
+"Question: Dado el siguiente código indica cuál de las siguientes afirmaciones es falsa.
+```java
+public class ClaseA{
+    private int a;
+    public ClaseA(int a){this.a=a;}
+    public ClaseA(){this(0);}
+    //getters and setters
+}
+public class ClaseB extends ClaseA{...}
+```
+Options:
+a. La expresión ""this.a"" hace referencia a la variable que recibe como parámetro el constructor de ClaseA
+b. La expresión ""this.a"" hace referencia al atributo de la clase A.
+c. La clase B puede tener un constructor que llame al constructor por defecto de la clase A.
+d. El constructor por defecto de la clase A llama a su vez a otro constructor.
+Answer: La expresión ""this.a"" hace referencia a la variable que recibe como parámetro el constructor de ClaseA"
+"Question: El modificador final aplicado a una variable significa...
+Options:
+a. Que la variable no puede cambiar su valor.
+b. El modificador final sólo puede aplicarse a clases y métodos pero no a variables.
+c. Que el atributo al que se aplica no puede ser heredado.
+d. Que la clase a la que pertenece dicha variable no se puede heredar.
+Answer: Que la variable no puede cambiar su valor."
+"Question: ¿Cuál de las siguientes afirmaciones es la correcta respecto al argumento del método main(...)?
+Options:
+a. Es un array de Strings que contiene los parámetros de entrada al programa.
+b. Es un String llamado args
+c. El método main no tiene parámetros
+d. Es un array de enteros que hay que convertir a Strings con Integer.parseInt()
+Answer: Es un array de Strings que contiene los parámetros de entrada al programa."
+"Question: ¿Cuántas veces se ejecuta este método para data = {1,2,3,1,0}?
+```java
+public static void method(int[] data) {
+    for (int i = 1; i < data.length; i=i*2) {
+        System.out.println(data[i]);
+    }
+}
+```
+Options:
+a. 3
+b. 2
+c. Es un bucle infinito
+d. 0
+Answer: 3"
+"Question: Indica qué hace este método sobre una lista enlazada como las que hemos programado en clase, siendo first la referencia al primer nodo de la lista.
+```java
+public void method() {
+    Node aux;
+    if (first != null) {
+        aux = first.getNext();
+        while (aux != null) {
+            System.out.print(aux.getInfo() + "" "");
+            aux = aux.getNext();
+        }
+    }
+}
+```
+Options:
+a. Imprime todos los nodos de la lista menos el primero.
+b. Imprime todos los nodos de la lista.
+c. Imprime los dos primeros nodos de la lista.
+d. Es un bucle infinito.
+Answer: Imprime todos los nodos de la lista menos el primero."
+"Question: Dada una lista simplemente enlazada con una referencia al primer nodo (first) y un nodo llamado nuevo que acabamos de crear y no pertenece la lista qué hace el siguiente código:
+`nuevo.setNext(first);`
+Options:
+a. Enlaza el nodo nuevo con el primero de la lista, first quedaría ubicado después de nuevo.
+b. Enlaza el primer nodo de la lista con el nuevo, nuevo quedaría ubicado después de first.
+c. No hace nada porque para crear un enlace se usa getNext() no setNext().
+d. Lanzaría una excepción de tipo NullPointerException.
+Answer: Enlaza el nodo nuevo con el primero de la lista, first quedaría ubicado después de nuevo."
+"Question: Las pilas son un tipo de estructura de datos...
+Options:
+a. Lineal.
+b. FIFO.
+c. LILO.
+d. Jerárquica.
+Answer: Lineal."
+"Question: Dada una cola implementada con una lista simplemente enlazada en qué método podríamos encontrar este código: last.setNext(nuevo).
+Options:
+a. enqueue
+b. dequeue
+c. push
+d. pop
+Answer: a. enqueue"
+"Question: Dado el árbol representado por el array {1,5,2,3,6,4,7} indica cuál es la altura y profundidad del nodo 3. (NOTA: El punto representa una posición vacía))
+Options:
+a. altura: 0, profundidad: 2
+b. altura: 2, profundidad: 0
+c. altura: 0, profundidad: 3
+d. altura: 3, profundidad: 0
+Answer: a. altura: 0, profundidad: 2"
+"Question: Dado el árbol representado por el array {3,1,4,.,2,.,5} indica por este orden la profundidad del árbol y número de descendientes del nodo 5. (NOTA: El punto representa una posición vacía).
+Options:
+a. 2, 1
+b. 2,0
+c. 0,0
+d. 0, 1
+Answer: 2, 1"
+"Question: Si insertamos uno a uno los siguientes elementos: 1,5,3,2,4,6 en un árbol de búsqueda binario, indica cuál sería el resultado de recorrerlo en postorden.
+Options:
+a. 2,4,3,6,5,1
+b. 1,2,3,4,5,6
+c. 2,4,5,6,3,1
+d. 2,4,6,5,3,1
+Answer: 2,4,3,6,5,1"
+"Question: Dado el montículo mínimo representado por el array {2,3,5,4,6,7}, indica cual de estos arrays representa al montículo después de realizar las siguientes operaciones insert(1), extract().
+Options:
+a. {2,3,5,4,6,7}
+b. {2,3,4,6,5,7}
+c. {2,1,3,4,6,5}
+d. {1,3,2,4,6,5}
+Answer: {2,3,5,4,6,7}"
+"Question: Indica a qué algoritmo corresponde el siguiente código. Siendo swap un método para intercambiar dos posiciones en un array.
+```java
+public static void algorithm (int[] a) {
+for (int i=0; i<a.length; i++) {
+int m = i;
+for (int j=i; j<a.length; j++) {
+if (a[j]<a[m]){
+m = j;
+}
+}
+swap(a, i, m);
+}
+}
+```
+Options:
+a. selectionSort ascendente.
+b. insertion Sort descendente.
+c. insertion Sort ascendente.
+d. selectionSort descendente.
+Answer: selectionSort ascendente."
+"Question: ¿Cuál de las siguientes afirmaciones sobre las pruebas de integración es correcta?.
+Options:
+a. Pueden ser estructurales.
+b. No pueden ser funcionales.
+c. No pueden usar clases de equivalencia.
+d. No pueden usar valores frontera.
+Answer: Pueden ser estructurales."
+"Question: ¿Qué devuelve la invocación al método method(5,1)?.
+Options:
+a. 5
+b. 1
+c. 15
+d. 51
+Answer: 5"
+"Question: Dado el siguiente método recursivo. Indica la afirmación correcta.
+```java
+public static int method2 (int x, int y) {
+    int i=0;
+    if (x <= 1) {
+        System.out.println(""+++""+(i++) +""+++"");
+        return y;
+    } else {
+        System.out.println(""---""+(i++) +""----"");
+        return method2(x-1,y-2) + x + method2(x-3,y-2);
+    }
+}
+```
+Options:
+a. Es un caso de recursión en cascada.
+b. En un caso de recursión lineal no por la cola.
+c. Es un caso de recursión anidada.
+d. Es un caso de recursión inversa.
+Answer: Es un caso de recursión en cascada."
+"Question: Indica cuál de las siguientes afirmaciones es correcta.
+Options:
+a. Una clase puede implementar a la vez dos interfaces diferentes.
+b. Una clase puede heredar de dos clases diferentes.
+c. Una interfaz no puede tener constantes.
+d. Una interfaz puede contener métodos con código y sin código.
+Answer: Una clase puede implementar a la vez dos interfaces diferentes."
+"Question: Indica cuál de las siguientes sentencias para modificar los valores de a, b, c es correcta.
+Nota: Ten en cuenta que sólo existen los getters y setters indicados en el código.
+```java
+public class A{
+private int a = 1;
+public static int b =1;
+public static final int C = 1;
+public void setA(int a){...}
+public static void main(String[] args){
+A miObjeto1 = new A();
+B miObjeto2 = new B();
+A miObjeto3 = new B();
+// código de las diferentes opciones de respuesta
+}
+}
+public class B extends A{
+public void setB(int b){...}
+}
+```
+Options:
+a. `miObjeto2.setA(5);`
+b. `miObjeto1.setB(5)`
+c. `miObjeto3.setB(5);`
+d. `miObjeto3.setB() =5;`
+Answer: `miObjeto2.setA(5);`"
+"Question: Indica qué hace este método sobre una lista enlazada como las que hemos programado en clase, siendo first la referencia al primer nodo de la lista.
+```java
+public void method() {
+Node aux = first;
+while (aux != null &amp;&amp; aux.getNext() != null &amp;&amp;
+aux.getNext().getNext()!= null
+&amp;&amp; aux.getNext().getNext().getNext()!=null) {
+aux = aux.getNext();
+}
+System.out.println(aux.getInfo());
+}
+```
+Options:
+a. Imprime el antepenúltimo nodo de la lista.
+b. Imprime el penúltimo nodo de la lista.
+c. Imprime todos los nodos de la lista menos el penúltimo.
+d. Imprime todos los nodos de la lista menos el antepenúltimo.
+Answer: Imprime el antepenúltimo nodo de la lista."
+"Question: Dada una lista simplemente enlazada con al menos dos elementos con una referencia al primer nodo (first) y al último (last) qué hace el siguiente código: `last.setNext(first);`
+Options:
+a. Convierte la lista enlazada en una lista circular.
+b. Inserta el primer nodo en el lugar que antes estaba el último.
+c. Inserta el último nodo en el lugar que antes estaba el primero.
+d. Lanza una excepción de tipo NullPointerException.
+Answer: Convierte la lista enlazada en una lista circular."
+"Question: Cuál de las siguientes afirmaciones sobre una cola es correcta.
+Options:
+a. Se puede implementar utilizando un array.
+b. Es una estructura jerárquica.
+c. Se puede recorrer en preorden, postorden y orden simétrico.
+d. Es una estructura lineal accesible por ambos extremos.
+Answer: Se puede implementar utilizando un array."
+"Question: Dado el árbol representado por el array {5,1,7,2,3,.,.,4} indica cuál es la altura y profundidad del nodo 3. (NOTA: El punto representa una posición vacía))
+Options:
+a. altura: 0, profundidad: 2
+b. altura: 2, profundidad: 0
+c. altura: 0, profundidad: 3
+d. altura: 3, profundidad: 0
+Answer: altura: 0, profundidad: 2"
+"Question: Dado el árbol representado por el array {1,5,2,3,6,4,7} indica, por este orden, el número de descendientes y ascendientes del nodo 5.
+Options:
+a. 3,1
+b. 3,2
+c. 2,1
+d. 2,2
+Answer: 3,1"
+"Question: Si insertamos uno a uno los siguientes elementos: 5,1,2,3,4,7 en un árbol de búsqueda binario, indica cuál sería el resultado de recorrerlo en orden simétrico (in-orden).
+Options:
+a. 1,2,3,4,5,7
+b. 3,1,4,5,7,2
+c. 5,1,7,2,3,4
+d. 5,1,2,3,4,7
+Answer: 1,2,3,4,5,7"
+"Question: Dado el montículo máximo representado por el array {6,5,4,3,1,2}, indica cual de estos arrays representa al montículo después de realizar las siguientes operaciones insert(7), extract().
+Options:
+a. {6,5,4,3,1,2}
+b. {6,5,7,4,3,2}
+c. {6,5,4,3,2,1}
+d. {7,5,4,3,1,2}
+Answer: {6,5,4,3,1,2}"
+"Question: Suponiendo que queremos ordenar un array de mayor a menor, indique cuál de los siguientes algoritmos de ordenación va recorriendo el array desde la primera posición hasta la última buscando el mayor elemento y luego repite el proceso sucesivamente para el resto del array pendiente de ordenar.
+Options:
+a. SelectionSort
+b. BubbleSort  c. InsertionSort
+d. BusquedaBinaria
+Answer: SelectionSort"
+"Question: Indica a qué algoritmo corresponde el siguiente código:
+```java
+public static void algorithm (int[] a) {
+for (int i=0; i<a.length-1; i++) {
+for (int j=0; j<a.length-1-i; j++) {
+if (a[j]>a[j+1]){
+swap(a, j, j+1);
+}
+}
+}
+}
+```
+Options:
+a. bubbleSort ascendente.
+b. selecion Sort ascendente.
+c. linearSearch ascendente.
+d. insertion SortDescendente.
+Answer: bubbleSort ascendente."
+"Question: ¿Cuál de las siguienes afirmaciones sobre las clases de equivalencia en testing es correcta?
+Options:
+a. Se utilizan en pruebas de caja negra para escoger los datos de entrada.
+b. Se escogen usando subconjuntos disjuntos evitando datos frontera entre ambos que puedan dar error.
+c. Son dos clases que devuelven true cuando aplicamos AssertEquals.
+d. Son dos clases que guardan jerarquía de herencia y tienen una relación es-un entre ellas.
+Answer: Se utilizan en pruebas de caja negra para escoger los datos de entrada."
+"Question: ¿Qué devuelve method(3,4)?.
+Options:
+a. 7
+b. 5
+c. 0
+d. 2
+Answer: 7"
+"Question: Dado el siguiente método. Indica la afirmación correcta.
+```java
+public long method(long number) {
+long output = 0;
+for (long i = 0; i <= number; i++) {
+output += i; //output = output + i;
+}
+return output;
+}
+```
+Options:
+a. Es un método no recursivo.
+b. Es un caso de recursión lineal por la cola.
+c. Es un caso de recursión lineal no por la cola.
+d. Es un caso de recursión infinita.
+Answer: Es un método no recursivo."
+"Question: Indica cuál de las siguientes sentencias para modificar los valores de a, b, c es correcta.
+Nota: Ten en cuenta los modficadores y que sólo existen los getters y setters indicados en el código.
+```java
+public class A{
+private int a = 1;
+public static int b =1;
+public static final int C = 1;
+public void setA(int a){...}
+public static void main(String[] args){
+A miObjeto1 = new A();
+B miObjeto2 = new B();
+A miObjeto3 = new B();
+// código de las diferentes opciones de respuesta
+}
+}
+public class B extends A{
+public void setB(int b){...}
+}
+```
+Options:
+a. C no se puede modificar desde A ni B porque es constante.
+b. b no se puede modificar desde A ni B porque es constante.
+c. a no se puede modificar desde B porque es privada.
+d. a se puede modificar desde A porque existe setA pero no desde B.
+Answer: C no se puede modificar desde A ni B porque es constante."
+"Question: Dado el siguiente código indique cuál de las siguientes sentencias es incorrecta.
+```java
+public Interface 11{
+void metodo1();
+}
+public Interface 12 extends 11{
+void metodo2();
+}
+public abstract class C1 implements 12{
+public void metodo3() {System.out.println(""ejecutando metodo3"");}
+}
+public class C2 extends C1{
+public void metodo1(){System.out.println(""ejecutando metodo1"");}
+public void metodo2(){System.out.println(""ejecutando metodo2"");}
+public void metodo4(){super.metodo3()}
+}
+```
+Options:
+a. `C1 c = new C1();`
+Answer: C1 c = new C1();"
+"Question: Cuál de las siguientes sentencias para dar valor al atributo a es incorrecta.
+```java
+public class ClaseA{
+    protected int a;
+    public ClaseA(int a){this.a=a;}
+    public ClaseA(){this(0);}
+    //getters and setters
+}
+public class ClaseB extends ClaseA{ }
+```
+Options:
+a. `B miObjeto = new B(3);`
+b. `A miobjeto = new A();`
+c. `B miObjeto = new B();`
+d. `B miObjeto = new B(); miObjeto.setB(3);`
+Answer: `B miObjeto = new B(3);`"
+"Question: Indica cuál de estas afirmaciones sobre el modificador final es incorrecta.
+Options:
+a. El modificador final aplicado a una clase indica que sus métodos no pueden ser sobrecargados.
+b. El modificador final aplicado a una clase indica que es clase no puede tener clases derivadas.
+c. El modificador final aplicado a un método indica que dicho método no puede ser sobreescrito.
+d. El mofificador final aplicado a una variable indica que dicha variable no puede cambiar su valor.
+Answer: El modificador final aplicado a una clase indica que sus métodos no pueden ser sobrecargados."
+"Question: ¿Cuál de las siguientes sentencias sobre el método main es correcta?.
+Options:
+a. Es el primer método que se invoca al ejecutar un programa.
+b. Recibe como parámetro un array de enteros llamado args.
+c. Devuelve como resultado un array de Strings llamado args.
+d. Como es un método static no permite invocar métodos no static en su interior.
+Answer: Es el primer método que se invoca al ejecutar un programa."
+"Question: ¿Qué valores imprime este método para data = {1,2,3,1,0}?.
+```java
+public static void method92 (int[] data) {
+    for (int i = data.length-1; i >=0 ; i=i-1) {
+        System.out.println(data[i]);
+    }
+}
+```
+Options:
+a. 0,1,3,2,1
+b. 1,2,3,1,0
+c. 1,3,2,1
+d. 0,1,2,3
+Answer:  0,1,3,2,1"
+"Question: Indica qué hace este método sobre una lista enlazada como las que hemos programado en clase, siendo first la referencia al primer nodo de la lista.
+```java
+public void method() {
+Node aux = first;
+while (aux!=null && aux.getNext() != null) {
+aux = aux.getNext();
+}
+System.out.println(aux.getInfo());
+}
+```
+Options:
+a. Imprime el último elemento de la lista.
+b. Imprime el penúltimo elemento de la lista.
+c. Imprime todos los elementos de la lista.
+d. Imprime el primer elemento de la lista.
+Answer: Imprime el último elemento de la lista."
+"Question: Si first es el primer nodo de una lista simplemente enlazada cuál es el código para eliminar el nodo first de la lista.
+Options:
+a. `first = first.getNext();`
+b. `setNext(first.getNext());`
+c. `first.setNext(first.getNext());`
+d. `first = new Node(info);`
+Answer: `first = first.getNext();`"
+"Question: Una cola es una estructura de tipo...
+Options:
+a. FIFO: First in first out.
+b. LIFO: Last in first out.
+c. FILO: First in last out.
+d. Ninguna de las otras opciones es correcta.
+Answer: FIFO: First in first out."
+"Question: Indica cuál de las siguientes afirmaciones sobre los métodos de una pila es correcta.
+Options:
+a. El método push permite insertar elementos y recibe como parámetro un objeto de tipo E info.
+b. El método pop permite insertar elementos y recibe como parámetro un objeto de tipo E info.
+c. El método enqueue permite insertar elementos y recibe como parámetro un objeto de tipo E info.
+Answer: El método push permite insertar elementos y recibe como parámetro un objeto de tipo E info."
+"Question: Indica qué hace el siguiente algoritmo.
+```java
+public static void algorithm (int[] a, int i, int j) {
+int aux=a[i];
+a[i]=a[j];
+a[j]=aux;
+}
+```
+Options:
+a. Intercambia el valor de las dos posiciones del array que recibe como parámetro.
+b. Ordena de menor a mayor las dos posiciones del array que recibe como parámetro.
+c. Ordena de mayor a menor las dos posiciones del array que recibe como parámetro.
+d. Ninguna de las otras opciones es correcta.
+Answer: Intercambia el valor de las dos posiciones del array que recibe como parámetro."
+"Question: Given the following code snippet, what is printed on the screen after its execution?
+```java
+public class A{
+public static void main(String[] args){
+    int x = 1;
+    m(x);
+    System.out.println(x);
+}
+private static void m(int x) {
+    x = x * 2;
+}
+}
+```
+Options:
+a. 2
+b. x*2
+c. 0
+d. 1
+Answer: d. 1"
+"Question: ** The final modifier applied to a class...
+Options:
+a. indicates that the methods of the class cannot be overridden.
+b. indicates that the class uses constants.
+c. Indicates that the class cannot have derived classes.
+d. The final modifier cannot be applied to classes.
+Answer: c. Indicates that the class cannot have derived classes."
+"Question: ** In this ArrayList: ArrayList<Object> a = new ArrayList<Object>(); we can store...
+Options:
+a. Objects of the class Object only.
+b. Objects of the class ArrayList only.
+c. Objects of any class in Java.
+d. Objects of the classes Object and String only.
+Answer: c. Objects of any class in Java."
+"Question: ** Given the following code, divided in two files, one per class, which of the following sentences is correct?
+```java
+public class A{
+    public static void main(String[] args){
+        B b = new B(10);
+    }
+}
+
+public class B extends A {
+    int b;
+    public B() {;}
+}
+```
+Options:
+a. In order to create an object of class B, the main method must be in class B.
+b. Class A in its main method cannot create an object of class B.
+c. The compiler shows an error and does not finish the compilation.
+d. The code is compiled and executed without problems, creating an object of class B.
+Answer: c. The compiler shows an error and does not finish the compilation."
+"Question: ** Given the following class hierarchy (with each class in a separate file), which of the following sentences is correct?
+```java
+public class File{; }
+public class FileOfficeMicrosoft extends File {; }
+public class FileExcel extends FileOfficeMicrosoft{ ; }
+public class Folder extends FileOfficeMicrosoft{; }
+public class FileWord extends FileOfficeMicrosoft{; }
+```
+Options:
+a. FileOfficeMicrosoft is a subclass of Folder
+b. FileExcel is a parent class of File
+c. Folder is a superclass of FileExcel
+d. FileOfficeMicrosoft is a base class for FileWord
+Answer: d. FileOfficeMicrosoft is a base class for FileWord"
+"Question: ** Method overloading consists of:
+Options:
+a. Replacing an inherited method by another one with the same name in the subclass.
+b. Programming in a class methods with the same name, but that receive a different number or type of parameters
+c. Programming in a class methods with the same name, same number and type of parameters but different return types.
+d. Using class references to point to objects in classes that inherit from another class.
+Answer: b. Programming in a class methods with the same name, but that receive a different number or type of parameters"
+"Question: ** Which of the following statements is correct in relation to equivalence classes for input/output testing?
+Options:
+a. Equivalence classes allow having equivalence objects.
+b. Input/output testing serves to inspect the code and achieve a certain coverage of methods/lines/instructions/branches.
+c. Equivalence classes can implement equivalence interfaces.
+d. Boundary values for equivalence classes must also be tested.
+Answer: d. Boundary values for equivalence classes must also be tested."
+"Question: We are asked to program a method that calculates the sine of a certain angle (in radians) received as input (double type). The behavior of this method must be such that it will return the result of the sine of x (sin(x)) for the range 0<=x<=2*pi, and an undetermined value for any other input value. Select the set of values that would allow to test all the equivalence classes for this method.
+Options:
+a. -4.0, 4.0, 8.0
+b. 0, 3.14, 6.28
+c. -2.0, 0.0, 2.0
+d. -6.0, -5.0, -4.0, -3.0, -2.0, -1.0, 0.0, 1.0, 2.0, 3.0, 4.0, 5.0, 6.0
+Answer: a. -4.0, 4.0, 8.0"
+"Question: Given the following recursive method, which statament is correct if this method is called with n equals to 5 and m equals to 2.
+```java
+public static int method(int n, int m){
+    if(n < m){
+        return 3;
+    }else{
+        return 3*method(n-m, n+m);
+    }
+}
+```
+Options:
+a. This is a case of linear non-tail recursion.
+b. The call to method(5,2) returns 27 as result.
+c. This is a case of non-linear cascading recursion.
+d. The call to method(5,2) returns 3 as result.
+Answer: a. This is a case of linear non-tail recursion."
+"Question: Given the following method:
+```java
+public static int a(int x, int y) {
+    if (x<=1) {
+        return y;
+    } else {
+        return a(x-1, x + a(x-2,y));
+    }
+}
+```
+Options:
+a. It is a linear recursion.
+b. It is not recursive.
+c. It is a mutual recursion.
+d. It is a nested recursion.
+Answer: d. It is a nested recursion."
+"Question: What does this method on a linked list like the ones we have programmed in class, where first is the reference to the first node in the list.
+```java
+public void method(){
+    if(first != null){
+        Node aux = first;
+        while(aux.getNext()!=null){
+            aux = aux.getNext();
+        }
+        System.out.println(aux.getInfo());
+    }
+}
+```
+Options:
+a. Prints the second-to-last element on the list.
+b. Prints the first element of the list.
+c. Prints all the elements on the list.
+d. Prints the last element on the list.
+Answer: d. Prints the last element on the list."
+"Question: ** Given an empty stack, what does the call to top() return after the next sequence of method calls are executed:
+push(5); top(); pop(); push(2); push(3); pop(); pop();
+Options:
+a. 3
+b. null or an exception would be thrown because the stack is empty.
+c. 2
+d. 5
+Answer: b. null or an exception would be thrown because the stack is empty."
+"Question: ** Given a non-empty linked list that stores objects of type Integer, and that contains more than one element, if the method m is called, which node does current point to after exiting the while loop?
+```java
+public void m() {
+Node current = this.first;
+while (current != null) {
+current = current.getNext();
+}
+}
+```
+Options:
+a. To the first node on the list.
+b. To no node (i.e. null).
+c. To the second-to-last node on the list.
+d. To the last node on the list.
+Answer: b. To no node (i.e. null)."
+"Question: ** In a deque (double-ended queue), which of the following statements is correct?
+Options:
+a. With its -insertLast()- and -removeFirst()- methods we are able to use the deque as a stack.
+b. With its -insertFirst()- and -removeFirst()- methods we are able to use the deque as a queue.
+c. For a more efficient implementation it should be programmed with an array
+d. For a more efficient implementation it should be programmed with a doubly linked list.
+Answer: d. For a more efficient implementation it should be programmed with a doubly linked list."
+"Question: If we insert one by one the elements of the following array (3,1,2,5,7,4,6) in a binary search tree, which node would be the left child of the node whose value is 5 after finishing the insertion process?
+Options:
+a. 2
+b. 4
+c. 6
+d. null
+Answer: b. 4"
+"Question: Given the binary tree of objects of type -Integer-, represented by the following array, and considering that these objects act as the key, is this binary tree a heap?
+{15, 27, 41, 32, 59, 63, 95, 80, 77, null, null, null, null, null, null}
+Options:
+a. Yes; it is a min-heap.
+b. No; it is not a heap because it is not complete.
+c. Yes; it is a max-heap.
+d. No; it is not a heap since it does not meet the criteria to be either min-heap or max-heap.
+Answer: a. Yes; it is a min-heap."
+"Question: Given the binary tree represented by the array (A, B, C, D, E, F}, what would be the result of traversing this tree in post-order?
+Options:
+a. D, E, B, A, C, F.
+b. A, B, D, E, C, F.
+c. D, E, B, F, C, A.
+d. B, D, E, C, F, A.
+Answer: c. D, E, B, F, C, A."
+"Question: Given a min-heap represented by the array {""a"", ""d"", ""f"", ""e"", ""g""} and using objects of type String as both the info and the key, what would be the content of the array that represents the heap after executing the following operations: insert(""c""); extract();, considering that extract() extracts the root of the min-heap.
+Options:
+a. ""c"", ""d"", ""f"", ""e"", ""g""
+b. ""a"", ""d"", ""c"", ""e"", ""g"", ""f""
+c. ""f"", ""d"", ""c"", ""e"", ""g""
+d. ""d"", ""e"", ""c"", ""f"", ""g""
+Answer: a. ""c"", ""d"", ""f"", ""e"", ""g"""
+"Question: Regarding the efficiency of the search algorithms studied in class (linear and binary), taking into account that N is the number of elements, which of the following sentenes is correct?
+Options:
+a. The linear search is more efficient than the binary search for large values of N.
+b. The binary search has a complextiy of O(N).
+c. The binary search is more efficient than the linear search for large values of N.
+d. The linear search has a complexity of O(logN).
+Answer: The binary search is more efficient than the linear search for large values of N."
+"Question: How many swaps does the Bubble Sort algorithm needs to sort this array of integers from the lowest to the highest?
+{45, 22, 39, 12}
+Options:
+a. 2
+b. 4
+c. 5
+d. 3
+Answer: 5"
+"Question: Si el siguiente método recibe un array con los valores 1,2,4,5,6,0,3 ¿qué devuelve este método?
+```java
+public static int method(int[] data) {
+    int a = 0;
+    if(data.length>=1){
+        int b= data[0];
+        for (int i=1; i < data.length; i++){
+            if (b> data[i]){
+                a = i;
+                b = data[i];
+            }
+        }
+    }
+    return a;
+}
+```
+Options:
+a. 6
+b. 5
+c. 0
+d. Se lanza una ArrayIndexOutOfBoundsException
+Answer: b. 5"
+"Question: Dado la siguiente sentencia para la creación de un array, ¿cuál de las siguientes frases es correcta?
+`Object[] objects = {new String(""exam""), new Integer(2021), new Boolean(true)};`
+Options:
+a. Es un caso de downcasting.
+b. Los objetos del array no pueden almacenar instancias de clases distintas de Object.
+c. La creación de los objetos de las clases Integer y Boolean no es correcta.
+d. La sentencia es correcta.
+Answer: d. La sentencia es correcta."
+"Question: La sobrecarga de métodos consiste en:
+Options:
+a. Programar en una clase métodos con el mismo nombre, el mismo número y tipo de parámetros pero diferentes tipos de retorno.
+b. Sustituir un método heredado por otro con el mismo nombre en la subclase.
+c. Usar referencias de clase para apuntar a objetos en clases que heredan de otra clase.
+d. Programar en una clase métodos con el mismo nombre, pero que reciben un número o tipo de parámetros diferente
+Answer: d. Programar en una clase métodos con el mismo nombre, pero que reciben un número o tipo de parámetros diferente"
+"Question: Dadas las siguientes declaraciones de clases e interfaz, ¿cuál de las siguientes asignaciones causaría un error de compilación?
+```java
+public interface Identifiable{...}
+public class Person implements Identifiable{...}
+public class Student extends Person{...}
+public class Intern extends Student{...}
+```
+Options:
+a. `Identifiable i = new Person();`
+b. `Person p = new Intern();`
+c. `Identifiable i = new Intern();`
+d. `Student s = new Identifiable();`
+Answer: d. Student s = new Identifiable();"
+"Question: El modificador final aplicado a un método...
+Options:
+a. El modificador final no puede aplicarse a métodos.
+b. indica que el valor de retorno del método es una constante.
+c. indica que el método no puede ser sobreescrito.
+d. indica que el método utiliza constantes.
+Answer: c. indica que el método no puede ser sobreescrito."
+"Question: Un atributo estático...
+Options:
+a. debe llamarse siempre con this.nombreAtributo.
+b. indica que sólo se puede acceder al atributo desde la misma clase y sus clases derivadas.
+c. existe sólo una vez para todas las instancias de la clase donde se define el atributo.
+d. indica que el atributo es una constante y su valor no puede cambiarse mientras se ejecuta el programa.
+Answer: c. existe sólo una vez para todas las instancias de la clase donde se define el atributo."
+"Question: Dado el siguiente método recursivo:
+
+```java
+public static int m(int x, int y) {
+    if (x<=1) {
+        return y;
+    } else {
+        return m(x-1, x + m(x-2,y));
+    }
+}
+```
+
+Seleccione una:
+Options:
+a. Es una recursión anidada.
+b. Es una recursión lineal no por la cola.
+c. No es un método recursivo.
+d. Es una recursión mutua.
+Answer: a. Es una recursión anidada."
+"Question: Dado el siguiente método recursivo, qué frase es correcta si se llama a este método con n igual a 4 y m igual a 3.
+
+```java
+public static int method(int n, int m){
+    if(n < m){
+        return 3;
+    }else{
+        return 2*method(n--, ++m);
+    }
+}
+```
+
+Seleccione una:
+Options:
+a. La llamada a method(4,3) devuelve 12 como resultado.
+b. La llamada a method(4,3) devuelve 6 como resultado.
+c. La llamada a method(4,3) causa un StackOverflowError
+d. Este es un caso de recursión lineal no por la cola.
+Answer: a. La llamada a method(4,3) devuelve 12 como resultado."
+"Question: Nos dan un método que calcula el área de un cuadrado para un lado dado recibido como parámetro. Queremos hacer pruebas de caja negra sobre este método. Selecciona el conjunto de valores que nos permita probar todas las clases de equivalencia y valores frontera de este método.
+Options:
+a. -1, 1, 2, 3
+b. 0, 0.5, 1
+c. -5, 0, 5
+d. 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+Answer: c. -5, 0, 5"
+"Question: Dada una cola vacía implementada a través de una lista enlazada, y en la que los siguientes elementos se insertan uno a uno en el orden indicado 3,4,8,2,1,7,9, ¿qué devolvería la llamada al siguiente método considerando que head apunta al primer nodo que se extrae de la cola?
+```java
+public void method(){
+if(head != null){
+Node aux = head;
+while(aux.getNext()!=null){
+aux = aux.getNext();
+}
+System.out.println(aux.getNext().getInfo());
+}
+}
+```
+Options:
+a. 3
+b. Se lanzaría una NullPointerException
+c. 7
+d. 9
+Answer: b. Se lanzaría una NullPointerException"
+"Question: Pasando del primer elemento a desencolar al último elemento a desencolar, ¿qué contiene la cola después de ejecutar el conjunto de sentencias anteriomente indicadas?
+Options:
+a. A,B,C,D
+b. La cola está vacía
+c. C,B,D,A
+d. C,B,A,D
+Answer: c. C,B,D,A"
+"Question: ¿Cuál es el resultado de llamar a agencia.printInOrder() después de ejecutar las siguientes sentencias?
+```
+agency.insert(""Madrid"", 1262);
+agency.insert(""Rome"", 1435);
+agency.insert(""Paris"", 243);
+agency.insert(""New York"", 5510);
+agency.insert(""Cape Town"", 9607);
+agency.insert(""Amsterdam"", 357);
+agency.insert(""Vienna"", 1235);
+agency.insert(""Tehran"", 4398);
+```
+Options:
+a. Paris, Amsterdam, Vienna, Madrid, Rome, Tehran, New York, Cape Town
+b. Madrid, Paris, Rome, Amsterdam, New York, Vienna, Tehran, Cape Town
+c. Madrid, Paris, Amsterdam, Vienna, Rome, New York, Tehran, Cape Town
+d. Vienna, Amsterdam, Paris, Tehran, Madrid, Rome, Cape Town, New York
+Answer: a. Paris, Amsterdam, Vienna, Madrid, Rome, Tehran, New York, Cape Town"
+"Question: ¿Cuál de las siguientes afirmaciones es VERDADERA?
+Options:
+a. Todos los subárboles de un montículo son árboles binarios de búsqueda.
+b. Todos los subárboles de un árbol binario de búsqueda son montículos
+c. El número de comparaciones para buscar un elemento en un árbol binario de búsqueda depende directamente de la profundidad del nodo que contiene la información deseada.
+d. Para que un montículo se considere completo debe tener todos los niveles llenos.
+Answer: c. El número de comparaciones para buscar un elemento en un árbol binario de búsqueda depende directamente de la profundidad del nodo que contiene la información deseada."
+"Question: ¿Cuántos intercambios necesita el algoritmo Bubble Sort para ordenar este array de String de menor a mayor (es decir, en orden alfabético)?
+{""Denmark"", ""Bulgaria"", ""Croatia"", ""Estonia"", ""Austria"", ""France"", ""Germany"", ""Italy"", ""Hungary""}
+Options:
+a. 8
+b. 9
+c. 10
+d. 7
+Answer: d. 7"
+"Question: ¿Cuántas iteraciones se necesitan con la búsqueda lineal y con la búsqueda binaria para averiguar que el valor 13 no está en el siguiente array?
+{-10, -4, 0, 3, 5, 8, 16}
+Options:
+a. 7 con la búsqueda lineal y 3 con la búsqueda binaria
+b. No podemos utilizar la búsqueda binaria en este caso ya que el array no está ordenado
+c. 6 con la búsqueda lineal y 4 con la búsqueda binaria
+d. No podemos utilizar la búsqueda binaria en este caso porque hay números negativos
+Answer: a. 7 con la búsqueda lineal y 3 con la búsqueda binaria"
+"Question: Dada la siguiente clase A, creamos una instancia suya con la instrucción Object o = new A(); Si a continuación invocamos al método o.toString(), ¿cuál es el String que devuelve?
+
+```java
+public class A {
+    private int a;
+    private int b;
+
+    public A(int a, int b) {
+        this.a = a;
+        this.b = b;
+    }
+
+    public A(int a) {
+        this(a, 1);
+    }
+
+    public A() {
+        this(1);
+    }
+
+    public String toString() {
+        return """" + a + "","" + b;
+    }
+}
+```
+Options:
+a. 0,0
+b. 1,1
+c. Lo que devuelva el método toString() de la clase Object.
+d. 0,1
+Answer: b. 1,1"
+"Question: Considerando una LinkedQueue que utiliza genéricos y la implementación del método dequeue() como se muestra a continuación, donde head es una referncia al próximo nodo que será extraido de la cola, y last la referencia al último nodo insertado, ¿cuál de las siguientes afirmaciones es correcta?
+
+```java
+public E dequeue(){
+    E info;
+    if (!isEmpty()) {
+        info = head.getInfo();
+        head = head.getNext();
+        size--;
+    } else {
+        info = null;
+    }
+    return info;
+}
+```
+Options:
+a. El método es incorrecto ya que desencola por el lado incorrecto de la cola.
+b. El método no correcto ya que no implementa correctamente el caso de desencolar el último elemento de la cola.
+c. El método es incorrecto ya que no implementa correctamente el caso en que la cola está vacia
+d. El método es correcto.
+Answer: b. El método no correcto ya que no implementa correctamente el caso de desencolar el último elemento de la cola."
+"Question: ¿Qué devuelve la llamada al siguiente método cuando n=4?
+
+```java
+public int m(int n) {
+    if (n<=2){
+        return 3;
+    }else {
+        return 2+(m(n-1)+ n(n-2));
+    }
+}
+```
+Options:
+a. 4
+b. 3
+c. 30
+d. 24
+Answer: c. 30"
+"Question: Un diccionario es una estructura de datos en la que cada dato está sociado a una clave. La operación de insercion recibe tanto el dato como la clave. La operacion de recuperación recibe la clave y obtiene el dato asociado. ¿Cuál de las siguientes estructuras es la más adecuada para implementar un diccionario?
+Options:
+a. Una lista enlazada
+b. Una cola de prioridades.
+c. Un árbol binario de búsqueda
+d. Un max-heap
+Answer: c. Un árbol binario de búsqueda"
+"Question: ¿Cuántos swaps se necesitan para ordenar de menor a mayor el siguiente array 5,3,4,1,2 utilizado Heap Sort?
+Options:
+a. 8
+b. 9
+c. 7
+d. 6
+Answer: d. 6"
+"Question: Al recorrer una lista enlazada, ¿cómo sabemos que hemos llegado al último nodo?
+Options:
+a. Cuando el nodo que sigue al actual es null.
+b. Cuando el nodo actual es null.
+c. Cuando el primer nodo de la lista es también el último.
+d. Cuando la informacion del nodo que sigue al actual es null.
+Answer: a. Cuando el nodo que sigue al actual es null."
+"Question: Elige la opcion INCORRECTA:
+Options:
+a. Ni las clases abstractas ni los interfaces pueden ser instanciados.
+b. Un interfaz declara métodos sin implementarlos.
+c. Todos los métodos de una clase abstracta deben ser abstractos
+d. Una clase abstracta puede tener constructores.
+Answer: c. Todos los métodos de una clase abstracta deben ser abstractos"
+"Question: Dadas las siguientes declaraciones de clases, ¿Cuál de las opciones de asignación no es correcta ya que los tipos de datos son incompatibles?
+
+```java
+public class Student extends Person (...)
+public class Professor extends Person (...)
+public class Intern extends Student (...)
+```
+Options:
+a. Person p= new Intern();
+b. Professor p = new Person();
+c. Student s = new Intern();
+d. Object o = new Professor();
+Answer: b. Professor p = new Person();"
+"Question: Has programado un método que calcula el logaritmo de un número. Indica el conjunto de valores que debería utilizarse para testear el método, considerando tanto las clases de equivalencia como los valores frontera.
+Options:
+a. 0, 1, 2, 3, 4
+b. -100, 100
+c. -23.7, 0, 0.4, 46.2
+d. -5.6, -3.2, 0.7, 1.4
+Answer: c. -23.7, 0, 0.4, 46.2"
+"Question: Si insertamos la siguiente secuencia de elementos (6,8,3,1,4,7,9) uno a uno en un árbol binario de búsqueda, ¿cuál de las siguentes secuencias representa el recorrido in-order del árbol.
+Options:
+a. 1,3,4,6,7,8,9
+b. 1,4,3,9,7,6,8
+c. 6,3,1,4,8,7,9
+d. 1,4,3,7,9,8,6
+Answer: a. 1,3,4,6,7,8,9"
+"Question: ¿Qué tipo de recursión es utilizado en el siguiente método?
+
+```java
+public int m(int a, int b){
+    if (a < b){
+        return a;
+    }
+    else{
+        m(a - 1, m(a, b - 1));
+    }
+}
+```
+Options:
+a. Recursión no-líneal, anidada
+b. Recursión líneal, por cola
+c. Recursión no-lineal, en cascada
+d. Recursión línear, no por cola
+Answer: a. Recursión no-líneal, anidada"
+"Question: La clase B hereda de la clase A. Si ambas clases tienen su propio método void m(), ¿Cómo puede el Método m() de la clase B invocar al método m() de la clase A?
+Options:
+a. m()
+b. No se puede invocar porque está oculto.
+c. super.m()
+d. this.m()
+Answer: c. super.m()"
+"Question: Has programado una clase que consta de dos métodos: main() y a(). a() tiene varias lineas de código y es invocada en la primera linea del método main(). Has colocado un breakpoint en la primera línea de a() y a continuación lanzas el debugger de Eclipse; se trata del único breakpoint en el código. ¿Qué opción debes tomar para que se ejecute completamente el método a() y el debugger vuelva a la primera linea del método main()?
+Options:
+a. Step return.
+b. Step into
+c. Terminate
+d. Step over
+Answer: a. Step return."
+"Question: En el contexto de programación orientada a objeto, cualquier objeto...
+Options:
+a. Hereda de una clase.
+b. Es una instancia de una clase.
+c. Implementa una clase.
+d. Es una interfaz.
+Answer: b. Es una instancia de una clase."
+"Question: Dado el siguiente código y la clase de test, ¿qué cobertura de líneas se alcanza?
+
+```java
+public class C {
+    public static int m(double a){
+        if (a>1){
+            return 1;
+        } else if (a<-1){
+            return -1;
+        } else{
+            return 0;
+        }
+    }
+}
+
+public class CTest {
+    @Test
+    public void test() {
+        assertEquals(C.m(35.4), 1);
+        assertEquals(C.m(-13.5), -1);
+        assertEquals(C.m(0.7), 0);
+    }
+}
+```
+Options:
+a. 75%
+b. 50%
+c. 66.6%
+d. 100%
+Answer: d. 100%"
+"Question: Selecciona la declaracion correcta dada una clase A que implementa el interfaz I y además hereda de la clase B:
+Options:
+a. public class A extends B implements I
+b. public class B implements I extends A
+c. public class B extends A implements I
+d. public interface I implements A extends B
+Answer: a. public class A extends B implements I"
+"Question: Considerando una Deque, elige la opción INCORRECTA:
+Options:
+a. Tiene métodos para insertar y extraer por ambos extemos.
+b. Puede ser utilizada para implementar una cola.
+c. Es una estructura muy eficiente para la búsqueda de elementos almacenados en ella.
+d. Puede ser utilizada para implementar una pila.
+Answer: c. Es una estructura muy eficiente para la búsqueda de elementos almacenados en ella."
+"Question: Tenemos tres métodos m1, m2 y m3, que dan el mismo resultado, pero que tienen las siguientes complejidades m1 es de O(n), m2 es de O(n*log n), m3 es de O(log n) podemos decir que el método más eficiente es:
+Options:
+a. m3
+b. m2
+c. Son igualmente eficientes.
+d. m1
+Answer: a. m3"
+"Question: Si se invoca un método pasándole como parámetro la referencia a un objeto, y dentro del método se modifica el valor de cierto atributo:
+Options:
+a. El cambio es visible también desde el código que invocó al método.
+b. El cambio es visible también desde el código que invocó al método, salvo que el objeto pasado sea del tipo Integer, Double, Float, Long, Short, Byte, Character o Boolean
+c. El cambio no es visible desde el código que invocó al método.
+Answer: a. El cambio es visible también desde el código que invocó al método."
+"Question: ¿Qué es cierto en relación al siguente método m(), implementado en la clase LBNode de un árbol binario?
+
+```java
+public class LBNode {
+    private E info;
+    private LBNode left;
+    private LBNode right;
+
+    (...)
+
+    public int m() {
+        return 1 + left.m() + right.m();
+    }
+}
+```
+Options:
+a. Recorre el árbol en preorder
+b. Siempre lanza un NullPointerException exception.
+c. Devuelve la altura del árbol.
+d. Devuelve el número de nodos del árbol.
+Answer: b. Siempre lanza un NullPointerException exception."
+"Question: Dada una Linked Queue y la siguiente implementación de su método enqueue(E info).
+¿Cuál de las siguientes afirmaciones es la correcta?
+```java
+public void enqueue (E info) {
+Node<E> n = new Node<E>(info, null);
+if (isEmpty()) {
+top = n;
+}
+} else {
+tail.setNext(n);
+}
+size++;
+Options:
+a. El método no inserta correctamente el elemento cuando la cola está vacía.
+b. El método no inserta correctamente el elemento cuando la cola tiene un elemento.
+c. El método no inserta correctamente el elemento en ningún caso.
+d. El método realiza la inserción correctamente.
+Answer: c. El método no inserta correctamente el elemento en ningún caso."
+"Question: ¿Cuántos intercambios hace el algoritmo de ordenación Bubble Sort para ordenar de menor a mayor este array de enteros {1, 2, 4, 3}?
+Options:
+a. 3
+b. 1
+c. 2
+d. 0
+Answer: b. 1"
+"Question: Dada una LinkedStack ¿cuántos strings ""@"" quedan en la pila después de ejecutar el último método push de este main?
+```java
+public static void main(String [] args) {
+    LinkedStack<String> pila = new LinkedStack<String>();
+    pila.push(""#"");
+    elem = pila.top();
+    elem = pila.pop();
+    pila.push(""@"");
+    pila.push(""#"");
+    elem = pila.pop();
+    pila.push(""@"");
+    elem = pila.pop();
+    pila.push(""#"");
+    pila.push(""@"");
+}
+```
+Options:
+a. 3
+b. 2
+c. 0
+d. 1
+Answer: b. 2"
+"Question: En una estructura de datos deque, ¿cuál de las siguientes afirmaciones es la correcta?
+Options:
+a. Con sus métodos insertLast() y removeFirst() estamos en condiciones de utilizar la deque como una queue
+b. Con sus métodos insertLast() y removeLast() estamos en condiciones de utilizar la deque como una queue
+c. Con sus métodos insertFirst() y removeFirst() estamos en condiciones de utilizar la deque como una queue
+d. La creación de nodos especiales (dummy) nunca facilita la implementación de la lista doblemente enlazada.
+Answer: a. Con sus métodos insertLast() y removeFirst() estamos en condiciones de utilizar la deque como una queue"
+"Question: Dado el siguiente árbol binario de objetos `Integer', representado por el siguiente array, ¿es un montículo?
+
+{1, 2, 4, 3, 5, 6, 9, 8, 7, null, null, null, null, null, null}
+Options:
+a. No; no es un montículo puesto que no cumple ni min-heap ni max-heap.
+b. Sí; es un montículo min-heap.
+c. No; no es un montículo porque no es completo.
+d. Sí; es un montículo max-heap.
+Answer: b. Sí; es un montículo min-heap."
+"Question: Ordena de peor a mejor eficiencia:
+Options:
+a. O(n3) < O(n2) < O(n) < O(N log N) < O(log N) < O(1)
+b. O(1) < O(log N) < O(N log N) < O(n) < O(n2) < O(n3)
+c. O(log N) < O(N log N) < O(1) < O(n) < O(n2) < O(n3)
+d. O(n) < O(n2) < O(n3) < O(log N) < O(N log N) < O(1)
+Answer: a. O(n3) < O(n2) < O(n) < O(N log N) < O(log N) < O(1)"
+"Question: De las estructuras de datos estudiadas en la asignatura ¿cuál de ellas elegirías para implementar el login de un alumno en los ordenadores del laboratorio para que sea una operación lo más rápida posible?:
+Options:
+a. Queue.
+b. Stack.
+c. Árbol binario de búsqueda.
+d. Árbol binario.
+Answer: c. Árbol binario de búsqueda."
+"Question: In the code structure provided below, what should be added in Line 03 instead of the comment marked with /* TO DO */?
+```java
+01 public class Point{
+02
+03
+04
+05
+06
+07
+08
+09
+10
+11 }
+private double x, y;
+public Point(double x, double y) { /* TO DO */ }
+public Point() { /* TO DO */ }
+public double getX() { /* TO DO */ }
+public void setX(double x) { /* TO DO */ }
+public double getY() { /* TO DO */ }
+public void setY(double y) {
+/* TO DO */ }
+public double distance() {/*
+TO DO */ }
+public double distance (Point otroPunto) {/* TO DO */ }
+```
+Options:
+a. *** this.x = x; this.y = y;
+b. x = this.x; y = this.y;
+c. The names of the arguments in the constructor must be different of those in the attributes of the class. Otherwise, the constructor cannot be implemented.
+d. It is not necessary to include code, the arguments already indicate the values that x and y will have.
+Answer: a. *** this.x = x; this.y = y;"
+"Question: We define the classes A and B in the same package as shown below. Choose the valid option so that the program prints the following output on screen: MethodA MethodB
+```java
+public class A {
+public static void methodA(){
+System.out.println(""MethodA"");
+}
+}
+public class B {
+public void methodB(){
+System.out.println(""MethodB"");
+}
+}
+```
+Options:
+a. *** B b = new B(); A. methodA(); b.methodB();
+b. A.methodA(); B.methodB();
+c. A a = new A(); a.methodA(); B.methodB();
+d. A a = new A(); a.methodA(); b.methodB();
+Answer: a. *** B b = new B(); A. methodA(); b.methodB();"
+"Question: What statement is correct?
+Options:
+a. *** 10 30 1 3
+b. 10 0 10
+c. 1 3 1 3
+d. 10 30 10 30
+Answer: (a) *** 10 30 1 3"
+"Question: What is the output of the program?
+Options:
+a. *** The for loop takes advantage of polymorphism. The output of the program is: printParent printSon printDaughter.
+b. The output of the program is: printParent printParent printParent.
+c. The for loop takes advantage of overload. The output of the program is: printParent printSon printDaughter.
+d. The for loop takes advantage of overload. The output of the program is: printParent printParent printParent.
+Answer: The for loop takes advantage of polymorphism. The output of the program is: printParent printSon printDaughter."
+"Question: Given the following program where all classes are in the same package but in different files, indicate which statement is correct.
+```java
+public abstract class A {
+private int i;
+// Declare int j
+A(int i) { this.i = i;}
+public abstract void method(int i);
+public String toString() {
+return ""i = "" + i + "" j = "" + j;
+}
+}
+public class B extends A{
+public B(int integer) {
+super (integer);
+}
+}
+public class Main {
+public static void main(String[] args) {
+B b = new B(10);
+System.out.println(b.toString());
+}
+}
+```
+Options:
+a. *** The program does not compile because B must implement method(int i).
+b. The program prints i = 10 j = 10.
+c. The program does not compile, the keyword abstract must be removed from method signature in class A.
+d. The program prints i = 10 j = 0.
+Answer: The program does not compile because B must implement method(int i)."
+"Question: The following classes are defined in the same package, but in different files. Which statement is correct?
+Options:
+
+Answer: nan"
+"Question: *** Line 15 has a valid upcasting while line 17 has an invalid downcasting.
+Options:
+a. *** Line 15 has a valid upcasting while line 17 has an invalid downcasting.
+b. Line 15 has a valid upcasting while line 17 has another valid downcasting.
+c. Line 15 has an invalid upcasting while line 17 has a valid downcasting.
+d. Line 15 has an invalid upcasting while line 17 has a invalid downcasting.
+Answer: a. *** Line 15 has a valid upcasting while line 17 has an invalid downcasting."
+"Question: A method returns true if the year received as parameter is a leap year, and false otherwise:
+public boolean leapYear(int year). The following list indicates the set of leap years,
+and those which are not leap years. Leap years: 1604, 1608, 1612, 1616... 1684, 1688, 1692,
+1696, 1704 (1700 is not leap year because it is divisible by 100 and not divisible by 400),
+1708, 1712... 1792, 1796, 1804 (1800 is not leap year because it is divisible by 100 and not
+divisible by 400), 1808, 1812... 1892, 1896, 1904 (1900 is not leap year because it is divisible
+by 100 and not divisible by 400), 1908, 1912... 1992, 1996, 2000 (it is a leap year because it is
+divisible by 100 and 400), 2004, 2008, 2012... 2092, 2096, 2104 (2100 is not leap year because
+it is divisible by 100 and not divisible by 400)... 2196, 2204... 2296, 2304... 2396, 2400 (it is
+a leap year because it is divisible by 100 and 400), 2404... What set of tests would you do
+the check the validity of public boolean leapYear (int year)?
+Options:
+a. 1604, 1900, 2000, 2001
+b. 1604, 2400
+c. 1604, 1900, 2000, 2400
+d. 1604, 1605, 2000
+Answer: 1604, 1900, 2000, 2001"
+"Question: The following method is intended to calculate the square of a number based on the following
+formula: for values of n greater than 1, (n-1)*(n-1) = n*n 2*n + 1, although the imple-
+mentation is not correct. Choose the correct option from the following so that the method
+correctly calculates the square of numbers greater than 1.
+1 public int square (int n){
+2
+if (n <= 1){
+3
+return 1;
+4
+} else {
+5
+return (square (n-1) 2*(n-1) + 1);
+6
+}
+7}
+Options:
+a. Line 5: replace by return (square(n-1) + 2*n - 1);
+b. Line 5: replace by return (square(n-1) - 2*square(n-2) + 1);
+c. Line 5: replace by return ((n-1)*(n-1) - 2*n + 1);
+d. Line 5: replace by return (square(n-1) - 2*square(n-1) + 1);
+Answer: Line 5: replace by return (square(n-1) + 2*n - 1);"
+"Question: What will be the values of `s` in `L1` and `L2` after executing the code?
+Options:
+a. L1: s = """" + n; y L2: s = d2b (n/2) + m;
+b. L1: s = """" + n; y L2: s = d2b (m) + n;
+c. L1: s = """" + 0; y L2: s = d2b (m) + n;
+d. L1: s = """" + 1; y L2: s = d2b (n/2) + m;
+Answer: L1: s = """" + n; y L2: s = d2b (n/2) + m;"
+"Question: To concatenate two existing linked lists...
+Options:
+a. we need to traverse one of the lists until its last element and assign as the following element the first of the other list
+b. we need to traverse both lists until their last elements and assign as the following element of one the lists the last node of the other list
+c. we need to create a new list with size the sum of the elements of the two existing lists and copy all the elements of the two existing lists to the newly created list
+d. we need to assign as the first element in one list the first element in the other list
+Answer: we need to traverse one of the lists until its last element and assign as the following element the first of the other list"
+"Question: In a binary search tree that represents the destinations an airline flies to, the following information is inserted sequentially, also acting as a key (in alphabetical order): ""Washington"", ""Toronto"", ""Madrid"", ""Barcelona"", ""Berlin"", ""Amsterdam"", ""Lisbon"", what is the height of the resulting tree?
+Options:
+a. 5
+b. 3
+c. 4
+d. 7
+Answer: 5"
+"Question: The following elements are inserted in a heap (max-heap) sequentially, 4,6,8,2,1,3 and then the element with key 6 is extracted. What is the post-order traversal of the resulting heap?
+Options:
+a. 2,1,4,3,8
+b. 1,3,2,4,8
+c. 2,3,1,4,8
+d. 1,2,3,4,8
+Answer: 2,1,4,3,8"
+"Question: How many swaps are needed to sort the following array 5,3,4,1,2 from lowest to highest with Heap Sort? Note that the node with key 5 will be the root, with nodes with keys 3 and 4 its left and right children, and nodes with keys 1 and 3 the left and right children of 3.
+Options:
+a. 6
+b. 5
+c. 8
+d. 7
+Answer: 6"
+"Question: In a simple (singly) linked list in which each node only knows its next node, and in which we have a reference to the first node (top) and to the last node (tail), which of the following operations is more computationally expensive.
+Options:
+a. Extraction at the end
+b. Extraction at the beginning
+c. Insertion at the beginning
+d. Insertion at the end
+Answer: Extraction at the end"
+"Question: If we insert one by one (and in the given order) the nodes with keys 3,1,2,5,7,4,6 in a binary search tree. Which node would be the left child of the node whose key is 5 after finishing the insertion process?
+Options:
+a. The node whose key is 4
+b. The node whose key is 2
+c. The node whose key is 6
+d. The node whose key is 5 will not have a left child
+Answer: The node whose key is 4"
+"Question: Given an empty stack s and an empty queue q. What would the method front() return applied on the queue after executing the following sequence of statements: s.push(3); s.push(2); s.push(1); q.enqueue(s.pop()); q.enqueue(5); s.top(); q.dequeue().
+Options:
+a. 5
+b. 3
+c. 1
+d. 2
+Answer: 5"
+"Question: What does the following code do?
+```java
+public void method(E info) {
+  Node<E> current = first;
+  while (current!=null) {
+    current = current.getNext();
+  }
+  System.out.println(current.getInfo());
+}
+```
+Options:
+a. *** Throws a NullPointerException.
+b. Prints the information of the last node.
+c. Prints the information of the penultimate (second-to-last) node.
+d. Prints the information of all the nodes in the list.
+Answer: *** Throws a NullPointerException."
+"Question: Given an unsorted array of a thousand elements, which of the following algorithms requires more memory to sort it?
+Options:
+a. *** Merge Sort
+b. Heap Sort
+c. Quick Sort
+d. Insertion Sort
+Answer: *** Merge Sort"
+"Question: Given the following recursive method, which returns in post-order the information of a binary tree, according to its recursive definition and with root the root of the binary tree, we can say that this is a...
+```java
+public String toStringPostOrder() {
+if (isEmpty()) {
+return """";
+} else {
+return root.getLeft().toStringPostOrder() +
+root.getRight().toStringPostOrder() +
+root.getInfo().toString() + "";
+}
+}
+```
+Options:
+a. Cascade non-linear recursion
+b. Nested non-linear recursion
+c. Tail linear recursion
+d. Non-tail linear recursion
+Answer: Cascade non-linear recursion"
+"Question: Given the following recursive method, which is the result of m(3,4)?
+```java
+public static int m(int a, int b) {
+if (b == 0) return 0;
+if (b % 2 == 0) return m(a*a, b/2);
+return m(a*a, b/2) + a;
+}
+```
+Options:
+a. 81
+b. 0
+c. 7
+d. 12
+Answer: 81"
+"Question: If we go through a linked list, how do we know if the current node (current) is the penultimate (second-to-last) node?
+Options:
+a. If current.getNext().getNext() == null returns true
+b. If current == null returns true
+c. If current.getNext() == null returns true
+d. If current.getNext().getNext().getInfo() == null returns true
+Answer: If current.getNext().getNext() == null returns true"
+"Question: We use an array of capacity N and a linked list with N nodes to store N pieces of information of the same type. Which of these two data structures requires more memory space?
+Options:
+a. The linked list, always
+b. The array, always
+c. The array, but only if the information to be stored is of a non-primitive data type
+Answer: The linked list, always"
+"Question: Mark the INCORRECT statement on stacks and queues:
+Options:
+a. *** The elements inserted in a stack are extracted in the same order, while those inserted in a queue are extracted in the reverse order
+b. Stacks use the same end for insertion and extraction
+c. Queues use different ends for insertion and extraction
+d. It is possible to implement both stacks and queues with arrays and linked lists
+Answer: *** The elements inserted in a stack are extracted in the same order, while those inserted in a queue are extracted in the reverse order"
+"Question: The following method applied on a stack implemented with a linked list, with top pointing at the last element (node) inserted in the stack...
+```java
+public void m(E info){
+Node<E> n = new Node<E>(info);
+n.setNext(top);
+top = n;
+}
+```
+Options:
+a. *** inserts a new element in the top of the stack
+b. extracts the last inserted element without returning its information
+c. empties the stack
+d. extracts all the elements of the stack, except for the one whose information is info
+Answer: *** inserts a new element in the top of the stack"
+"Question: In a binary search tree, the following information is inserted sequentially, with the information also acting as a key: ""Water polo"", ""Tennis"", ""Football"", ""Basketball"", ""Handball"", ""Athletics"", ""Hockey"". How many keys need to be compared to find out that ""Baseball"" is not stored in this binary search tree?
+Options:
+a. *** 5
+b. 3
+c. 4
+d. 7
+Answer: *** 5"
+"Question: The following elements are inserted into a heap (max-heap) sequentially 4,5,3,2,1,6, and then the element with key 6 is extracted. What is the in-order traversal of the resulting heap?
+Options:
+a. *** 2,4,1,5,3
+b. 2,3,1,5,4
+c. 2,4,5,1,3
+d. 2,5,1,3,4
+Answer: *** 2,4,1,5,3"
+"Question: How many swaps are needed to sort the following array 2,5,1,3,4 from highest to lowest using Bubble Sort?
+Options:
+a. *** 6
+Answer: *** 6"
+"Question: What sorting algorithm uses a pivot so that all the elements that are lower than the pivot are placed on its left, and all the elements that are higher than the pivot are placed on its right, repeating the process recursively?
+Options:
+a. *** Quick Sort
+b. Merge Sort
+c. Heap Sort
+d. Insertion Sort
+Answer: *** Quick Sort"
+"Question: Given the following code, what is printed on screen?
+```java
+public class P {
+private int[] array = {};
+public static void main(String[] args) {
+Pp
+=
+new P();
+for (int i = 0; i <= p.array.length; i++){
+System.out.println(p.array[i]);
+}
+}
+}
+```
+Options:
+a. *** An ArrayIndexOutOfBoundsException is thrown
+b. 0
+c. null
+d. A NullPointerException is thrown
+Answer: An ArrayIndexOutOfBoundsException is thrown"
+"Question: We are given the following code in two separate classes, what does it print on screen?
+```java
+public class P {
+protected static int p = 0;
+public P(){
+p++;
+}
+}
+
+public class H extends P{
+public static void main(String[] args) {
+Pa = new P();
+Hb = new H();
+System.out.println(p);
+}
+}
+```
+Options:
+a. *** 2
+b. 0
+c. 1
+d. There is a compilation error and the program cannot be executed
+Answer: 2"
+"Question: Attributes defined as final...
+Options:
+a. *** Cannot change their values during the program
+b. Can only be private
+c. Must be initialized in the constructor of the class where they are defined
+d. Cannot be overridden in subclases
+Answer: *** Cannot change their values during the program"
+"Question: Given classes C1, C2 and C3, and interfaces 11 and 12, which of these statements is correct?
+Options:
+a. *** public abstract class C1 extends C2 implements I1
+b. public abstract class C1 implements I1, I2 extends C2
+c. public abstract class C1 extends C2, C3
+d. public abstract interface Il extends 12
+Answer: *** public abstract class C1 extends C2 implements I1"
+"Question: Given class A, which has a constructor which does not receive any parameters, and a constructor which receives one parameter, we want to call the first constructor from the second constructor, which sentence shall we use?
+Options:
+a. *** this()
+b. super()
+c. this.A
+d. A()
+Answer: *** this()"
+"Question: Given abstract class A, its non-abstract child class B, and non-abstract class C which extends from B, all of them implementing a constructor which does not receive any parameters, indicate the statement which causes a runtime error:
+Options:
+a. *** C c = (C) new B();
+b. A a = new B();
+c. A a = new A();
+d. B b = new C();
+Answer: *** C c = (C) new B();"
+"Question: Given the following class and its test class, which is the branch coverage achieved?
+```java
+public class A {
+public boolean a(int a) {
+if (a <= 0) {
+return false;
+} else if (a > 100) {
+return false;
+} else
+return true;
+}
+}
+public class ATest {
+A a;
+@Before
+public void setup() throws Exception {
+a = new A();
+}
+@Test
+public void testA() {
+assertTrue(a.a(10));
+}
+}
+```
+Options:
+a. 50%
+b. 25%
+c. 33%
+d. 100%
+Answer: 50%"
+"Question: The reserved word this is used in Java to refer to:
+Options:
+a. An object.
+b. A method.
+c. An attribute.
+d. A class.
+Answer: An object."
+"Question: Considering the following code...
+```java
+public class C{
+private static int a = 0;
+public static void main(String[] args) {
+System.out.println(a);
+}
+}
+```
+Options:
+a. The code is correct.
+b. The code is incorrect because you cannot call a static attribute from a static method.
+c. The code is incorrect because you have to create an object of the class C before you can use the attribute a.
+d. The code is incorrect because the attribute a is private and cannot be accessed from the main() method.
+Answer: The code is correct."
+"Question: The modifier final applied on the parameter a in the following method...
+```java
+public int m(final int a){...}
+```
+Options:
+a. Indicates that the value taken by the parameter a when calling the method m cannot be modified inside that method.
+b. Indicates that the method m cannot return a, so the return a; statement would give a compilation error.
+c. Indicates that the method m cannot be overidden in the subclasses of the class where it is implemented.
+d. Indicates that the memory space occupied by the parameter a will not be released when finishing the execution of method m.
+Answer: Indicates that the value taken by the parameter a when calling the method m cannot be modified inside that method."
+"Question: Given a class A which implements the interface I. Given B and C two classes which derive from A, and knowing that all classes have constructors which do not receive parameters, which of these statements if correct?
+Options:
+a. I[] array = {new A(), new B(), new C()};
+b. B[] array = {new A(), new B(), new C()};
+c. C[] array = {new A(), new C(), new I()};
+d. A[] array = {new B(), new C(), new I()};
+Answer: I[] array = {new A(), new B(), new C()};"
+"Question: The data structure LinkedStack<Person>, that is, a stack implemented with linked lists which stores information about persons can contain:
+Options:
+a. Objects of class Person and of any non-abstract class which derives from it.
+b. Objects of class Person only.
+c. Objects of class Person and of any interface implemented by the class Person.
+d. Objects of classes Person and Object.
+Answer: Objects of class Person and of any non-abstract class which derives from it."
+"Question: Which of the following statements about constructors is correct?
+Options:
+a. All classes in Java have a default constructor which does not receive parameters, except in the case that other constructors have been explicitly programmed.
+b. Constructors cannot be overloaded.
+c. Constructors need to define a return type, even if it is void.
+d. A constructor can call another constructor of the same class by using this and passing the name of the class in parentheses.
+Answer: All classes in Java have a default constructor which does not receive parameters, except in the case that other constructors have been explicitly programmed."
+"Question: In method overloading there are:
+Options:
+a. methods with the same name, but different number and/or type of parameters
+b. methods with the same name, number and type of parameters
+c. methods with different names, but the same number and type of parameters
+d. methods with different names, number and type of parameters
+Answer: methods with the same name, but different number and/or type of parameters"
+"Question: Given the following code and its test class, what line coverage is achieved?
+```java
+public class C {
+public int m(int a, int b){
+if (a<0)
+return b;
+if (b<0)
+return a;
+return a+b;
+}
+}
+public class CTest {
+C c = new C();
+@Test
+public void test() {
+assertEquals(c.m(1, 1), 1);
+assertEquals(c.m(-1, 1), 1);
+assertEquals(c.m(1,1),2);
+}
+}
+```
+Options:
+a. 100%.
+b. 25%.
+c. 50%.
+Answer: 100%."
+"Question: What is the result of calling the following recursive method with values n = 10, m = 2?
+```java
+public int m(int n, int m) {
+if (n<m)
+return n;
+else
+return 2*m(n-m, n+m);
+}
+```
+Options:
+a. 16
+b. 4
+c. 6
+d. 10
+Answer: a. 16"
+"Question: What is the type of recursion of the following method, which is implemented in a recursively defined binary tree, where each root node has references to left (getLeft()) and right (getRight()) sub-trees, which may or may not be empty (isEmpty())
+```java
+public int m() {
+if(isEmpty())
+return 0;
+else
+return root.getLeft().m() + root.getRight().m() + 1;
+}
+```
+Options:
+a. Cascade non-linear recursion.
+b. Nested non-linear recursion.
+c. Tail linear recursion.
+d. Non-tail linear recursion.
+Answer: a. Cascade non-linear recursion."
+"Question: Given the following code, what does method m() return?
+```java
+public class MyBasicLinkedList<E> {
+protected Node<E> first;
+private int mR(Node<E> list) {
+if (list == null) return 0;
+else return 1 + mR(list.getNext());
+}
+public int m() {
+int a = mR(first);
+return a;
+}
+}
+```
+Options:
+a. The size of the linked list
+Answer: a. The size of the linked list"
+"Question: After running the following method, passing a stack (stack) as parameter:
+```java
+void process (Stack stack) {
+Stack aux = new Stack();
+while (!stack.isEmpty()) {
+aux.push(stack.pop());
+}
+while (!aux.isEmpty()) {
+stack.push(aux.pop());
+}
+}
+```
+Options:
+a. *** The stack will contain the same items as before, in the same order.
+b. The stack will contain the same items as before, in the reverse order.
+c. The changes made to the stack in the method will not be visible because in Java the parameters of the methods are passed by value.
+d. The stack will be empty.
+Answer: *** The stack will contain the same items as before, in the same order."
+"Question: To program a priority queue in Java it is necessary that the class of the objects used as key in the queue implement:
+Options:
+a. *** Interface Comparable
+b. Interface Queue<E>
+c. Interface Deque<E>
+d. Interface Equals
+Answer: *** Interface Comparable"
+"Question: What double-ended queue (deque) methods could be used to implement *push* and *pop* methods of a stack?
+Options:
+a. *** insertFirst for push and removeFirst for pop.
+b. insertLast for push and removeFirst for pop.
+c. insertLast for pop and removeLast for push.
+d. insertFirst for push and removeLast for pop.
+Answer: *** insertFirst for push and removeFirst for pop."
+"Question: La interfaz `BTree<E>` interface contains a method `toString()` which returns the content of the tree in inorder, what is the method `toString()` exactly doing?
+Options:
+a. *** It returns a String with the content of the left child recursively, then the content of the root node, then the content of the right child recursively
+b. It returns a String with the content of the right child recursively, then the content of the root node, then the content of the left child recursively
+Answer: *** It returns a String with the content of the left child recursively, then the content of the root node, then the content of the right child recursively"
+"Question: Given the following binary search tree [50,40,60,30,45,55,70], what is the sequence obtained as result of an in-order traversal?
+Options:
+a. 30, 40, 45, 50, 55, 60, 70
+b. 50, 40, 30, 45, 60, 55, 70
+c. 30, 45, 40, 55, 70, 60, 50
+d. 30, 45, 55, 70, 40, 60, 50
+Answer: 30, 40, 45, 50, 55, 60, 70"
+"Question: Given the following binary tree [1, 2, 4, 3, 5, 6, 9, 8, 7], which statement is correct?
+Options:
+a. It is a min-heap
+b. It is not a heap, even though it meets the condition of minimum key in the root.
+c. It is a max-heap
+d. It is not a heap, even though it meets the condition of maximum key in the root.
+Answer: It is a min-heap"
+"Question: Given the following array [1, 2, 3, 4, 5, 6, 7, 8, 9]. How many iterations does the BinarySearch algorithm need to find number 5?
+Options:
+a. It finds it in the first iteration.
+b. It finds it in the second iteration.
+c. It finds it in the third iteration.
+d. It finds it in the fourth iteration.
+Answer: It finds it in the first iteration."
+"Question: Given the SelectionSort sorting algorithm which looks for the minimum of the unsorted part and swaps it with the first unsorted element, and the following array, which is being sorted from lowest to highest by the algorithm, currently after its third iteration [3, 8, 15, 25, 20, 45, 35], how will the array look afer the fourth iteration?:
+Options:
+a. 3, 8, 15, 20, 25, 45, 35
+b. 3, 8, 15, 25, 20, 45, 35
+c. 3, 8, 15, 20, 25, 35, 45
+d. 3, 8, 20, 15, 25, 45, 35
+Answer: 3, 8, 15, 20, 25, 45, 35"
+"Question: Given an unsorted array of a thousand elements, which of the following algorithms is, on average, the most efficient one to sort the array?
+Options:
+a. Merge Sort
+b. Bubble Sort
+c. Selection Sort
+d. Insertion Sort
+Answer: Merge Sort"
+"Question: Given the following code and variables array = {1, 2, 3} and String b=""hello"", what is the value of the variables array and b after calling method m(array, b)?
+```java
+public static void m(int[] array, String b){
+for(int i=0; i<array.length; i++){
+array [i] = array.length;
+b = ""bye"";
+}
+}
+```
+Options:
+a. array = {3,3,3} b = ""hello""
+b. array = {1,2,3} b = ""hello""
+c. array = {3,3,3} b = ""bye""
+d. array = {1,2,3} b = ""bye""
+Answer: array = {3,3,3} b = ""hello"""
+"Question: Given the following code, what will be the output after executing the main method?
+```java
+public class Test{
+private static int a = 1;
+private static int b = 2;
+public static void main(String[] args){
+int a1 = a + b++;
+System.out.println(a1 + "" "" + a2);
+int a2 = ++a + 5;
+}
+}
+```
+Options:
+a. 3 7
+b. 4 7
+c. 3 6
+d. 4 6
+Answer: 3 7"
+"Question: Given the following code, indicate which method coverage is reached in the class A after executing the main method.
+```java
+public class A{
+String a;
+public A(String a) {setA(a);}
+public A() { this(null); }
+public setA (String a) {this.a=a;}
+}
+public class B extends A{}
+public class Test{
+public static void main(String[] args) {
+B test = new B();
+}
+}
+```
+Options:
+a. 100%
+Answer: 100%"
+"Question: Given the following code, indicate by which sentence would you need to replace XXXX to modify the value of the variable a so that it takes the value 5.
+```java
+public class A{
+private static int a = 3;
+public void setA (int a) {this.a =a;}
+}
+public class B extends A{
+public void modifyA(){
+XXXX
+}
+}
+```
+Options:
+a. `*** setA(5);`
+b. `super.a = 5;`
+c. `this.a = 5;`
+d. `a = 5;`
+Answer: setA(5);`"
+"Question: Given the following code, indicate what modifiers need to replace xxxx, and yyyy to make the declarations of classes A and B correct.
+```java
+public interface I1{void m1();}
+public interface 12{void m2();}
+public xxxx class A implements I1{ }
+public yyyy class B extends A implements 12{
+public void m2(){...}
+}
+```
+Options:
+a. *** xxx = abstract, yyy = abstract.
+b. xxx = abstract, yyy no modifier
+c. xxx no modifier, yyy = abstract
+d. xxx no modifier, yyy no modifier
+Answer: xxx = abstract, yyy = abstract."
+"Question: Given interfaces I1, and I2 that inherits from the former and abstract class A and its non-abstract subclass B, indicate which of the following statements is INCORRECT.
+Options:
+a. *** A a = new A();
+b. A a = new B();
+c. I1 i1 = new B();
+d. I2 i2 = new B();
+Answer: *** A a = new A();"
+"Question: Indicate which of the following statements applies to white box testing.
+Options:
+a. *** Branch coverage is a type of white box test.
+b. Equivalence classes define disjointed subsets of possible input data for white box tests.
+c. White box tests can also be called input/output tests.
+d. White box tests do not require knowledge of the internal structure of the code.
+Answer: *** Branch coverage is a type of white box test."
+"Question: Indicate what the following recursive method returns for a = 2.
+```java
+public static int m(int a) {
+    int result = 0;
+    if (a<=0) {
+        result = 3;
+    }else{
+        result = m(a-1) + m(a-2) - 2;
+    }
+    return result;
+}
+```
+Options:
+a. *** 5
+b. 3
+c. -2
+d. 4
+Answer: *** 5"
+"Question: Indicate which of the following statements about recursion is correct.
+Options:
+a. *** Tail recursion can be transformed in a loop.
+Answer: *** Tail recursion can be transformed in a loop."
+"Question: If we have a non-empty binary tree represented as an array, knowing that, given any node in position i of the array, its left child is in position 2*i and its right child in position 2*i+1, in which position of the array can we find the root of the tree?
+Options:
+a. 1
+b. 0
+c. 2*i - 1
+d. i
+Answer: 1"
+"Question: The following binary tree, represented by the array {15,13,14,9,10,12,11,1,2,3,4,5,6,7,8} is:
+Options:
+a. Binary tree and max-heap.
+b. Binary search tree.
+c. Binary tree and min-heap.
+d. Binary tree without being a heap or a search tree
+Answer: Binary tree and max-heap."
+"Question: Given the class LinkedQueue<E> which implements a queue without exception management, what is printed on screen after running this program?
+```java
+public class Main {
+public static void main(String args[]){
+LinkedQueue<Integer> lq = new LinkedQueue<Integer>();
+lq.enqueue (new Integer(10));
+lq.enqueue(new Integer(15));
+lq.enqueue(new Integer(20));
+Integer i = lq.dequeue();
+i = lq.front();
+i = lq.dequeue();
+i = lq.dequeue();
+i = lq.front();
+System.out.println(i);
+}
+}
+```
+Options:
+a. null
+b. 20
+c. 10
+d. 15
+Answer: nan"
+"Question: What data structure should be used to implement a non-priority queue?
+Options:
+a. Deque
+b. Heap
+Answer: Deque"
+"Question: In an implementation of a doubly linked queue using dummy nodes, if we store N data in the N nodes with information of the queue, how many nodes does the queue have in total (including those that store information and those that do not)?
+Options:
+a. N+2
+b. N
+c. N+1
+d. N+3
+Answer: N+2"
+"Question: A multinational has around 100,000 employees spread across the globe. The multinational has a proprietary software that stores the information of each of the employees, including first name, last name, date of birth, email account and username and password to access the computer. Knowing that the operation of login (via username and password) is the most frequent one and must be done as quickly as possible, what data structure should be implemented by the multinational proprietary software to store the information of its employees?
+Options:
+a. Binary search tree.
+b. Linked list.
+c. Heap as a priority queue
+d. Stack
+Answer: Binary search tree."
+"Question: Given the following interface, what does top() return if isEmpty() returns true?
+```java
+public interface Stack<E> {
+    boolean isEmpty();
+    int size();
+    E top();
+    void push(E info);
+}
+```
+Options:
+a. null
+b. new E()
+c. throw new EmptyStackException()
+d. throw new StackOverFlowException()
+Answer: nan"
+"Question: We want to sort an array where N = 1,000,000 elements from lowest to highest. The array contains integers and is initially sorted from highest to lowest. What sorting algorithm should you choose looking for maximum efficiency?
+Options:
+a. HeapSort.
+b. SelectionSort.
+c. InsertionSort.
+Answer: HeapSort."
+"Question: Given the following sorted array of integers {6,12,15,16,20,25,30,38,40,50,60,61,67,80,85}, in how many iterations is number 61 located using binary search (iterative implementation)?
+Options:
+a. 2
+b. 1
+c. 3
+d. 4
+Answer: 2"
+"Question: Given the following code which prints on screen the contents of a linked list. If this method print() is called over a list of 10 items, what number of items does the list have after calling print()?
+```java
+public void print(){
+if (first != null) {
+Node<E> current = first;
+while (first!=null){
+System.out.println(first.getInfo());
+first = first.getnext();
+}
+}
+}
+```
+Options:
+a. 0
+b. 10
+c. -1
+d. 1
+Answer: 0"
+"Question: Given the following code, what is printed on screen?
+```java
+public class P {
+private int[] array;
+public static void main(String[] args) {
+Pp
+=
+new P();
+for (int i = 0; i <= p.array.1
+array.length; i++){
+System.out.println(p.array[i]);
+}
+}
+}
+```
+Options:
+a. *** A NullPointerException is thrown
+b. 0
+c. null
+d. An ArrayIndexOutOfBoundsException is thrown
+Answer: A NullPointerException is thrown"
+"Question: We are given the following code in two separate classes, what does it print on screen?
+```java
+public class P {
+protected static int p;
+public P(){
+p++;
+}
+}
+
+public class H extends P{
+protected static int h;
+public H() {
+h++;
+}
+public static void main(String[] args) {
+Pa = new P();
+Hb = new H();
+System.out.println(p + h);
+}
+}
+```
+Options:
+a. *** 3
+b. 2
+c. 0
+d. There is a compilation error and the program cannot be executed
+Answer: 3"
+"Question: Methods defined as final...
+Options:
+a. *** Cannot be overridden in subclases
+b. Can only be private
+c. Make use of constants
+d. Cannot receive arguments
+Answer: Cannot be overridden in subclases"
+"Question: Given classes C1 and C2 and interfaces 11 and 12, which of these statements is correct?
+Options:
+a. public abstract class C1 implements I1
+b. public interface Il extends C1
+c. public class C1 extends abstract class C2
+d. public abstract interface Il extends I2
+Answer: public abstract class C1 implements I1"
+"Question: Given non-abstract class A, its abstract child class B, and non-abstract class C which extends from B, all of them implementing a constructor which does not receive any parameters, indicate the statement which causes a runtime error:
+Options:
+a. C c = (C) new A();
+b. C c = (B) new B();
+c. B b = new A();
+d. B b = new C();
+Answer: C c = (C) new A();"
+"Question: Considering the following code...
+```java
+public class C{
+public static void main(String[] args) { method();
+}
+
+private static void method() {
+}
+}
+```
+Which of the following statements is correct?
+Options:
+a. The code is correct.
+b. The code gives a compilation error because a static method cannot be called from another static method.
+c. The code gives a compilation error because we need to create an object of class C, before calling method() in main().
+d. The code gives a compilation error because method() is not visible from main() since method() is a private method.
+Answer: The code is correct."
+"Question: Which of the following statements on method overloading and method overriding is correct?
+Options:
+a. Constructors can be overloaded but not overriden
+b. For method overriding to happen at least one class is needed, while for method overloading to happen at least two classes are needed.
+c. Abstract classes cannot overload methods.
+d. Abstract classes cannot override methods.
+Answer: Constructors can be overloaded but not overriden"
+"Question: Let `protected int i` be an attribute of an A class. Let B be a class extending A. Choose the correct answer:
+Options:
+a. It is possible to directly modify the value of the i from B.
+Answer: It is possible to directly modify the value of the i from B."
+"Question: Given the following class and its test class, which is the branch coverage achieved?
+```java
+public class A {
+public boolean a(int a) {
+if (a <= 0) {
+return false;
+} else if (a > 100) {
+return false;
+} else
+return true;
+}
+}
+public class ATest {
+A a;
+@BeforeEach
+public void setup() throws Exception {
+a
+=
+new A();
+}
+@Test
+public void testA() {
+assertTrue(a.a(10));
+assertFalse(a.a(0));
+}
+}
+```
+Options:
+a. 75%
+b. 25%
+c. 50%
+d. 100%
+Answer: 75%"
+"Question: What does the call method(2,1) return on the following recursive method?
+```java
+public static int method(int i, int j) {
+    if (j == 0) {
+        return 1;
+    } else if (j == i) {
+        return 1;
+    } else {
+        return method (i - 1, j - 1) + method(i - 1, j);
+    }
+}
+```
+Options:
+a. 2
+b. 1
+c. 0
+d. 3
+Answer: 2"
+"Question: The following recursive method is an example of...
+```java
+public static int method(int i, int j) {
+    if (j == 0) {
+        return 1;
+    } else if (j == i) {
+        return 1;
+    } else {
+        return method (i - 1, j - 1) + method(i - 1, j);
+    }
+}
+```
+Options:
+a. Non-linear cascade recursion
+b. Linear non-tail recursion
+c. Linear tail recursion
+d. Non-linear nested recursion
+Answer: Non-linear cascade recursion"
+"Question: Given a linked list which contains objects of class String, assuming that the linked list is not empty and contains more than one element, what does the method m() return?
+```java
+public Node<E> m() {
+    Node<E> current = this.first;
+    while(current != null) {
+        current = current.getNext();
+    }
+    return current;
+}
+```
+Options:
+a. null
+b. A reference to the last node in the linked list
+c. A reference to the first node in the linked list
+d. A NullPointerException
+Answer: nan"
+"Question: Which of the following methods in a deque (double-ended queue) could be used to implement the methods push and pop in a stack
+Options:
+a. insertFirst for push and removeFirst for pop
+b. insertFirst for push and removeLast for pop
+c. insertLast for push and removeFirst for pop
+d. removeFirst for push and removeLast for pop
+Answer: insertFirst for push and removeFirst for pop"
+"Question: Considering a LinkedQueue<E>, which is intended to be used to store Integer values and the implementation of the method dequeue() as shown below, with top a reference to the next node to be extracted in the queue, which of the following statements is correct?
+```java
+public E dequeue() {
+    E info;
+    if (!isEmpty()) {
+        info = top.getInfo();
+        top = top.getNext();
+        size--;
+    } else {
+        info = null;
+    }
+    return info;
+}
+```
+Options:
+a. When the queue contains only one element the reference to the last element in the queue is not updated.
+b. The method dequeues on the incorrect side of the queue.
+c. If the queue is empty the method throws a NullPointerException.
+d. The information returned by the method dequeue() cannot be of type E as the queue is intended to be used to store Integer values.
+Answer: When the queue contains only one element the reference to the last element in the queue is not updated."
+"Question: If we insert the following sequence of elements {6,8,3,1,4,7,9} one by one into a binary search tree (and of course in an ordered way), which of the following sequences represents the post-order traversal of the tree.
+Options:
+a. 1,4,3,7,9,8,6.
+b. 1,3,4,6,7,8,9.
+c. 6,3,1,4,8,7,9.
+d. 1,4,3,9,7,6,8.
+Answer: 1,4,3,7,9,8,6."
+"Question: If we insert the following sequence of elements {5,7,6,8,3,1,2,4} one by one into a binary search tree (and of course in an ordered way), which of the following statements on the three whose root is 3 is correct?
+Options:
+a. Its size is 4.
+b. Its height is 3.
+c. It is a complete tree.
+d. The right child of 1 is 4.
+Answer: Its size is 4."
+"Question: Given the min-heap represented by the following array {1,4,6,5,7}, what would the method extract() return if called just after calling the following two methods in the given order: insert (3), extract()
+Options:
+a. 3
+b. 4
+c. 1
+d. 5
+Answer: 3"
+"Question: How many swaps are needed with Bubble Sort to sort the following array of integers from lowest to highest (ascending order) {3, 2, 1, 5, 4}?
+Options:
+a. 4
+b. 3
+c. 2
+d. 5
+Answer: 4"
+"Question: Which of the following sorting algorithms needs more memory space to sort an array of one million objects of class String?
+Options:
+a. Merge Sort
+b. Quick Sort
+c. Heap Sort
+d. Objects of class String cannot be sorted
+Answer: Merge Sort"
+"Question: Given the following recursive algorithm with input values a non-empty array of integers a,
+and an integer value x to be searched in the array, select the correct option...
+```java
+public static int binarySearchRecursive (int[] a, int x){
+    return binarySearchRecursive(a, 0, a.length-1, x);
+}
+public static int binarySearchRecursive (int[] a, int first, int last, int x){
+    int half;
+    if (first <= last) {
+        half = (first + last) / 2;
+        if (a[half] == x){
+            return half;
+        }
+        else if (a[half]<x) {
+            return binarySearchRecursive(a, half+1, last, x);
+        }
+        else if (a[half]>x) {
+            return binarySearchRecursive(a, first, half-1, x);
+        }
+    }
+}
+```
+Options:
+a. It is a tail recursion.
+b. It is a non-tail recursion.
+c. The base case cannot be reached.
+d. It is a nested recursion.
+Answer:  It is a tail recursion."
+"Question: Select the correct option.
+Options:
+a. White box tests does not ensure that the program properly works.
+b. JUnit shows the percentage of code coverage for black box tests.
+c. With 100% code coverage, we can ensure the correct performance of the program.
+d. White box tests are also called input/output tests.
+Answer: White box tests does not ensure that the program properly works."
+"Question: The resolution of the method call in case of overloading depends on...
+Options:
+a. The parameters of the method.
+b. The return type of the method.
+c. The visibility of the method.
+d. Whether the method is static or not.
+Answer: The parameters of the method."
+"Question: Given the following code, is the program correct?
+```java
+public class Main {
+public static void main(String args[]) {
+int[] elements = {1,2,3,4,5,6};
+int i = 0;
+int len = elements.length;
+while (i<=len){
+System.out.println(elements[i]);
+i++;
+}
+}
+}
+```
+Options:
+a. *** It is not correct; it throws an ArrayIndexOutOfBoundsException.
+b. It is correct; it prints on screen the elements of the array and ends correctly.
+c. It is not correct; it does not compile indicating that value resulting from calling elements.length
+cannot be assigned to a variable of type int.
+d. It is not correct; it does not compile indicating that the array has not been initialized
+properly.
+Answer: It is not correct; it throws an ArrayIndexOutOfBoundsException."
+"Question: Given the following program, select the correct option.
+```java
+public class Main{
+protected int i;
+public static void main(String args[]) {
+Main m = new Main();
+m.i = 0;
+System.out.println(m.i);
+}
+}
+```
+Options:
+a. *** The program compiles and runs correctly printing 0 on screen.
+b. The program does not compile because the attribute i is protected and cannot be accessed by the object m.
+c. The program does not compile because the object m cannot be created in the main
+method of class Main.
+d. The program compiles and runs correctly printing null on screen.
+Answer: The program compiles and runs correctly printing 0 on screen."
+"Question: What is wrong with this Java code?\
+```java
+public class ClassA extends ClassB, ClassC implements InterfaceD, InterfaceE{
+public static void main(String args[]){ }
+}
+}
+```
+Options:
+a. *** The program does not compile because Java does not support inheritance of more than one class at the same time.
+b. The program does not compile because Java does not support the implementation of more than one interface at the same time.
+c. The program does not compile because we should have explicitly implemented a constructor in ClassA.
+d. The program does not compile because in ClassA the main method cannot be implemented.
+Answer: a. *** The program does not compile because Java does not support inheritance of more than one class at the same time."
+"Question: Given the following code, select the correct option.
+```java
+class ClassA{
+public ClassA() { }
+}
+class ClassB extends ClassA {
+private int a;
+public ClassB (int a) { super(); this.a = a;}
+}
+class ClassC extends ClassB{
+private int b;
+public ClassC(int a, int b) { super(); this.b = b;}
+}
+public class Main {
+public static void main(String args[]) {
+ClassC c = new ClassC(10,10);
+}
+}
+```
+Options:
+a. *** The calls to the constructors in the inheritance hierarchy are not correct for the object c.
+b. The object c is correctly created.
+c. An object cannot be created in a static method.
+d. super() must be replaced by this() in the code of ClassC.
+Answer: b. The object c is correctly created."
+"Question: Given the following code, select the correct option.
+```java
+interface InterfaceA{
+    void m();
+}
+class ClassA implements InterfaceA{
+    private int a = 1;
+    public void m() { System.out.print(a);}
+}
+class ClassB extends ClassA implements InterfaceA{
+    private int b = 2;
+    private int c = 3;
+    public void m() { System.out.print(b);}
+    public void c() { System.out.print(c);}
+}
+public class Main {
+    public static void main(String args[]) {
+        InterfaceA ia = new ClassA();
+        ia.m();
+        ia = new ClassB();
+        ia.c();
+    }
+}
+```
+Options:
+a. *** The method c() cannot be accessed from the reference ia.
+b. The program displays on the screen: 1 3.
+c. The program displays on the screen: 1 2 3.
+d. The program displays on the screen: 1 2.
+Answer: The method c() cannot be accessed from the reference ia."
+"Question: Select the correct option about linear data structures.
+Options:
+a. *** Stacks and queues can be implemented both with arrays and linked lists.
+b. Arrays can increase their capacity dynamically depending on the number of elements to be stored.
+c. Linked lists require contiguous memory space to store the data.
+d. It is necessary to indicate the size of a linked list before its creation.
+Answer: Stacks and queues can be implemented both with arrays and linked lists."
+"Question: What is the following method doing on a double-linked list which contains two dummy nodes top and tail?
+```java
+public E m(){
+    E result = null;
+    if (tail.getPrev()!=top) {
+        result = tail.getPrev().getInfo();
+}
+```
+Options:
+a. *** It removes an element on the side of tail (removeLast)
+b. It removes an element on the side of top (removeFirst)
+c. It inserts an element on the side of tail (insertLast)
+d. It inserts an element on the side of top (insertFirst)
+Answer:  It removes an element on the side of tail (removeLast)"
+"Question: *** It is equivalent to the method pop() in an ArrayStack
+Options:
+a. *** It is equivalent to the method pop() in an ArrayStack
+b. It is equivalent to the method dequeue() in a LinkedQueue
+c. It is equivalent to the method push() in an ArrayStack
+d. It is equivalent to the method removeFirst() in a LinkedList
+Answer: *** It is equivalent to the method pop() in an ArrayStack"
+"Question: *** It prints the numbers 3, 2, 1.
+Options:
+a. *** It prints the numbers 3, 2, 1.
+b. It prints the numbers 1, 2, 3.
+Answer: *** It prints the numbers 3, 2, 1."
+"Question: Select the correct option.
+*** In a min-heap the key of the children is always higher than that of the parent.
+In a binary tree, and given a node, the keys of the nodes of its left subtree are always higher than those of its right subtree.
+A binary tree is always a binary search tree.
+A tree cannot be represented by an array because a tree is a hierarchical structure.
+Options:
+a. *** In a min-heap the key of the children is always higher than that of the parent.
+b. In a binary tree, and given a node, the keys of the nodes of its left subtree are always higher than those of its right subtree.
+c. A binary tree is always a binary search tree.
+d. A tree cannot be represented by an array because a tree is a hierarchical structure.
+Answer:  In a min-heap the key of the children is always higher than that of the parent."
+"Question: What does the following method calculate in a binary tree with getLeft() returning the left subtree and getRight() returning the right subtree?
+```java
+public int m() {
+int result = 0;
+try {
+result = 1 + getLeft().m() + getRight().m();
+} catch (BTreeException e) {
+result = 0;
+}
+return result;
+}
+```
+Options:
+a. *** The size of the tree.
+b. The depth of the tree.
+c. The height of the tree.
+d. It checks if the tree is empty and returns zero if it is empty.
+Answer: The size of the tree."
+"Question: Given the unsorted array {3, 1, 7, 2, 5, 9}, what would be the content of the array after three iterations of the external loop of the Selection Sort method, if we use the implementation that sorts from lowest to highest selecting the minimum value of the unsorted part and swapping it for the first unsorted element?
+Options:
+a. *** {1, 2, 3, 7, 5, 9}
+b. {1, 3, 2, 5, 7, 9}
+c. {1, 3, 7, 2, 5, 9}
+d. {1, 3, 2, 5, 9, 7}
+Answer: {1, 2, 3, 7, 5, 9}"
+"Question: Given the binary search tree resulting from inserting one by one the following sequence of nodes {3, 1, 5, 2, 7, 9}, what is the result of traversing the tree in post-order after extracting the node whose value is 7?
+Options:
+a. *** 2, 1, 9, 5, 3
+b. 1, 2, 3, 5, 9
+c. 3, 1, 5, 2, 9
+Answer: 2, 1, 9, 5, 3"
+"Question: Given the min-heap resulting from inserting one by one the sequence of nodes {5, 1, 3, 2, 7}, which of the following arrays corresponds to the resulting heap after calling the method extract()?
+Options:
+a. {2, 5, 3, 7}
+b. {3, 2, 5, 7}
+c. {2, 3, 5, 7}
+d. {2, 7, 3, 5}
+Answer: {2, 5, 3, 7}"
+"Question: Which sorting algorithms uses recursive partitions, chooses an element as pivot, and swaps elements so that those on the left side are lower than the pivot, and those on the right side are higher than the pivot (assuming that the sorting is done in ascending order)?
+Options:
+a. Quick Sort.
+b. Bubble Sort.
+c. Insertion Sort.
+d. Selection Sort.
+Answer: Quick Sort."
+"Question: Dada la siguiente declaración de atributo en una clase: int elementos; ¿Cuál de las siguientes afirmaciones es la correcta?
+Options:
+a. *** Si no se asigna valor al atributo java lo inicializará con valor 0.
+b. elementos = 10.0f asignará el valor 10 entero a la variable elementos.
+c. elementos.length contiene el número de elementos de la variable.
+d. elementos.valueOf(""13"") devuelve el int con valor 13.
+Answer: Si no se asigna valor al atributo java lo inicializará con valor 0."
+"Question: Dada la siguiente clase. Para llamar del constructor Coche(String nombre, String marca) al constructor Coche (String nombre) que habría que hacer:
+```java
+Public class Coche{
+private String nombre; private String marca;
+Coche (String nombre) { this.nombre = nombre; }
+Coche (String nombre, String marca) { this.marca = marca; }
+}
+```
+Options:
+a. *** Debe utilizarse this (nombre); como primera sentencia del constructor.
+b. Debe utilizarse super(nombre) como primera sentencia del constructor.
+c. Debe utilizarse this (nombre) implementado en cualquier lugar del constructor.
+d. Debe utilizarse super(nombre) implementado en cualquier lugar del constructor.
+Answer: Debe utilizarse this (nombre); como primera sentencia del constructor."
+"Question: Dado el siguiente código. ¿Cuál de las siguientes afirmaciones es la correcta?
+```java
+public class A{
+public static void main(String [] args){ B b = new B(); }
+}
+public class B extends A {}
+```
+Options:
+a. *** El código compila y ejecuta creando un objeto de la clase B en la referencia b aunque no hay constructores implementados.
+b. El código no compila.
+c. Es necesario implementar un constructor en la clase A y B para asegurar la inicialización del objeto.
+d. Desde la clase A no podemos crear instancias de la clase B.
+Answer: El código compila y ejecuta creando un objeto de la clase B en la referencia b aunque no hay constructores implementados."
+"Question: El programa no compila generando el compilador un error tipo: error: constructor A in class A cannot be applied to given types.
+Options:
+a. *** El programa no compila generando el compilador un error tipo: error: constructor A in class A cannot be applied to given types.
+b. La clase B debería ser privada para poder crear instancias de la clase B.
+c. Se puede instanciar un objeto de la clase B puesto que la clase A tiene un constructor implementado.
+d. Es necesario implementar un constructor sin parámetros en la clase B.
+Answer:  El programa no compila generando el compilador un error tipo: error: constructor A in class A cannot be applied to given types."
+"Question: El polimorfismo las llamadas a los métodos de objetos se resuelven en:
+Options:
+a. *** Tiempo de ejecución.
+b. Tiempo de programación.
+c. Tiempo de compilación.
+d. Ninguna de las anteriores es correcta.
+Answer: Tiempo de ejecución."
+"Question: Dado el siguiente código, ¿cuál de las siguientes afirmaciones es la correcta?
+```java
+public class Tweet{
+public String mensaje;
+public Tweet() {mensaje="""";};
+public void imprimir() { System.out.println(mensaje);}
+public static void main(String[] args){
+Tweet t = new Tweet();
+t.imprimir();
+}
+}
+```
+Options:
+a. *** Esta clase ofrece un pobre nivel de reutilización y un difícil mantenimiento posterior.
+b. No inicializa el estado del objeto.
+c. Es necesario declarar la clase como abstracta porque es una generalización.
+d. La clase está perfectamente implementada en base a los fundamentos de la POO.
+Answer: Esta clase ofrece un pobre nivel de reutilización y un difícil mantenimiento posterior."
+"Question: Si todos los objetos en Java tienen la capacidad de clonarse. ¿Cómo implementaría este comportamiento en aquellos objetos que lo necesiten?
+Options:
+a. *** Implementando una interfaz Clonable que defina un método público clone() donde todas las clases que requieran dicho comportamiento implementen la interfaz.
+b. Con una clase abstracta Clone con un método público clone() abstracto, donde todas las clases que requieran dicho comportamiento hereden de Clone e implementan dicho método.
+c. Implementando un método público clone() en aquellas clases que tengan la capacidad de clonarse.
+d. Implementando un clase Clone y un método público estático clone() con el que se realice dicha operación con independencia del objeto.
+Answer: Implementando una interfaz Clonable que defina un método público clone() donde todas las clases que requieran dicho comportamiento implementen la interfaz."
+"Question: Respecto a las clases de equivalencia ¿cuál de las siguientes afirmaciones es la correcta?
+Options:
+a. *** Se prueba también en los valores frontera de los subconjuntos de valores.
+b. Las clases de equivalencia permiten generar clases abstractas.
+c. Son instanciadas por JUnit de manera automática.
+d. Se prueba con uno de los valores frontera de los subconjuntos de valores.
+Answer: Se prueba también en los valores frontera de los subconjuntos de valores."
+"Question: Respecto a las herramientas de testing ¿cuál de las siguientes afirmaciones es la correcta?
+Options:
+a. *** EclEmma nos ayuda en la etapa de pruebas de caja blanca.
+b. EclEmma nos ayuda en la etapa de pruebas de caja negra.
+c. EclEmma nos ayuda en la etapa de pruebas de rendimiento.
+d. EclEmma nos ayuda en la etapa de pruebas de seguridad.
+Answer: EclEmma nos ayuda en la etapa de pruebas de caja blanca."
+"Question: ¿Cuál de los siguientes comandos es el correcto para compilar un fichero fuente de java?
+Options:
+a. *** javac Main.java
+b. java Main
+c. java Main.java
+d. javac Main.class
+Answer: javac Main.java"
+"Question: Dado el siguiente código. ¿Cuál de las siguientes afirmaciones es correcta?:
+
+```java
+public class Tweet{ private String mensaje; }
+```
+Options:
+a. *** Se podrá crear un objeto de la clase inicializandose el atributo mensaje a null.
+b. Es necesario implementar un constructor para que se pueda crear un objeto de la clase.
+c. Nunca se podrá crear un objeto de esta clase porque no hay un constructor implementado.
+d. Se podrá crear un objeto de la clase inicializandose el atributo a (cadena vacía).
+Answer: Se podrá crear un objeto de la clase inicializandose el atributo mensaje a null."
+"Question: Dado el siguiente código. ¿Cuál de las siguientes afirmaciones es la correcta?
+
+```java
+public class A{
+public static void main(String [] args){
+A b = new B();
+}
+}
+public class B extends A { }
+```
+Options:
+a. *** El código compila y ejecuta creando un objeto de la clase B en la referencia b aunque no hay constructores implementados.
+b. El código no compila.
+c. Es necesario implementar un constructor en la clase A y B para asegurar la inicialización correcta del objeto.
+d. Desde la clase A no podemos crear instancias de la clase B y menos almacenarlas en una referencia de clase A.
+Answer: El código compila y ejecuta creando un objeto de la clase B en la referencia b aunque no hay constructores implementados."
+"Question: Dado el siguiente código ¿cuál de las siguientes afirmaciones es la correcta?:
+```java
+public class A{
+int a;
+public A(int a){a=a;}
+}
+class B extends A {
+int x;
+public B(int a, int x) { super(a);x=x;}
+public static void main(String [] args){
+B b = new B(5,10);
+}
+}
+```
+Options:
+a. *** El estado del objeto b no se inicializa correctamente según el parámetro por valor 10 del constructor.
+b. Es necesaria una llamada a `this()` para inicializar correctamente el estado del objeto.
+c. La llamada a `super(a)` no es correcta puesto que deja mal inicializado el estado del objeto.
+d. Es necesario implementar los constructores `public A()...` y `public B()...` para asegurar la correcta inicialización del estado del objeto.
+Answer: El estado del objeto b no se inicializa correctamente según el parámetro por valor 10 del constructor."
+"Question: Si al compilar javac nos devuelve este error A.java:10: error: B is not abstract and does not override abstract method ejecutar() in A ¿Cuál de las siguientes afirmaciones es correcta?
+Options:
+a. La clase B hereda de la clase A que es abstracta y define un método abstracto ejecutar() que debe ser redefinido en la clase B.
+b. La clase B hereda de la clase A y define un método abstracto ejecutar() que debe ser redefinido en la clase B.
+c. La clase A hereda de la clase B que es abstracta y define un método abstracto ejecutar() que debe ser redefinido en la clase B.
+d. La clase B debe implementar un método ejecutar() en la clase B.
+Answer: La clase B hereda de la clase A que es abstracta y define un método abstracto ejecutar() que debe ser redefinido en la clase B."
+"Question: Dado el siguiente código. ¿Cuál de las siguientes afirmaciones es la correcta?:
+```java
+public class A implements Startable{
+public static void main(String [] args){
+Startable s = new A();
+}
+}
+interface Startable { public void start(); }
+```
+Options:
+a. Al ejecutar javac el código no compila porque en la clase A hay que implementar el método start().
+b. Al ejecutar javac el código compila pero da error al ejecutar porque un objeto de la clase A no puede ser referenciado por la referencia s de tipo Startable.
+c. Al ejecutar javac el código no compila porque no tiene sentido hacer la asignación de un objeto de la clase A en una referencia a interfaz Startable.
+d. Al ejecutar javac el código compila y no da ningún error en tiempo de ejecución.
+Answer: Al ejecutar javac el código no compila porque en la clase A hay que implementar el método start()."
+"Question: Respecto a las clases de equivalencia ¿cuál de las siguientes afirmaciones es la correcta?
+Options:
+a. Se prueba también en los valores frontera de los subconjuntos de valores.
+b. Las clases de equivalencia permiten tener objetos equivalentes.
+c. Indican subconjuntos adjuntos de posibles datos de entrada.
+d. Se prueba con uno de los valores frontera de los subconjuntos de valores.
+Answer: Se prueba también en los valores frontera de los subconjuntos de valores."
+"Question: Respecto a las pruebas de caja negra ¿cuál de las siguientes afirmaciones es la correcta?
+Options:
+a. Permiten asegurar cobertura de requisitos.
+b. Permiten asegurar cobertura de métodos.
+c. Permiten asegurar cobertura de líneas/instrucciones.
+d. Permiten asegurar cobertura de ramas/condicionales/bucles.
+Answer: Permiten asegurar cobertura de requisitos."
+"Question: Dado el siguiente código. Al ejecutar el programa, ¿qué se muestra por pantalla? Nota: % en java es la operación módulo (resto de dividir un número entre otro).
+```java
+public class Recursividad{
+public String m1(int i){
+if (i<0) return """";
+else if ((i%2) == 0) return """" + m1(i-1);
+else return i + """" + m1(i-1);
+}
+public static void main(String args[]){
+Recursividad r = new Recursividad();
+String cadena = r.m1(10);
+System.out.println(cadena);
+} // main
+} // Recursividad
+```
+Options:
+a. ***9 7 5 3 1
+b. 10 8 6 4 20
+c. 10 9 8 7 6 5 4 3 2 1 0
+d. 9 8 7 6 5 4 3 2 1
+Answer: 9 7 5 3 1"
+"Question: Dada una lista enlazada simple de elementos de la clase Integer, no vacía y con más de un elemento. Si se llama al método m1() ¿a qué nodo apunta current después de salir del bucle while?
+```java
+public void m1() {
+Node<E> current = this.first;
+while(current.getNext() != null) {
+current = current.getNext();
+}
+}
+```
+Options:
+a. *** Al último nodo de la lista.
+b. A null.
+c. Al primer nodo de la lista.
+d. La ejecución da un error ""javaLang.NullPointerException""
+Answer: a. *** Al último nodo de la lista."
+"Question: What is the value of i after executing the following code?:
+```
+i = pila.pop();
+pila.push(3);
+i = pila.top();
+pila.push(4);
+i = pila.top();
+pila.push(5);
+i = pila.top();
+pila.push(6);
+i = pila.size();
+```
+Options:
+a. *** 5
+b. 6
+c. 7
+d. 4
+Answer: 5"
+"Question: Given a LinkedQueue<E> and the following implementation of its front() method, which of the following statements is correct?
+```
+public E front() {
+  E info;
+  info = top.getInfo();
+  return info;
+}
+```
+Options:
+a. *** In certain occasions a java.lang.NullPointerException will be thrown
+b. We must update tail to the correct value before returning the information.
+c. The method is correct, returning the information without deleting it.
+d. front() must also delete the element it returns.
+Answer: a. *** In certain occasions a java.lang.NullPointerException will be thrown"
+"Question: In a deque data structure, which of the following statements is correct?
+Options:
+a. *** It is more efficient with a doubly linked list implementation.
+b. It is more efficient with a singly linked list implementation.
+c. With its insertLast() and removeLast() methods we are able to use the deque as a queue
+d. With its insertFirst() and removeFirst() methods we are able to use the deque as a queue
+Answer: a. *** It is more efficient with a doubly linked list implementation."
+"Question: Dado el siguiente árbol binario de objetos Integer, representado por el siguiente array, ¿es un montículo?
+
+{1, 2, 4, 3, 5, 6, 9, 8, 7, null, null, null, null, null, null}
+Options:
+a. Sí; es un montículo min-heap.
+b. No; no es un montículo puesto que no cumple ni min-heap ni max-heap.
+c. No; no es un montículo porque no es completo.
+d. Sí; es un montículo max-heap.
+Answer: Sí; es un montículo max-heap."
+"Question: Respecto a la eficiencia de los algoritmos de búsqueda estudiados en clase (lineal y binaria), teniendo en cuenta que N es el número de elementos, ¿cuál de las siguientes afirmaciones es la correcta?:
+Options:
+a. Para valores pequeños de N en búsqueda lineal y binaria se utilizan aproximadamente el mismo número de comparaciones.
+b. Para valores muy grandes de N la búsqueda lineal es más eficiente que la binaria.
+c. La búsqueda lineal tiene una eficiencia de O(logN).
+d. La búsqueda binaria tiene una eficiencia de O(N).
+Answer: Para valores pequeños de N en búsqueda lineal y binaria se utilizan aproximadamente el mismo número de comparaciones."
+"Question: La organización del contenido de un libro de texto en capítulos, subcapítulos, secciones, subsecciones se corresponde con:
+Options:
+a. *** Árbol
+b. Árbol binario
+c. Árbol binario ordenado
+d. Lista
+Answer: Árbol"
+"Question: Dado el siguiente código. Al ejecutar el programa, ¿qué se muestra por pantalla? Nota: % en java es la operación módulo (resto de dividir un número entre otro).
+```java
+public class Recursividad{
+public String m1(int i){
+if (i<0) return """";
+else if ( (i%2) != 0) return """" + m1(i-1);
+else return i + "" "" + m1(i-1);
+}
+public static void main(String args[]){
+Recursividad r = new Recursividad();
+String cadena = r.m1(10);
+System.out.println(cadena);
+} // main
+} // Recursividad
+```
+Options:
+a. *** 10 8 6 4 2 0
+b. 9 7 5 3 1
+c. 10 9 8 7 6 5 4 3 2 1 0
+d. 9 8 7 6 5 4 3 2 1
+Answer: a. *** 10 8 6 4 2 0"
+"Question: Dada una lista enlazada simple de objetos de la clase Integer, no vacía y con más de un elemento. Si se llama al método m1() ¿a qué nodo apunta current después de salir del bucle while?
+```java
+public void m1() {
+Node<E> current = this.first;
+while (current != null) {
+current = current.getNext();
+}
+}
+```
+Options:
+a. *** A ninguno. A null.
+b. Al último nodo de la lista.
+c. Al primer nodo de la lista.
+d. La ejecución da un error javaLang.NullPointerException
+Answer: a. *** A ninguno. A null."
+"Question: En una estructura de datos deque, ¿cuál de las siguientes afirmaciones es la correcta?
+Options:
+a. *** Es más eficiente con una implementación mediante lista doblemente enlazada.
+b. Es más eficiente con una implementación mediante lista dinámica simplemente enlazada.
+c. Con sus métodos insertLast() y removeFirst() estamos en condiciones de utilizar la deque como una stack
+d. Con sus métodos insertFirst() y removeLast() estamos en condiciones de utilizar la deque como una stack
+Answer: Es más eficiente con una implementación mediante lista doblemente enlazada."
+"Question: Dado el siguiente árbol binario de objetos Integer, representado por el siguiente array, en un recorrido preorden ¿cómo se visitarían los nodos?:
+{1, null, 2, null, null, null, 3, null, null, null, null, null, null, 6, 4}
+Options:
+a. *** 1, 2, 3, 6, 4
+b. 6, 4, 3, 2, 1
+c. 1, 2, 6, 3, 4
+d. 4, 6, 3, 2, 1
+Answer: 1, 2, 3, 6, 4"
+"Question: Dado el siguiente árbol binario de objetos Integer, representado por el siguiente array, ¿es un montículo?
+{1, 2, 4, 3, 5, 6, 9, 8, 7, null, null, null, null, null, null}
+Options:
+a. *** Sí; es un montículo min-heap.
+b. No; no es un montículo puesto que no cumple ni min-heap ni max-heap.
+c. No; no es un montículo porque no es completo.
+d. Sí; es un montículo max-heap.
+Answer: Sí; es un montículo min-heap."
+"Question: Respecto a la eficiencia de los algoritmos de búsqueda estudiados en clase (lineal y binaria), teniendo en cuenta que N es el número de elementos, ¿cuál de las siguientes afirmaciones es la correcta?:
+Options:
+a. *** Para valores pequeños de N no merece la pena la búsqueda binaria.
+b. Para valores muy grandes de N la búsqueda lineal es más eficiente que la binaria.
+c. La búsqueda lineal tiene una eficiencia de O(logN)
+d. La búsqueda binaria tiene una eficiencia de O(N)
+Answer: Para valores pequeños de N no merece la pena la búsqueda binaria."
+"Question: ¿Cuántos intercambios hace el algoritmo de ordenación Bubble Sort para ordenar de menor a mayor este array de enteros: {3, 2, 1}?
+Options:
+a. *** 3
+b. 4
+c. 2
+d. 1
+Answer: a. *** 3"
+"Question: De las estructuras de datos estudiadas en clase cuál escogerías para permitir un el acceso más rápido a los ordenadores de la Universidad con usuario(NIA)/contraseña tanto del personal como el alumnado.
+Options:
+a. *** Árbol binario de búsqueda.
+b. Stack.
+c. Queue.
+d. Linked List.
+Answer: a. *** Árbol binario de búsqueda."

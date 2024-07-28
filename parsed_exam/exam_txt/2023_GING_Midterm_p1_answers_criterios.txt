@@ -180,58 +180,44 @@ Evaluation criteria
  
 Section 2. 4 (2 points)  
  
-@Test 
-    void testLibrarianDepartment() {  
-        assertEquals ("Adult Fiction" , ((Librarian)  librarian ).getDepartment());  
-    } 
+
+void testLibrarianDepartment() {
+    assertEquals ("Adult Fiction" , ((Librarian)  librarian ).getDepartment());
+}
+
+void testLibraryAssistantHoursWorked() {
+    assertEquals (30, ((LibraryAssistant) libraryAssistant ).getHoursWorked());
+}
+
+void testSalaryTooLowException() {
+    Exception exception  = assertThrows (SalaryTooLowException. class, () -> {
+        librarian .setSalary(20.0);
+    });}
+
+void testCalculatePay() {
+    assertEquals (600.0, libraryAssistant .calculatePay()); }
  
-Evaluation criteria  
-● 0 if the code makes no sense.  
-● 0.25 if call assertEquals with correct parametres  
-● 0,25 if cast and call method getDepartament()  
-● Significant errors are subject to additional penalties  
- 
-    @Test 
-    void testLibraryAssistantHoursWorked() {  
-        assertEquals (30, ((LibraryAssistant) libraryAssistant ).getHoursWorked());  
-    } 
- 
-Evaluation criteria  
-● 0 if the code makes no sense.  
-● 0.25 if call assertEquals with correct parametres  
-● 0,25 if cast and call method getDepartament()  
-● Significant errors are subject to additional penalties  
- 
- 
- 
- 
- 
- 
- 
- 
- 
-  
-  
- 
-    @Test 
-    void testSalaryTooLowException() {  
-        Exception exception  = assertThrows (SalaryTooLowException. class, () -> { 
-            librarian .setSalary(20.0);  
-        });} 
- 
-Evaluation criteria  
-● 0 if the code makes no sense.  
-● 0.25 if call assertThrows with correct parametres  
-● 0,25 if cast and call method setSalary() with the correct parameter  
-● Significant errors are subject to additional penalties  
- 
- 
-    @Test 
-    void testCalculatePay() {  
-        assertEquals (600.0, libraryAssistant .calculatePay()); } 
- 
-Evaluation criteria  
-● 0 if the code makes no sense.  
-● 0.25 if call assertEquals with correct parametres  
-● 0,25 if cast and call method calculatePay()  
+Evaluation criteria
+Section 4 (2 points)
+● 0 if the code makes no sense.
+● 0.25 if call assertEquals with correct parametres
+● 0,25 if cast and call method getDepartament()
+● Significant errors are subject to additional penalties
+
+Evaluation criteria
+● 0 if the code makes no sense.
+● 0.25 if call assertEquals with correct parametres
+● 0,25 if cast and call method getHoursWorked()
+● Significant errors are subject to additional penalties
+
+Evaluation criteria
+● 0 if the code makes no sense.
+● 0.25 if call assertThrows with correct parametres
+● 0,25 if cast and call method setSalary() with the correct parameter
+● Significant errors are subject to additional penalties
+
+Evaluation criteria
+● 0 if the code makes no sense.
+● 0.25 if call assertEquals with correct parametres
+● 0,25 if cast and call method calculatePay()
 ● Significant errors are subject to additional penalties
